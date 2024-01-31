@@ -153,7 +153,7 @@
 								href = $a.attr('href'),
 								target = $a.attr('target');
 
-							if (!href || href == '' || href == '' || href == '' + id)
+							if (!href || href == '#' || href == '' || href == '#' + id)
 								return;
 
 							// Cancel original event.
@@ -255,7 +255,7 @@
 				});
 
 			// Event: Hide panel if a child anchor tag pointing to its ID is clicked.
-				$this.on('click', 'a[href="' + id + '"]', function(event) {
+				$this.on('click', 'a[href="#' + id + '"]', function(event) {
 
 					event.preventDefault();
 					event.stopPropagation();
@@ -272,7 +272,7 @@
 				});
 
 			// Event: Toggle.
-				$body.on('click', 'a[href="' + id + '"]', function(event) {
+				$body.on('click', 'a[href="#' + id + '"]', function(event) {
 
 					event.preventDefault();
 					event.stopPropagation();
