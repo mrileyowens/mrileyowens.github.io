@@ -1305,6 +1305,7 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
+	/* Set the background image of the body */
 	body {
 		background-image: url("images/overlay.png"), url("images/bg.jpg");
 		background-repeat: repeat, no-repeat;
@@ -1682,20 +1683,28 @@ input, select, textarea {
 
 /* List */
 
+	/* Set the left padding 
+	of unordered lists */
 	ul {
 		list-style: disc;
 		padding-left: 1em;
 	}
 
+		/* Set the left padding of the 
+		list items of unordered lists */
 		ul li {
 			padding-left: 0.5em;
 		}
 
+	/* Set the left padding of 
+	ordered lists */
 	ol {
 		list-style: decimal;
 		padding-left: 1.25em;
 	}
 
+		/* Set the left padding of 
+		the list items of ordered lists */
 		ol li {
 			padding-left: 0.25em;
 		}
@@ -1769,6 +1778,8 @@ input, select, textarea {
 
 /* Nav */
 
+	/* Align the navigation bar's 
+	text in the center */
 	#nav {
 		text-align: center;
 		height: 4.25em;
@@ -1847,6 +1858,8 @@ input, select, textarea {
 					border-right: solid 0.6em transparent;
 				}
 
+			/* Make anchors opaque 
+			when hovered over */
 			#nav a:hover {
 				opacity: 1.0;
 			}
@@ -2101,6 +2114,97 @@ input, select, textarea {
 						margin: 0.25em 0 0 0;
 					}
 
+					#main > .panel.intro header a {
+						position: relative;
+						display: inline-block;
+						color: #222222;
+						width: 1em;
+						height: 1em;
+						line-height: 0.9em;
+						font-size: 2.5em;
+						margin: 1em 0.25em 0 0.25em;
+						opacity: 0.35;
+						outline: 0;
+						-moz-transition: opacity .25s ease-in-out;
+						-webkit-transition: opacity .25s ease-in-out;
+						-ms-transition: opacity .25s ease-in-out;
+						transition: opacity .25s ease-in-out;
+					}
+
+						#main > .panel.intro header a.icon:before {
+							padding-right: 0;
+						}
+
+						#main > .panel.intro header a:before {
+							font-size: 0.8em;
+						}
+
+						#main > .panel.intro header a:after {
+							content: '';
+							display: block;
+							position: absolute;
+							left: 50%;
+							bottom: -0.75em;
+							margin-left: -0.5em;
+							border-bottom: solid 0em #000000;
+							border-left: solid 0.5em transparent;
+							border-right: solid 0.5em transparent;
+							-moz-transition: border-bottom-width .25s ease-in-out;
+							-webkit-transition: border-bottom-width .25s ease-in-out;
+							-ms-transition: border-bottom-width .25s ease-in-out;
+							transition: border-bottom-width .25s ease-in-out;
+						}
+
+						/* Span containing the popup text identifying the link
+						when hovering over the anchor */
+						#main > .panel.intro header a span {
+							display: block;
+							position: absolute;
+							background: #222222;
+							color: #ffffff;
+							top: -2.75em;
+							font-size: 0.3em;
+							height: 2.25em;
+							line-height: 2.25em;
+							left: 50%;
+							opacity: 0;
+							-moz-transition: opacity .25s ease-in-out;
+							-webkit-transition: opacity .25s ease-in-out;
+							-ms-transition: opacity .25s ease-in-out;
+							transition: opacity .25s ease-in-out;
+							width: 5.5em;
+							margin-left: -2.75em;
+							text-align: center;
+						}
+
+							#main > .panel.intro header a span:after {
+								content: '';
+								display: block;
+								position: absolute;
+								bottom: -0.4em;
+								left: 50%;
+								margin-left: -0.6em;
+								border-top: solid 0.6em #222222;
+								border-left: solid 0.6em transparent;
+								border-right: solid 0.6em transparent;
+							}
+
+						#main > .panel.intro header a:hover {
+							opacity: 1.0;
+						}
+
+							#main > .panel.intro header a:hover span {
+								opacity: 1.0;
+							}
+
+						#main > .panel.intro header a.active {
+							opacity: 1.0;
+						}
+
+							#main > .panel.intro header a.active:after {
+								border-bottom-width: 0.5em;
+							}
+
 				@media screen and (max-width: 980px) {
 
 					#main > .panel.intro {
@@ -2142,6 +2246,7 @@ input, select, textarea {
 
 /* Footer */
 
+	/* Align the footer's text in the center */
 	#footer {
 		color: rgba(255, 255, 255, 0.45);
 		text-align: center;
@@ -2158,6 +2263,9 @@ input, select, textarea {
 			transition: color .25s ease-in-out;
 		}
 
+		 	/* Make anchors nested 
+			in the ID footer white 
+			wwhen hovered over */
 			#footer a:hover {
 				color: white;
 			}
