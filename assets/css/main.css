@@ -1782,8 +1782,20 @@ input, select, textarea {
 	text in the center */
 	#nav {
 		text-align: center;
-		height: 4.25em;
+		height: 6.75em;
 		cursor: default;
+		position: sticky;
+		top: 0;
+		padding: 2.50em 0 0 0;
+		z-index: 1;
+		width: 100%;
+		background-image: url("images/overlay.png"), url("images/bg.jpg");
+		background-repeat: repeat, no-repeat;
+		background-size: auto, 100% 100%;
+		background-attachment: fixed;
+		/* Suppressed because it appeared to cause the popup text of the 
+		nav bar to not be visible */
+		/*overflow-y: hidden;*/
 	}
 
 		#nav a {
@@ -1816,7 +1828,7 @@ input, select, textarea {
 				display: block;
 				position: absolute;
 				left: 50%;
-				bottom: -0.75em;
+				bottom: -0.7em;
 				margin-left: -0.5em;
 				border-bottom: solid 0em #ffffff;
 				border-left: solid 0.5em transparent;
@@ -1961,6 +1973,7 @@ input, select, textarea {
 		overflow: hidden;
 		width: 100%;
 		background: #ffffff;
+		background-attachment: fixed;
 		box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
 		-moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
@@ -2031,7 +2044,6 @@ input, select, textarea {
 						background: url("images/overlay.png");
 						width: 100%;
 						height: 100%;
-						z-index: 1;
 					}
 
 					#main > .panel.intro .pic img {
@@ -2122,7 +2134,7 @@ input, select, textarea {
 						height: 1em;
 						line-height: 0.9em;
 						font-size: 2.5em;
-						margin: 1em 0.25em 0 0.25em;
+						margin: 1em 0.025em 0 0.25em;
 						opacity: 0.35;
 						outline: 0;
 						-moz-transition: opacity .25s ease-in-out;
@@ -2172,7 +2184,7 @@ input, select, textarea {
 							-webkit-transition: opacity .25s ease-in-out;
 							-ms-transition: opacity .25s ease-in-out;
 							transition: opacity .25s ease-in-out;
-							width: 5.5em;
+							width: 6em;
 							margin-left: -2.75em;
 							text-align: center;
 						}
