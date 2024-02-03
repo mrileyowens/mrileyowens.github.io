@@ -33,8 +33,9 @@
 					<nav id="nav">
 						<!--Make clickable icons that link to the other pages of the website-->
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#research" class="icon solid fa-flask"><span>Research</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+						<!--<a href="#research" class="icon solid fa-flask"><span>Research</span></a>-->
+						<a href="#gallery" class="icon solid fa-camera"><span>Gallery</span></a>
+						<!--<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>-->
 					</nav>
 
 				<!-- Language -->
@@ -62,6 +63,7 @@
 							</article>
 
 						<!-- Research -->
+						<!--
 							<article id="research" class="panel">
 								<header>
 									<h2>Research</h2>
@@ -112,8 +114,55 @@
 									</div>
 								</section>
 							</article>
+						-->
+
+						<!-- Gallery -->
+							<article id="gallery" class="panel">
+								<header>
+									<h2>Gallery</h2>
+								</header>
+								<p>
+									Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
+									Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+									luctus elit eget interdum.
+								</p>
+								<section>
+									<div class="albums">
+										<div class="album" onclick="openPopup('album-pittsburgh')">
+        								    <img src="images/albums/pittsburgh/PXL_20210717_212702087.jpg" alt="Pittsburgh album cover">
+											<div class="text-container">
+												<p class="title">Pittsburgh</p>
+												<p class="caption">A day trip while I was a NSF REU student at WVU</p>
+											</div>
+        								</div>	
+										<div class="popup" id="album-pittsburgh">
+        								    <span class="close-btn" onclick="closePopup('album-pittsburgh')">&times;</span>
+            								<div class="popup-content">
+                								<img src="images/albums/pittsburgh/PXL_20210717_171034232.MP.jpg" alt="Photo 1">
+                								<img src="images/albums/pittsburgh/PXL_20210717_171048426.jpg" alt="Photo 2">
+                								<!-- Add more images for Album 1 -->
+            								</div>
+        								</div>
+										<div class="album" onclick="openPopup('album-seattle')">
+        								    <img src="images/albums/seattle/PXL_20230108_001307968.jpg" alt="Seattle album cover">
+											<div class="text-container">
+												<p class="title">Seattle</p>
+												<p class="caption">My trip to AAS 241</p>
+											</div>
+        								</div>	
+										<div class="popup" id="album-seattle">
+        								    <span class="close-btn" onclick="closePopup('album-seattle')">&times;</span>
+            								<div class="popup-content">
+                								<img src="images/albums/seattle/PXL_20230108_001315922.jpg" alt="Photo 1">
+                								<img src="images/albums/seattle/PXL_20230108_001319193.jpg" alt="Photo 2">
+            								</div>
+        								</div>
+									</div>
+								</section>
+							</article>
 
 						<!-- Contact -->
+						<!--
 							<article id="contact" class="panel">
 								<header>
 									<h2>Contact me</h2>
@@ -140,6 +189,7 @@
 									</div>
 								</form>
 							</article>
+						-->
 
 					</div>
 
@@ -158,6 +208,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/gallery.js"></script>
 
 	</body>
 </html>
