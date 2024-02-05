@@ -1,7 +1,11 @@
-function openPopup(popupId) {
-    document.getElementById(popupId).style.display = "flex";
-}
+// Get all album elements
+const albums = document.querySelectorAll('.album');
 
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = "none";
-}
+// Loop through each album and attach an event listener
+albums.forEach(album => {
+    const modal = album.querySelector('.modal');
+
+    album.addEventListener('click', () => {
+        modal.showModal();
+    });
+});

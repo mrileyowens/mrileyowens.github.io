@@ -1787,7 +1787,7 @@ input, select, textarea {
 		position: sticky;
 		top: 0;
 		padding: 2.50em 0 0 0;
-		z-index: 1;
+		z-index: 3;
 		width: 100%;
 		background-image: url("images/overlay.png"), url("images/bg.jpg");
 		background-repeat: repeat, no-repeat;
@@ -2266,17 +2266,18 @@ input, select, textarea {
     padding: 20px;
 	*/
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    padding: 20px;
+    /*gap: 20px;*/
+	gap: 1em;
+    padding: 1em;
 }
 
 .album {
 	position: relative;
     cursor: pointer;
-    margin: 10px;
+    margin: 0;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
 	/*height: 6em;*/
 	aspect-ratio: 4/3;
 	width: 100%;
@@ -2292,7 +2293,7 @@ input, select, textarea {
 		z-index: 1;
 	}
 
-	.album:hover img {
+	.album:hover > img {
     	transform: scale(1.05); /* Add a slight scale effect on hover */
 	}
 
@@ -2307,14 +2308,16 @@ input, select, textarea {
     	/*bottom: 0;*/
     	/*left: 0;*/
 		height: auto;
-    	width: auto;
+    	width: 100%;
     	margin: 0;
     	/*padding: 10px 10px;*/
 		padding: 0;
     	background: rgba(0, 0, 0, 0);
     	color: #fff;
-    	font-size: 14px;
-    	text-align: left;
+    	/*font-size: 14px;*/
+		font-size: 1em;
+    	text-align: justify;
+		text-justify: inter-word;
 		transition: bottom 0.25s ease-in-out;
 	}
 
@@ -2323,7 +2326,7 @@ input, select, textarea {
 		font-weight: bold;
 	}
 
-	.album .caption {
+	.album .text-container .caption {
 		line-height: 1.2em;
 	}
 
@@ -2366,41 +2369,148 @@ input, select, textarea {
     	transform: translateY(-50%);
 	}
 
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+.modal {
+	padding: 1em;
+	border: 0;
+	position: fixed;
+	width: auto;
+	height: auto;
 }
 
-	.popup img {
-    	width: 100%;
-    	height: auto;
+.modal::backdrop {
+	background: rgb(0,0,0,0.4);
+}
+
+	.photos {
+		display: grid;
+		/*
+    	flex-wrap: wrap;
+    	justify-content: space-around;
+    	padding: 20px;
+		*/
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+    	gap: 20px;
+    	padding: 20px;
 	}
 
-.popup-content {
-    display: flex;
-    flex-wrap: wrap;
-}
+		.close-album-button {
+			position: fixed;
+			background-color: rgb(0,0,0,0.9);
+			color: #ffffff;
+			opacity: 0.7;
+			z-index: 10;
+			right: 0;
+		}
 
-.popup img {
-    width: 100%;
-    height: auto;
-}
+		.close-album-button:hover {
+			opacity: 1;
+		}
+
+		.photo {
+			position: relative;
+    		cursor: pointer;
+    		margin: 0;
+    		overflow: hidden;
+    		border-radius: 8px;
+    		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			aspect-ratio: 3/4;
+			width: 100%;
+		}
+
+			.photo img {
+				width: 100%;
+    			height: 100%;
+				display: block;
+    			border-radius: 8px;
+				object-fit: cover;
+			}
+
+		.photo:hover .photo-caption-container {
+			transform: translateY(-100%);
+		}
+
+			.photo-caption-container {
+    			position: absolute;
+    			top: 100%;
+    			left: 0;
+				height: auto;
+    			width: 100%;
+    			/*margin: 0;*/
+    			padding: 10px 10px;
+    			background: rgba(0, 0, 0, 0.8);
+    			/*color: #fff;*/
+    			font-size: 14px;
+    			text-align: left;
+    			transition: transform 0.25s ease-in-out;
+				/*transform: translateY(100%)*/
+				z-index: 2;
+				/*line-height: 1.2em;*/
+			}
+
+				.photo-caption-header {
+					margin-bottom: 0.8em;
+				}
+
+					.location {
+						font-size: 22px;
+						font-weight: bold;
+						height: auto;
+						width: auto;
+						line-height: 1.5em;
+					}
+
+					.date {
+						font-size: 18px;
+						font-style: italic;
+						height: auto;
+						width: auto;
+						line-height: 1.5em;
+					}
+
+				.caption {
+					height: auto;
+					width: 100%;
+					line-height: 1.3em;
+					text-align: justify;
+					text-justify: inter-word;
+				}
+
+					.caption a {
+						border: 0;
+						color: #ffffff;
+					}
+
+				.photo-people-container {
+					margin-top: 10px;
+				}
+
+					.people {
+						height: auto;
+						width: 100%;
+						line-height: 1em;
+						text-align: justify;
+						text-justify: inter-word;
+						opacity: 0.6;
+					}
 
 .close-btn {
-    color: #fff;
-    font-size: 30px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #2f2f2f;
     cursor: pointer;
+	z-index: 2;
+	opacity: 0.7;
+	background: none;
+	border: none;
+	transition: opacity 0.25s ease-in-out;
 }
+
+	.close-btn:hover {
+		opacity: 1;
+		color: #ff0000; /* Change the color on hover if desired */
+	}
 
 /* Footer */
 
