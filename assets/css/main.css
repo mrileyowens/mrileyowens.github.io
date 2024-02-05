@@ -2258,6 +2258,11 @@ input, select, textarea {
 
 /* Gallery */
 
+#gallery > p {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
 .albums {
     display: grid;
 	/*

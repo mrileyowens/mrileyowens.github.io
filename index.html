@@ -123,71 +123,651 @@
 								</header>
 								<p>
 									This is where I keep photo albums from my travels. Hover over each destination's thumbnail for more information,
-									and click to see the complete album.
+									and click to see the complete album. The albums appear in reverse chronological order from left to right and top to bottom.
+									All pictures are mine unless credited otherwise.
 								</p>
 								<section>
 									<div class="albums">
 
-										<div class="album" onclick="openPopup('album-kolymvari')">
+										<!--
+										<div class="album" id="album-new-orleans">
+        								    <img src="images/albums/kolymvari/PXL_20230418_114359274.MP.jpg" alt="New Orleans album cover">
+											<div class="text-container">
+												<p class="title">New Orleans</p>
+												<p class="caption">My visit to New Orleans for AAS 243</p>
+											</div>
+											<dialog class="modal" id="modal-new-orleans">
+												<div class="photos" id="photos-new-orleans">
+												</div>
+											</dialog>
+										</div>
+
+										<div class="album" id="album-kolymvari">
         								    <img src="images/albums/kolymvari/PXL_20230418_114359274.MP.jpg" alt="Kolymvari album cover">
 											<div class="text-container">
 												<p class="title">Kolymvari</p>
 												<p class="caption">A conference trip to a Greek seaside town and my first time in Europe</p>
 											</div>
-        								</div>	
-										<div class="popup" id="album-kolymvari">
-        								    <span class="close-btn" onclick="closePopup('album-kolymvari')">&times;</span>
-            								<div class="popup-content">
-                								<img src="images/albums/seattle/PXL_20230108_001315922.jpg" alt="Photo 1">
-                								<img src="images/albums/seattle/PXL_20230108_001319193.jpg" alt="Photo 2">
-            								</div>
-        								</div>
+											<dialog class="modal" id="modal-kolymvari">
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/kolymvari/PXL_20230416_211543554.MP.jpg" alt="New York City on the approach to Newark airport">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Near Newark</p>
+																<p class="date">16 April 2023</p>
+															</div>
+															<p class="caption">The view of New York City as the plane descended toward Newark Liberty International Airport. I knew
+																New York City was close, but I didn't realize it was <i>that</i> close! This was the first time I saw the city.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/kolymvari/PXL_20230420_052205517.MP.jpg" alt="A lone fisher">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Road between Kolymvari and the OAC</p>
+																<p class="date">20 April 2023</p>
+															</div>
+															<p class="caption">A lone fisher on a rocky outcrop I spotted one morning on my way to
+																the conference center. I had never seen someone use such a long fishing pole before.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/kolymvari/PXL_20230420_113743348.MP.jpg" alt="The Aegean Sea">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Near Kolymvari</p>
+																<p class="date">20 April 2023</p>
+															</div>
+															<p class="caption">The sea is a consistent theme of my travels, and the Aegean was 
+																one of the most beautiful. The Greek poet Homer often used the term <i>oînops póntos</i>,
+																traditionally translated as <i>wine-dark sea</i> (or more literally as <i>wine-face sea</i>)
+																to describe the Aegean when storms made it turbulent and choppy. He may not have
+																meant it as a literal description of its color, but after seeing it myself,
+																I think its rich blue tone also deserves the epithet <i>wine-dark</i>. Seeing
+																the sea from so many places across the world has made me appreciate its vastness.
+																When I gaze over the sea now, it is sobering to think about all the people I met
+																and places I saw that are still somewhere across it, continuing on in spite of
+																my absence.
+															</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/kolymvari/PXL_20230420_120434121.MP.jpg" alt="A stray cat inside the conference center">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Orthodox Academy of Crete</p>
+																<p class="date">20 April 2023</p>
+															</div>
+															<p class="caption">Some stray cats lived near the conference center, and this one found its way 
+																inside during the meeting.</p>
+															<div class="photo-people-container">
+																<p class="people">People (left to right): Anne Jaskot (standing at the microphone), 
+																Matthew Hayes (stooped in the orange / brown hoodie), 
+																Uroš Meštrić (sitting in the blue shirt and looking toward the camera)</p>
+															</div>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/kolymvari/PXL_20230422_025053826.jpg" alt="Morning road to the conference center">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Road between Kolymvari and the OAC</p>
+																<p class="date">21 April 2023</p>
+															</div>
+															<p class="caption">The road to the conference center as I walked there to meet the airport shuttle. I 
+																left so early that Nikos, the hotel keeper, asked me the day before to leave the keys inside the 
+																main entrance and simply close the door as I left. Since I left early, I finished checking out (i.e.,
+																paying him, since he insisted that I shouldn't pay him until I left) the day before. After handing
+																him the notes, he hurried off to get me change. After handing me the change, he kneeled down behind
+																the counter, and I was shocked to see him gleefully reveal two shot glasses and a bottle of raki,
+																a popular Cretan spirit (also called tsikoudia, but not the same as the Turkish spirit raki). I
+																happily accepted his kind gesture. This was also the first time I ever took a shot. Raki is a very
+																strong drink, but fortunately for me also surprisingly smooth and sweet. Nikos wasted no time 
+																offering me another shot, but I kindly declined, and before I could say anything, he was stuffing 
+																my hands with Greek sweet gummy treats before I returned to my room. In a comedic twist, my only
+																other hospitality experience even remotely comparable to Nikos's kindness was with a group of 
+																Turks in Morgantown. But that's a story for a different picture. That night, I wrote a small note 
+																to Nikos that I left in the room when I departed the following morning. In it, I thanked him for his
+																overwhelming kindness he had shown me during my stay and described that I had never felt so welcome 
+																so far from home. I hope he got my note, and I hope that he is well. 
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/kolymvari/PXL_20230422_035612293.MP.jpg" alt="Chania">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Near Chania</p>
+																<p class="date">21 April 2023</p>
+															</div>
+															<p class="caption"> Chania as it appeared from the shuttle that returned us to
+																the airport. I had been very concerned about how to return to the airport,
+																but I was relieved when I found out the conference center would arrange 
+																shuttles for attendees (as they had for the arrival flight). We thought we 
+																were missing a passenger before we left the conference center, but it turned 
+																out they just stayed somewhere in Kolymvari and the shuttle driver knew to 
+																pick them up from there. We must've had some miscommunication with the driver. 
+																I remember Uroš and (I think) at least one other person disembarked in Chania 
+																because they planned to stay in Crete longer.
+															</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/kolymvari/PXL_20230423_003103858.MP.jpg" alt="The line for the service desk at the Newark airport">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Newark Liberty International Airport</p>
+																<p class="date">22 April 2023</p>
+															</div>
+															<p class="caption">Unfortunately (or perhaps fortunately), the worst part of my journey was my return home. We landed in
+																the United States (flying through Newark again), and everything went horribly. A series of flight delays and cancelations
+																followed, and the best flight option left the next morning. Surprisingly, the airline's app made it very easy to reschedule 
+																flights in the event of delays or cancelations. This picture is the line at the airline's service desk after they canceled 
+																the last flight home that night. We waited more than an hour in line, and the ire of the would-be passengers was palpable. 
+																Incidentally, I met a US veteran in line with us that had been stationed in Crete. I think he said it was sometime during 
+																the 1980s or 1990s. He told me about how they shot missiles into the sea. By the time we talked to a service agent, we 
+																found out the airline would not offer any lodging for the night because poor weather was responsible for the flight 
+																cancelations. Originally, a gate agent told us the first flight was canceled due to a staffing shortage. I secretly 
+																wonder if some corporate representative made the decision to lie about the cause so the airline wouldn't owe the 
+																passengers anything. Either way, I pitied the service agents who had to receive all the fury of the irritated passengers 
+																for decisions and policies they probably didn't make. All the nearby lodging we could find was full, likely from the crush 
+																of passengers on canceled planes, so we made the tough decision to sleep rough in the airport. By this point, I had been 
+																awake for more than a day. The only silver lining of this awful experience was Keunho. I had never navigated 
+																such a tumultuous flight experience before, and I cannot imagine how much worse it would have been to experience it 
+																alone.</p>
+														</div>
+													</div>
+												</div>
+											</dialog>
+										</div>
 
-										<div class="album" onclick="openPopup('album-seattle')">
-        								    <img src="images/albums/seattle/PXL_20230108_001307968.jpg" alt="Seattle album cover">
+										<div class="album" id="album-seattle">
+        								    <img src="images/albums/seattle/PXL_20230113_035409913.jpg" alt="Seattle album cover">
 											<div class="text-container">
 												<p class="title">Seattle</p>
-												<p class="caption">My trip to Seattle for AAS 241</p>
+												<p class="caption">My trip to seattle for AAS 241</p>
 											</div>
-        								</div>	
-										<div class="popup" id="album-seattle">
-        								    <span class="close-btn" onclick="closePopup('album-seattle')">&times;</span>
-            								<div class="popup-content">
-                								<img src="images/albums/seattle/PXL_20230108_001315922.jpg" alt="Photo 1">
-                								<img src="images/albums/seattle/PXL_20230108_001319193.jpg" alt="Photo 2">
-            								</div>
-        								</div>
+											<dialog class="modal" id="modal-seattle">
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230107_172421213.jpg" alt="View from a concourse of the Denver International Airport">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Denver International Airport</p>
+																<p class="date">7 January 2023</p>
+															</div>
+															<p class="caption">The view from a concourse of the Denver International Airport during a layover on my way to Seattle. 
+																This was the first time I flew through this airport.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230108_001319193.jpg" alt="View of Puget Sound from the Seattle waterfront">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Downtown Seattle waterfront</p>
+																<p class="date">7 January 2023</p>
+															</div>
+															<p class="caption">The view of Puget Sound from a pier on the downtown Seattle waterfront, facing west / northwest.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230111_003146811.jpg" alt="Graffiti wall of DeliNoMore">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">DeliNoMore</p>
+																<p class="date">10 January 2023</p>
+															</div>
+															<p class="caption">A graffiti wall inside <i>DeliNoMore</i>. I later found out the deli 
+																permanently closed not long after I visited because of building renovations. The name 
+																is too fitting now. I pieced together that just one woman ran the deli. I hope she 
+																was able to recover from the deli's closure.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/Taylor Hutchison/PXL_20230112_020212140.MP.jpg" alt="Taylor Hutchison delivering a presentation">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Seattle Convention Center</p>
+																<p class="date">11 January 2023</p>
+															</div>
+															<p class="caption">My collaborator <a href="https://aibhleog.github.io" target="_blank">Taylor Hutchison</a> delivering a presentation.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230111_221746906.MP.jpg" alt="UW Seattle promenade">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">University of Washington, Seattle</p>
+																<p class="date">11 January 2023</p>
+															</div>
+															<p class="caption">A grassy promenade on the campus of the University of Washington, Seattle.
+																I visited as part of a tradition to visit nearby college campuses while I travel. It
+																was so convenient to take Seattle's Link light rail from downtown to the campus.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230111_224014915.MP.jpg" alt="UW Seattle promenade">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">University of Washington, Seattle</p>
+																<p class="date">11 January 2023</p>
+															</div>
+															<p class="caption">The same promenade on the campus of the University of Washington, Seattle,
+																viewed from Red Square facing the opposite direction as the previous picture. It points 
+																directly toward Mount Rainier, the slopes of which are visible above the tree line 
+																despite some cloud cover. From this point, Mount Rainier is approximately 98 km away.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/Lauren Elicker/PXL_20230111_230005888.MP.jpg" alt="Lauren Elicker framed in a window">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">University of Washington, Seattle</p>
+																<p class="date">11 January 2023</p>
+															</div>
+															<p class="caption">My collaborator and former fellow undergraduate Lauren Elicker also came with me to visit the 
+																campus. I thought the contrast between her silhouette and the brighter exterior leaking through the patterned
+																glass made an excellent frame.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230111_230328385.MP.jpg" alt="Chalkboard artwork">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">University of Washington, Seattle</p>
+																<p class="date">11 January 2023</p>
+															</div>
+															<p class="caption">A stunning piece of chalk artwork I found while exploring the physics 
+																building.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230113_024224986.MP.jpg" alt="Seattle ferris wheel">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Downtown Seattle waterfront</p>
+																<p class="date">12 January 2023</p>
+															</div>
+															<p class="caption">The iconic Seattle ferris wheel at night. I spent my last night in 
+																Seattle wandering the waterfront, trudging through puddles and sporadic rain. I'm 
+																glad I did, because the neon red light of the ferris wheel dancing on the calm water
+																of the sound is one of my favorite memories of Seattle. I wanted to ride the ferris
+																wheel with a friend, but it fell through.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230113_035409913.jpg" alt="Seattle skyline">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Downtown Seattle waterfront</p>
+																<p class="date">12 January 2023</p>
+															</div>
+															<p class="caption">The Seattle skyline from a pier on the waterfront.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/seattle/PXL_20230113_164358095.MP.jpg" alt="Seattle skyline">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Somewhere between Seattle and Seattle-Tacoma International Airport</p>
+																<p class="date">13 January 2023</p>
+															</div>
+															<p class="caption">The view from the Link light rail of the Cascade Range as I left Seattle.</p>
+														</div>
+													</div>
+												</div>
+											</dialog>
+										</div>
 
-										<div class="album" onclick="openPopup('album-busan')">
-        								    <img src="images/albums/busan/PXL_20220801_075128130.jpg" alt="Busan album cover">
+										<div class="album" id="album-busan">
+        								    <img src="images/albums/busan/PXL_20220801_074338438.jpg" alt="Busan album cover">
 											<div class="text-container">
 												<p class="title">Busan</p>
-												<p class="caption">My first international travel for the IAUGA 2022 conference in Busan</p>
+												<p class="caption">My first international travel for the IAUGA 2022 meeting in Busan</p>
 											</div>
-        								</div>	
-										<div class="popup" id="album-busan">
-        								    <span class="close-btn" onclick="closePopup('album-busan')">&times;</span>
-            								<div class="popup-content">
-                								<img src="images/albums/seattle/PXL_20230108_001315922.jpg" alt="Photo 1">
-                								<img src="images/albums/seattle/PXL_20230108_001319193.jpg" alt="Photo 2">
-            								</div>
-        								</div>
+											<dialog class="modal" id="modal-busan">
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/busan/PXL_20220731_063349762.jpg" alt="Window view of Incheon International Airport after landing">
+														<div class="photo-caption-container">
+															<p class="location">Incheon International Airport</p>
+															<p class="date">31 July 2022</p>
+															<p class="caption">I took this picture looking out the window of the airplane after touching down in South Korea. 
+																This was the first time I was ever in another country. Incheon's airport definitely ranks as one of my favorites.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/busan/PXL_20220731_100532315.jpg" alt="Window view from the train connecting Incheon International Airport and Seoul Station">
+														<div class="photo-caption-container">
+															<p class="location">Somewhere between Incheon International Airport and Seoul</p>
+															<p class="date">31 July 2022</p>
+															<p class="caption">The window view of the train connecting Incheon International Airport and Seoul Station.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img class="photo" src="images/albums/busan/PXL_20220801_060100508.jpg" alt="A toy model of an antique US Route 66 gas pump">
+														<div class="photo-caption-container">
+															<p class="location">We Guest House</p>
+															<p class="date">1 August 2022</p>
+															<p class="caption">I was surprised to see the guest house I stayed at had a toy model of an antique US Route 66 gas pump.</p>
+														</div>
+													</div>
+													<img class="photo" src="images/albums/busan/PXL_20220801_060100508.jpg" alt="A toy model of an antique US Route 66 gas pump">
+													<img class="photo" src="images/albums/busan/PXL_20220801_061617619.jpg" alt="Looking east on Haeundaehaebyeon-ro, near Haeundae beach">
+													<img class="photo" src="images/albums/busan/PXL_20220801_073606413.jpg" alt="Looking east on Haeundae beach">
+													<img class="photo" src="images/albums/busan/PXL_20220801_074338438.jpg" alt="East shore of Dongbaek Park, looking toward Haeundae beach">
+													<img class="photo" src="images/albums/busan/PXL_20220801_074458605.jpg" alt="A bird perched on the rocks">
+													<img class="photo" src="images/albums/busan/PXL_20220801_074607145.jpg" alt="Shore of Dongbaek Park, looking out to sea">
+													<img class="photo" src="images/albums/busan/PXL_20220801_075135012.jpg" alt="Dongbark Park, looking out to sea">
+													<img class="photo" src="images/albums/busan/PXL_20220801_075150587.MP.jpg" alt="Looking up the east shore of Dongbaek Park toward Haeundae beach">
+													<img class="photo" src="images/albums/busan/PXL_20220801_075442849.MP.jpg" alt="The carved stone of Haeundae">
+													<img class="photo" src="images/albums/busan/PXL_20220801_082021718.jpg" alt="A stray cat resting on a monument in Dongbaek Park">
+													<img class="photo" src="images/albums/busan/PXL_20220801_082133232.MP.jpg" alt="A monument to the Korean scholar Choi Chi-won in Dongbaek Park">
+													<img class="photo" src="images/albums/busan/PXL_20220802_043915072.jpg" alt="Looking across Centum 3-ro toward the southeast from the BEXCO side">
+													<img class="photo" src="images/albums/busan/PXL_20220802_053447704.jpg" alt="BEXCO, as viewed from the large pavilion outside">
+													<img class="photo" src="images/albums/busan/PXL_20220803_065431776.jpg" alt="A view of Busan from a bus crossing the Gwangan Bridge">
+													<img class="photo" src="images/albums/busan/PXL_20220803_073317780.MP.jpg" alt="Looking to the southwest out to sea from a bus on Jeoryeong-ro">
+													<img class="photo" src="images/albums/busan/PXL_20220803_074636912.MP.jpg" alt="A monument to foreign medical aid volunteers of the Korean War in Taejongdae Resort Park">
+													<img class="photo" src="images/albums/busan/PXL_20220803_080347120.MP.jpg" alt="A peaceful rest area in Taejongdae Resort Park">
+													<img class="photo" src="images/albums/busan/PXL_20220803_081200750.MP.jpg" alt="Parted trees reveal the vast sea beyond">
+													<img class="photo" src="images/albums/busan/PXL_20220803_082821159.jpg" alt="A view of the sea with a lone island and lighthouse">
+													<img class="photo" src="images/albums/busan/PXL_20220803_083319342.jpg" alt="The cliffs of Taejongdae">
+													<img class="photo" src="images/albums/busan/PXL_20220803_083327901.MP.jpg" alt="The cliffs and rocky shoreline of Taejongdae">
+													<img class="photo" src="images/albums/busan/PXL_20220803_085838767.jpg" alt="View of the bay and ships from a road in Taejongdae">
+													<img class="photo" src="images/albums/busan/PXL_20220803_085844746.MP.jpg" alt="View of the sea from Taejongdae with ships and an island">
+												</div>
+											</dialog>
+										</div>
 
-										<div class="album" onclick="openPopup('album-pittsburgh')">
-        								    <img src="images/albums/pittsburgh/PXL_20210717_212702087.jpg" alt="Pittsburgh album cover">
+										<div class="album" id="album-pasadena">
+        								    <img src="images/albums/pittsburgh/PXL_20210717_171034232.MP.jpg" alt="Pasadena album cover">
+											<div class="text-container">
+												<p class="title">Pasadena</p>
+												<p class="caption">My first conference travel to AAS 240 in Pasadena</p>
+											</div>
+											<dialog class="modal" id="modal-pasadena">
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/busan/PXL_20220731_063349762.jpg" alt="Window view of Incheon International Airport after landing">
+														<div class="photo-caption-container">
+															<p class="location">Incheon International Airport</p>
+															<p class="date">31 July 2022</p>
+															<p class="caption">I took this picture looking out the window of the airplane after touching down in South Korea. 
+																This was the first time I was ever in another country. Incheon's airport definitely ranks as one of my favorites.</p>
+														</div>
+													</div>
+												</div>
+											</dialog>
+										</div>
+
+										<div class="album" id="album-pittsburgh">
+        								    <img src="images/albums/pittsburgh/PXL_20210717_171034232.MP.jpg" alt="Pittsburgh album cover">
 											<div class="text-container">
 												<p class="title">Pittsburgh</p>
-												<p class="caption">A day trip while I was a NSF REU student at WVU</p>
+												<p class="caption">A day trip to Pittsburgh while I was a NSF REU student at WVU</p>
 											</div>
-        								</div>	
-										<div class="popup" id="album-pittsburgh">
-        								    <span class="close-btn" onclick="closePopup('album-pittsburgh')">&times;</span>
-            								<div class="popup-content">
-                								<img src="images/albums/pittsburgh/PXL_20210717_171034232.MP.jpg" alt="Photo 1">
-                								<img src="images/albums/pittsburgh/PXL_20210717_171048426.jpg" alt="Photo 2">
-                								<!-- Add more images for Album 1 -->
-            								</div>
-        								</div>
+											<dialog class="modal" id="modal-pittsburgh">
+												<button class="close-album-button">Esc to close</button>
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/pittsburgh/PXL_20210717_171034232.MP.jpg" alt="Exterior of Phipps Conservatory and Botanic Gardens">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Outside the Phipps Conservatory and Botanic Garden</p>
+																<p class="date">17 July 2021</p>
+															</div>
+															<p class="caption">Exterior of the Phipps Conservatory and Botanic Gardens. We had intended to go inside, but we didn't. 
+																I don't remember why. It had been pouring rain shortly before this, but thankfully it stopped.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/pittsburgh/PXL_20210717_171048426.jpg" alt="The Cathedral of Learning">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Near the Phipps Conservatory and Botanic Garden</p>
+																<p class="date">17 July 2021</p>
+															</div>
+															<p class="caption">The University of Pittsburgh's Cathedral of Learning.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/pittsburgh/PXL_20210717_191000576.jpg" alt="The Carnegie museums">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location"> Carnegie Museum of Natural History / Carnegie Museum of Art</p>
+																<p class="date">17 July 2021</p>
+															</div>
+															<p class="caption">An interior of the Carnegie Museum of Natural History / Carnegie Museum of Art.
+																I thought we were visiting the Carnegie Museum of Art, so I was surprised to find out both are
+																actually in the same building, and that one admission ticket gave entrance to both.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/pittsburgh/PXL_20210717_191107557.jpg" alt="The Carnegie museums">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location"> Carnegie Museum of Natural History / Carnegie Museum of Art</p>
+																<p class="date">17 July 2021</p>
+															</div>
+															<p class="caption">Another interior of the Carnegie Museum of Natural History / Carnegie 
+																Museum of Art.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/pittsburgh/PXL_20210717_210250901.MP.jpg" alt="The Carnegie museums">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location"> Carnegie Museum of Natural History / Carnegie Museum of Art</p>
+																<p class="date">17 July 2021</p>
+															</div>
+															<p class="caption">A group photo in the museum's courtyard after we left. I only realized
+																later that all the photos had someone blinking or looking goofy, so I had
+																to make a tough decision (sorry Alex).
+															<div class="photo-people-container">
+																<p class="people">People (left to right): Blaise Veres, Kelby Palencia-Torres, Sparrow
+																	Roch, Alex Higley
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/pittsburgh/PXL_20210717_212702087.jpg" alt="The Carnegie museums">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">University of Pittsburgh</p>
+																<p class="date">17 July 2021</p>
+															</div>
+															<p class="caption">A closer look at the Cathedral of Learning. After visiting the museum, 
+																Alex and I split from the rest of the group for a self-guided tour of the nearby
+																University of Pittsburgh and Carnegie Mellon University. The others went to an 
+																amusement park. We tried to enter the Cathedral of Learning but were denied because
+																we weren't University of Pittsburgh students.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/pittsburgh/PXL_20210717_212921798.jpg" alt="Heinz Memorial Chapel">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">University of Pittsburgh</p>
+																<p class="date">17 July 2021</p>
+															</div>
+															<p class="caption">The Heinz Memorial Chapel.</p>
+														</div>
+													</div>
+												</div>
+											</dialog>
+										</div>
+
+										<div class="album" id="album-green-bank">
+        								    <img src="images/albums/pittsburgh/PXL_20210717_171034232.MP.jpg" alt="Green Bank album cover">
+											<div class="text-container">
+												<p class="title">Green Bank</p>
+												<p class="caption">An overnight trip to the Green Bank Observatory while I was a NSF REU student at WVU</p>
+											</div>
+											<dialog class="modal" id="modal-green-bank">
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/busan/PXL_20220731_063349762.jpg" alt="Window view of Incheon International Airport after landing">
+														<div class="photo-caption-container">
+															<p class="location">Incheon International Airport</p>
+															<p class="date">31 July 2022</p>
+															<p class="caption">I took this picture looking out the window of the airplane after touching down in South Korea. 
+																This was the first time I was ever in another country. Incheon's airport definitely ranks as one of my favorites.</p>
+														</div>
+													</div>
+												</div>
+											</dialog>
+										</div>
+
+										-->
+
+										<div class="album" id="album-dolly-sods">
+        								    <img src="images/albums/dolly sods/PXL_20210703_181914565.jpg" alt="Dolly Sods album cover">
+											<div class="text-container">
+												<p class="title">Dolly Sods</p>
+												<p class="caption">A day trip to the Dolly Sods Wilderness while I was a NSF REU student at WVU</p>
+											</div>
+											<dialog class="modal" id="modal-dolly-sods">
+												<button class="close-album-button">Esc to close</button>
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_154324508.jpg" alt="On the road to Dolly Sods">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Somewhere between Morgantown and Dolly Sods</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">We took the highway east from Morgantown and briefly passed through the
+																Maryland panhandle before turning south toward Dolly Sods. That day, we drove through 
+																more than one volunteer fire department donation drive in the small towns we went through.
+																I'm not sure if they were coincidental, or if they were connected to the holiday the next
+																day.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_181914565.jpg" alt="A Dolly Sods trail">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">An initial stretch of the trail in Dolly Sods. The unique and varied
+																combinations of terrain and flora were unlike anything I had seen before. Much of the 
+																wilderness looks like it should belong to Canadian forests far to its north.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_183115550.jpg" alt="A snake">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">A snake by the trail.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_184055663.jpg" alt="An access road">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">We found what looked like an access or service road cutting up the mountain.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_190553707.jpg" alt="The view from atop the mountain ridge">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">This view suddenly appeared as we crested the ridge.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_200846617.jpg" alt="Red Creek">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">This is Red Creek.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_201030685.jpg" alt="A rock bridge across Red Creek">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">A rock bridge fording Red Creek. As a Wilderness Area, Dolly Sods has severe
+																restrictions on permanent infrastructure, explaining the makeshift bridge.
+															</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_201047689.jpg" alt="Red Creek">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">Looking up Red Creek from the rock bridge. The stream's deep red-brown tone 
+																makes it clear how it got its name.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_201927850.jpg" alt="Red Creek">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">A thicket of young pines split by the rocky trail.</p>
+														</div>
+													</div>
+													<div class="photo">
+														<img src="images/albums/dolly sods/PXL_20210703_214247293.jpg" alt="Dolly Sods">
+														<div class="photo-caption-container">
+															<div class="photo-caption-header">
+																<p class="location">Dolly Sods Wilderness</p>
+																<p class="date">3 July 2021</p>
+															</div>
+															<p class="caption">The rocky trail leads into a section of mixed plant growth 
+																of trees, shrubs, and grasses.</p>
+														</div>
+													</div>
+												</div>
+											</dialog>
+										</div>
+
+										<!--
+
+										<div class="album" id="album-morgantown">
+        								    <img src="images/albums/pittsburgh/PXL_20210717_171034232.MP.jpg" alt="Morgantown album cover">
+											<div class="text-container">
+												<p class="title">Morgantown</p>
+												<p class="caption">My summer internship in Morgantown as a NSF REU student at WVU</p>
+											</div>
+											<dialog class="modal" id="modal-morgantown">
+												<div class="photos">
+													<div class="photo">
+														<img src="images/albums/busan/PXL_20220731_063349762.jpg" alt="Window view of Incheon International Airport after landing">
+														<div class="photo-caption-container">
+															<p class="location">Incheon International Airport</p>
+															<p class="date">31 July 2022</p>
+															<p class="caption">I took this picture looking out the window of the airplane after touching down in South Korea. 
+																This was the first time I was ever in another country. Incheon's airport definitely ranks as one of my favorites.</p>
+														</div>
+													</div>
+												</div>
+											</dialog>
+										</div>
+
+										-->
 
 									</div>
 								</section>
@@ -228,7 +808,7 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; M. Riley Owens.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; M. Riley Owens</li><li>Hosted by <a href="https://github.com/mrileyowens/mrileyowens.github.io">GitHub Pages</a></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</div>
 
