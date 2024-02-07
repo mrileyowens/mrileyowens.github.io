@@ -1776,6 +1776,8 @@ input, select, textarea {
 			display: none;
 		}
 
+/* Loader */
+
 /* Nav */
 
 	/* Align the navigation bar's 
@@ -2255,6 +2257,16 @@ input, select, textarea {
 						}
 
 				}
+
+/* Research */
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
 
 /* Gallery */
 
