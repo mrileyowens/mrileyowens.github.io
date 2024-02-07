@@ -2268,6 +2268,27 @@ input, select, textarea {
     display: block;
 }
 
+.accessibility-button {
+	/*background-color: rgba(255,255,255,0);*/
+	margin-right: 2px;
+	border: 2px solid #ffffff;
+	/*box-shadow: 0 0 0 2px #2f2f2f;*/
+	background-color: rgba(255,255,255,0);
+	color: #2f2f2f;
+	cursor: pointer;
+}
+
+.accessibility-button:hover {
+	background-color: #2f2f2f;
+	color: white;
+}
+
+	.accessibility-button.selected {
+		background-color: #2f2f2f;
+		color: white;
+		box-shadow: 0 0 0 2px #2f2f2f;
+	}
+
 /* Gallery */
 
 #gallery > p {
