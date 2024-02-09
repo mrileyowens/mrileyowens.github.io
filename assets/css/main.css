@@ -21,7 +21,7 @@ section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;}
 
@@ -315,6 +315,7 @@ input, select, textarea {
 					padding-top: 2.5em;
 				}
 
+		/*
 		@media screen and (max-width: 1680px) {
 
 			.row {
@@ -1295,6 +1296,8 @@ input, select, textarea {
 
 		}
 
+		*/
+
 /* Basic */
 
 	html {
@@ -1329,10 +1332,11 @@ input, select, textarea {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
 		color: #777777;
-		font-size: 20pt;
+		/*font-size: 20pt;*/
 		line-height: 1.75em;
 	}
 
+	 	/*
 		@media screen and (max-width: 1680px) {
 
 			body, input, textarea, select {
@@ -1364,6 +1368,7 @@ input, select, textarea {
 			}
 
 		}
+		*/
 
 	strong, b, h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
@@ -1371,20 +1376,22 @@ input, select, textarea {
 	}
 
 	h1 {
-		font-size: 2.4em;
+		/*font-size: 2.4em;*/
 		letter-spacing: -0.015em;
 	}
 
 	h2 {
-		font-size: 1.8em;
+		/*font-size: 1.8em;*/
+		font-size: 2.5rem;
 		letter-spacing: -0.015em;
 	}
 
 	h3, h4, h5, h6 {
-		font-size: 1.25em;
+		/*font-size: 1.25em;*/
 		letter-spacing: -0.015em;
 	}
 
+	/*
 	@media screen and (max-width: 736px) {
 
 		h1 {
@@ -1400,6 +1407,7 @@ input, select, textarea {
 		}
 
 	}
+	*/
 
 	blockquote {
 		border-left: solid 0.5em #ddd;
@@ -1421,13 +1429,13 @@ input, select, textarea {
 	sub {
 		position: relative;
 		top: 0.5em;
-		font-size: 0.8em;
+		/*font-size: 0.8em;*/
 	}
 
 	sup {
 		position: relative;
 		top: -0.5em;
-		font-size: 0.8em;
+		/*font-size: 0.8em;*/
 	}
 
 	br.clear {
@@ -1529,7 +1537,7 @@ input, select, textarea {
 		}
 
 	header {
-		margin: 0 0 1.5em 0;
+		margin: 0 0 1.5rem 0;
 	}
 
 		header > p {
@@ -1537,6 +1545,7 @@ input, select, textarea {
 			color: #aaa;
 		}
 
+		/*
 		@media screen and (max-width: 736px) {
 
 			header {
@@ -1544,6 +1553,7 @@ input, select, textarea {
 			}
 
 		}
+		*/
 
 /* Image */
 
@@ -1784,11 +1794,12 @@ input, select, textarea {
 	text in the center */
 	#nav {
 		text-align: center;
-		height: 6.75em;
+		height: auto; /*6.75em;*/
 		cursor: default;
 		position: sticky;
 		top: 0;
-		padding: 2.50em 0 0 0;
+		/*padding: 2.50em 0 30px 0;*/
+		padding: 2.25rem 0 1rem 0;
 		z-index: 3;
 		width: 100%;
 		background-image: url("images/overlay.png"), url("images/bg.jpg");
@@ -1804,11 +1815,11 @@ input, select, textarea {
 			position: relative;
 			display: inline-block;
 			color: #ffffff;
-			width: 1em;
-			height: 1em;
+			width: auto; /*1em;*/
+			height: auto; /*1em;*/
 			line-height: 0.9em;
-			font-size: 2.5em;
-			margin: 0 0.25em 0 0.25em;
+			font-size: 2rem;
+			margin: 0 20px; /* 0 0.25em 0 0.25em;*/
 			opacity: 0.35;
 			outline: 0;
 			-moz-transition: opacity .25s ease-in-out;
@@ -1822,9 +1833,19 @@ input, select, textarea {
 			}
 
 			#nav a:before {
-				font-size: 0.8em;
+				/*font-size: 0.8em;*/
 			}
 
+			#nav a:hover {
+				transform: scale(1.1);
+				opacity: 0.7;
+				/*margin: 0 10px;*/
+				transition: transform .25s ease-in-out;
+				transition: opacity .25s ease-in-out;
+				/*transition: margin .25s ease-in-out;*/
+			}
+
+			/*
 			#nav a:after {
 				content: '';
 				display: block;
@@ -1840,14 +1861,16 @@ input, select, textarea {
 				-ms-transition: border-bottom-width .25s ease-in-out;
 				transition: border-bottom-width .25s ease-in-out;
 			}
+			*/
 
 			#nav a span {
 				display: block;
 				position: absolute;
-				background: #222222;
+				background: none;
 				color: #ffffff;
-				top: -2.75em;
-				font-size: 0.3em;
+				font-weight: bold;
+				top: -2.2em;
+				font-size: 1rem;
 				height: 2.25em;
 				line-height: 2.25em;
 				left: 50%;
@@ -1860,6 +1883,7 @@ input, select, textarea {
 				margin-left: -2.75em;
 			}
 
+			 	/*
 				#nav a span:after {
 					content: '';
 					display: block;
@@ -1871,12 +1895,17 @@ input, select, textarea {
 					border-left: solid 0.6em transparent;
 					border-right: solid 0.6em transparent;
 				}
+				*/
 
 			/* Make anchors opaque 
 			when hovered over */
+			/*
 			#nav a:hover {
 				opacity: 1.0;
+				margin: 0 10px;
+				transform: scale(1.0);
 			}
+			*/
 
 				#nav a:hover span {
 					opacity: 1.0;
@@ -1884,6 +1913,10 @@ input, select, textarea {
 
 			#nav a.active {
 				opacity: 1.0;
+				transform: scale(1.2);
+				transition: opacity 0.25s ease-in-out;
+				transition: transform 0.25s ease-in-out;
+				/*margin: 0 10px;*/
 			}
 
 				#nav a.active:after {
@@ -1901,11 +1934,17 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
+		/*
 		width: 45em;
 		margin: 0 auto;
+		*/
+		margin: auto;
 		min-height: 100vh;
 		max-width: 100%;
+		/*
 		padding: 4em 0;
+		*/
+		padding: auto 0;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1928,10 +1967,17 @@ input, select, textarea {
 		transition: opacity 1s ease-in-out;
 	}
 
+	@media screen and (min-width: 1024px) {
+		#wrapper {
+			width: calc(max(819px,30vw))
+		}
+	}
+
 		body.is-preload #wrapper {
 			opacity: 0;
 		}
 
+		/*
 		@media screen and (max-width: 1280px) {
 
 			#wrapper {
@@ -1940,7 +1986,9 @@ input, select, textarea {
 			}
 
 		}
+		*/
 
+		/*
 		@media screen and (max-width: 980px) {
 
 			#wrapper {
@@ -1949,7 +1997,9 @@ input, select, textarea {
 			}
 
 		}
+		*/
 
+		/*
 		@media screen and (max-width: 736px) {
 
 			#wrapper {
@@ -1967,6 +2017,7 @@ input, select, textarea {
 			}
 
 		}
+		*/
 
 /* Main */
 
@@ -1998,6 +2049,7 @@ input, select, textarea {
 				opacity: 0;
 			}
 
+			/*
 			@media screen and (max-width: 736px) {
 
 				#main > .panel {
@@ -2005,6 +2057,7 @@ input, select, textarea {
 				}
 
 			}
+			*/
 
 			#main > .panel.intro {
 				padding: 0;
@@ -2079,7 +2132,7 @@ input, select, textarea {
 						color: #ffffff;
 						text-align: center;
 						line-height: 2.75em;
-						font-size: 1.5em;
+						/*font-size: 1.5em;*/
 						z-index: 1;
 						-moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 						-webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
@@ -2124,7 +2177,7 @@ input, select, textarea {
 
 					#main > .panel.intro header p {
 						letter-spacing: -0.015em;
-						font-size: 1.25em;
+						/*font-size: 1.25em;*/
 						margin: 0.25em 0 0 0;
 					}
 
@@ -2135,7 +2188,7 @@ input, select, textarea {
 						width: 1em;
 						height: 1em;
 						line-height: 0.9em;
-						font-size: 2.5em;
+						/*font-size: 2.5em;*/
 						margin: 1em 0.025em 0 0.25em;
 						opacity: 0.35;
 						outline: 0;
@@ -2150,7 +2203,7 @@ input, select, textarea {
 						}
 
 						#main > .panel.intro header a:before {
-							font-size: 0.8em;
+							/*font-size: 0.8em;*/
 						}
 
 						#main > .panel.intro header a:after {
@@ -2177,7 +2230,7 @@ input, select, textarea {
 							background: #222222;
 							color: #ffffff;
 							top: -2.75em;
-							font-size: 0.3em;
+							/*font-size: 0.3em;*/
 							height: 2.25em;
 							line-height: 2.25em;
 							left: 50%;
@@ -2216,9 +2269,10 @@ input, select, textarea {
 						}
 
 							#main > .panel.intro header a.active:after {
-								border-bottom-width: 0.5em;
+								border-bottom-width: 0;/*.5em;*/
 							}
 
+				/*
 				@media screen and (max-width: 980px) {
 
 					#main > .panel.intro {
@@ -2257,16 +2311,24 @@ input, select, textarea {
 						}
 
 				}
+				*/
 
 /* Research */
 
 #research p {
 	text-align: justify;
 	text-justify: inter-word;
+	font-size: 1rem;
+	line-height: 1.8rem;
+}
+
+#research h3 {
+	font-size: 1.5rem;
+	margin: 0 0 1rem 0;
 }
 
 #research section > header {
-	margin-bottom: 0.5em;
+	margin-bottom: 0;
 }
 
 .hidden {
@@ -2282,12 +2344,28 @@ input, select, textarea {
 	transition: opacity 0.25s ease;
 }
 
-.accessibility-button-container {
-	position: relative;
-	margin: 0;
-	vertical-align: middle;
-	width: auto;
-	height: auto;
+@media screen and (min-width: 1024px) {
+	.accessibility-button-container {
+		position: relative;
+		margin: 0 0 1.2rem 0;
+		vertical-align: middle;
+		width: auto;
+		height: auto;
+	}
+		.accessibility-button {
+			font-size: 0.8rem;
+		}
+}
+
+@media screen and (max-width: 1023px) {
+	.accessibility-button-container {
+		position: relative;
+		margin: 0;
+		vertical-align: middle;
+		width: 100%;
+		height: auto;
+		font-size: 1rem;
+	}
 }
 
 .accessibility-button {
@@ -2317,27 +2395,59 @@ input, select, textarea {
 #gallery > p {
 	text-align: justify;
 	text-justify: inter-word;
+	font-size: 1rem;
 }
 
+
+/*
 .albums {
     display: grid;
-	/*
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
-	*/
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-    /*gap: 20px;*/
+    /*gap: 20px;
 	gap: 1em;
     padding: 1em;
 }
+*/
+
+.albums {
+	display: grid;
+	gap: 1rem;
+	padding: 0;
+}
+
+	@media screen and (min-width: 1024px) {
+		.albums {
+			/*
+    		flex-wrap: wrap;
+    		justify-content: space-around;
+    		padding: 20px;
+			*/
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+    		/*gap: 20px;*/
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		.albums {
+			/*
+    		flex-wrap: wrap;
+    		justify-content: space-around;
+    		padding: 20px;
+			*/
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+    		/*gap: 20px;*/
+		}
+	}
 
 .album {
 	position: relative;
     cursor: pointer;
     margin: 0;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 2px;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
 	/*height: 6em;*/
 	aspect-ratio: 4/3;
@@ -2348,7 +2458,7 @@ input, select, textarea {
     	width: 100%;
     	height: 100%;
 		display: block;
-    	border-radius: 8px;
+    	border-radius: 2px;
 		object-fit: cover;
 		transition: transform 0.25s ease-in-out;
 		z-index: 1;
@@ -2376,14 +2486,15 @@ input, select, textarea {
     	background: rgba(0, 0, 0, 0);
     	color: #fff;
     	/*font-size: 14px;*/
-		font-size: 1em;
+		/*font-size: 1em;*/
     	text-align: justify;
 		text-justify: inter-word;
 		transition: bottom 0.25s ease-in-out;
 	}
 
 	.album .title {
-		font-size: 18px;
+		/*font-size: 18px;*/
+		font-size: 120%;
 		font-weight: bold;
 	}
 
@@ -2401,7 +2512,7 @@ input, select, textarea {
     	padding: 0px 10px;
     	background: rgba(0, 0, 0, 0.8);
     	/*color: #fff;*/
-    	font-size: 14px;
+    	/*font-size: 14px;*/
     	text-align: left;
     	transition: transform 0.25s ease-in-out;
 		/*transform: translateY(100%)*/
@@ -2444,14 +2555,34 @@ input, select, textarea {
 
 	.photos {
 		display: grid;
-		/*
-    	flex-wrap: wrap;
-    	justify-content: space-around;
-    	padding: 20px;
-		*/
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-    	gap: 20px;
-    	padding: 20px;
+		gap: 1rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		.photos {
+			/*display: grid;
+    		flex-wrap: wrap;
+    		justify-content: space-around;
+    		padding: 20px;
+			*/
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+    		/*gap: 20px;*/
+    		padding: 20px;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		.photos {
+			/*
+			display: grid;
+    		flex-wrap: wrap;
+    		justify-content: space-around;
+    		padding: 20px;
+			*/
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+    		/*gap: 20px;*/
+    		padding: 20px;
+		}
 	}
 
 		.close-album-button {
@@ -2472,7 +2603,7 @@ input, select, textarea {
     		cursor: pointer;
     		margin: 0;
     		overflow: hidden;
-    		border-radius: 8px;
+    		border-radius: 2px;
     		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 			aspect-ratio: 3/4;
 			width: 100%;
@@ -2482,7 +2613,7 @@ input, select, textarea {
 				width: 100%;
     			height: 100%;
 				display: block;
-    			border-radius: 8px;
+    			border-radius: 2px;
 				object-fit: cover;
 			}
 
@@ -2500,7 +2631,8 @@ input, select, textarea {
     			padding: 10px 10px;
     			background: rgba(0, 0, 0, 0.8);
     			/*color: #fff;*/
-    			font-size: 14px;
+    			/*font-size: 14px;*/
+				font-size: 1rem;
     			text-align: left;
     			transition: transform 0.25s ease-in-out;
 				/*transform: translateY(100%)*/
@@ -2513,7 +2645,7 @@ input, select, textarea {
 				}
 
 					.location {
-						font-size: 22px;
+						/*font-size: 22px;*/
 						font-weight: bold;
 						height: auto;
 						width: auto;
@@ -2521,7 +2653,7 @@ input, select, textarea {
 					}
 
 					.date {
-						font-size: 18px;
+						/*font-size: 18px;*/
 						font-style: italic;
 						height: auto;
 						width: auto;
@@ -2558,7 +2690,7 @@ input, select, textarea {
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 30px;
+    /*font-size: 30px;*/
     color: #2f2f2f;
     cursor: pointer;
 	z-index: 2;
@@ -2580,7 +2712,7 @@ input, select, textarea {
 		color: rgba(255, 255, 255, 0.45);
 		text-align: center;
 		padding: 2em 0 0 0;
-		font-size: 0.75em;
+		/*font-size: 0.75em;*/
 	}
 
 		#footer a {
