@@ -1378,6 +1378,7 @@ input, select, textarea {
 	h1 {
 		/*font-size: 2.4em;*/
 		letter-spacing: -0.015em;
+		font-size: 2.5rem;
 	}
 
 	h2 {
@@ -2179,6 +2180,7 @@ input, select, textarea {
 						letter-spacing: -0.015em;
 						/*font-size: 1.25em;*/
 						margin: 0.25em 0 0 0;
+						font-size: 1.5rem;
 					}
 
 					#main > .panel.intro header a {
@@ -2189,7 +2191,8 @@ input, select, textarea {
 						height: 1em;
 						line-height: 0.9em;
 						/*font-size: 2.5em;*/
-						margin: 1em 0.025em 0 0.25em;
+						font-size: 2rem;
+						margin: 2rem 0.25rem 0 0.25rem;
 						opacity: 0.35;
 						outline: 0;
 						-moz-transition: opacity .25s ease-in-out;
@@ -2315,6 +2318,11 @@ input, select, textarea {
 
 /* Research */
 
+#interests, #publications, #presentations, #observations {
+	transition: min-height 0.5s ease-in-out;
+	transition: max-height 0.5s ease-in-out;
+}
+
 #research p {
 	text-align: justify;
 	text-justify: inter-word;
@@ -2330,6 +2338,52 @@ input, select, textarea {
 #research section > header {
 	margin-bottom: 0;
 }
+
+.research-nav-bar {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1px;
+	position: relative;
+	height: auto;
+	width: auto;
+	margin: 0 auto 1rem auto;
+	border: 2px solid #2f2f2f;
+}
+
+	.nav-button {
+		height: 100%;
+		width: auto;
+		border: 2px solid #ffffff;
+		border-radius: 2px;
+		background-color: rgba(255,255,255,0);
+		color: #2f2f2f;
+		cursor: pointer;
+	}
+
+		.nav-button.selected {
+			background-color: #2f2f2f;
+			color: white;
+		}
+
+	.nav-button:hover {
+		background-color: #2f2f2f;
+		color: white;
+		transition: background-color 0.25s ease-in-out;
+		transition: color 0.25s ease-in-out;
+	}
+
+.publication p {
+	position: relative;
+	height: auto;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+}
+
+	.journal {
+		font-style: italic;
+	}
 
 .hidden {
     display: none;
@@ -2382,6 +2436,8 @@ input, select, textarea {
 .accessibility-button:hover {
 	background-color: #2f2f2f;
 	color: white;
+	transition: background-color 0.25s ease-in-out;
+	transition: color 0.25s ease-in-out;
 }
 
 	.accessibility-button.selected {
@@ -2487,33 +2543,41 @@ input, select, textarea {
     	color: #fff;
     	/*font-size: 14px;*/
 		/*font-size: 1em;*/
+		font-size: 1rem;
     	text-align: justify;
 		text-justify: inter-word;
-		transition: bottom 0.25s ease-in-out;
 	}
 
 	.album .title {
 		/*font-size: 18px;*/
-		font-size: 120%;
+		font-size: 1rem;
 		font-weight: bold;
+		top: 0%;
+		height: auto;
+		width: 100%;
+		line-height: 1;
+		margin: 0 0 4% 0;
 	}
 
 	.album .text-container .caption {
 		line-height: 1.2em;
+		font-size: 0.8rem;
 	}
 
 	.album .text-container {
     	position: absolute;
-    	bottom: -25%;
+    	bottom: 0%;
     	left: 0;
-		height: 45%;
+		height: auto;
     	width: 100%;
     	margin: 0;
-    	padding: 0px 10px;
+    	/*padding: 0px 10px;*/
+		padding: 4%;
     	background: rgba(0, 0, 0, 0.8);
     	/*color: #fff;*/
     	/*font-size: 14px;*/
     	text-align: left;
+		opacity: 0;
     	transition: transform 0.25s ease-in-out;
 		/*transform: translateY(100%)*/
 		z-index: 2;
@@ -2538,7 +2602,13 @@ input, select, textarea {
 		*/
 
 	.album:hover .text-container {
-    	transform: translateY(-50%);
+    	/*transform: translateY(-22%);*/
+		/*
+		bottom: 0%;
+		transition: bottom 0.25s ease-in-out;
+		*/
+		opacity: 1;
+		transition: opacity 0.25s ease-in-out;
 	}
 
 .modal {
