@@ -2465,7 +2465,7 @@ input, select, textarea {
 				transition: transform 0.25s ease-in-out;
 			}
 
-	.observation hr {
+	.observations hr {
 		margin: 1rem 0;
 		padding: 0;
 	}
