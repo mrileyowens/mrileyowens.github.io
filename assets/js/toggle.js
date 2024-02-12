@@ -1,6 +1,6 @@
 function toggleText(button) {
 
-  var textContainer = button.closest('.observation'); // Find the common ancestor
+  var textContainer = button.closest('.item'); // Find the common ancestor
   var textElement = textContainer.querySelector('.info'); // Find the hidden text within the container
   var chevron = textContainer.querySelector('.fa');
 

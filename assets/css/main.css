@@ -2385,12 +2385,12 @@ input, select, textarea {
 		font-style: italic;
 	}
 
-.observation {
+.item {
 	height: auto;
 	width: 100%;
 }
 
-	.observation .header {
+	.item .header {
 		display: flex;
 		flex-direction: row;
 		height: auto;
@@ -2398,7 +2398,7 @@ input, select, textarea {
 		align-items: flex-start;
 	}
 
-		.observation .header .header-info {
+		.item .header .header-info {
 			/*
 			display: inline-block;
 			height: 100%;
@@ -2407,16 +2407,16 @@ input, select, textarea {
 			flex: 1;
 		}
 
-			.observation .header .header-info p {
+			.item .header .header-info p {
 				margin: 0;
 				line-height: 1;
 			}
 
-			.observation .header .header-info .telescope {
+			.item .header .header-info .source {
 				font-style: italic;
 			}
 
-		.observation .header .time {
+		.item .header .statistic {
 			/*
 			display: inline-block;
 			position: relative;
@@ -2427,7 +2427,7 @@ input, select, textarea {
 			margin: 0 1rem;
 		}
 
-			.observation .header .time p {
+			.item .header .statistic p {
 				margin: 0;
 			}
 
@@ -2439,7 +2439,7 @@ input, select, textarea {
 				}
 				*/
 
-		.observation .header button {
+		.item .header button {
 			/*
 			height: auto;
 			width: 10%;
@@ -2460,25 +2460,25 @@ input, select, textarea {
 			transition: transform 0.25s ease-in-out;
 		}
 
-			.observation .header button i {
+			.item .header button i {
 				line-height: 1.8rem;
 				transition: transform 0.25s ease-in-out;
 			}
 
-	.observations hr {
+	.item hr {
 		margin: 1rem 0;
 		padding: 0;
 	}
 
-	.observation .info {
+	.item .info {
 
 	}
 
-		.observation .info p {
+		.item .info p {
 			margin: 0 0 1rem 0;
 		}
 
-		.observation .info .authors {
+		.item .info .authors {
 			font-size: 0.9rem;
 			line-height: 1.62rem;
 		}
