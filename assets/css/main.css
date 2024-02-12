@@ -2395,6 +2395,7 @@ input, select, textarea {
 		flex-direction: row;
 		height: auto;
 		width: 100%;
+		align-items: flex-start;
 	}
 
 		.observation .header .header-info {
@@ -2430,6 +2431,14 @@ input, select, textarea {
 				margin: 0;
 			}
 
+			 	/*
+				.observation .header .time p::after {
+					font-family: "Font Awesome 5 Free";
+					content: "\f078";
+					color: #777777;
+				}
+				*/
+
 		.observation .header button {
 			/*
 			height: auto;
@@ -2439,12 +2448,39 @@ input, select, textarea {
 			background-color: none;
 			color: none;
 			*/
+			display: flex;
 			flex: 0 1 auto;
 			height: auto;
 			width: auto;
 			padding: 0;
+			align-items: flex-start;
+			line-height: 1.8rem;
 			background-color: #ffffff;
 			color: #777777;
+			transition: transform 0.25s ease-in-out;
+		}
+
+			.observation .header button i {
+				line-height: 1.8rem;
+				transition: transform 0.25s ease-in-out;
+			}
+
+	.observation hr {
+		margin: 1rem 0;
+		padding: 0;
+	}
+
+	.observation .info {
+
+	}
+
+		.observation .info p {
+			margin: 0 0 1rem 0;
+		}
+
+		.observation .info .authors {
+			font-size: 0.9rem;
+			line-height: 1.62rem;
 		}
 
 	/*
