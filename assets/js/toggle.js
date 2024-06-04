@@ -2,7 +2,7 @@ function toggleText(button) {
 
   var textContainer = button.closest('.item'); // Find the common ancestor
   var textElement = textContainer.querySelector('.info'); // Find the hidden text within the container
-  var chevron = textContainer.querySelector('.fa');
+  var chevron = textContainer.querySelector('.fa-chevron-down');
 
   textElement.classList.toggle('hidden');
   chevron.classList.toggle('fa-rotate-180')

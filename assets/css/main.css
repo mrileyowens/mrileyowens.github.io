@@ -2352,19 +2352,19 @@ input, select, textarea {
 	transition: max-height 0.5s ease-in-out;
 }
 
-#comm p {
+#impact p {
 	text-align: justify;
 	text-justify: inter-word;
 	font-size: 1rem;
 	line-height: 1.8rem;
 }
 
-#comm h3 {
+#impact h3 {
 	font-size: 1.5rem;
 	margin: 0 0 1rem 0;
 }
 
-#comm section > header {
+#impact section > header {
 	margin-bottom: 0;
 }
 
