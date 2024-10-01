@@ -567,137 +567,76 @@ input, select, textarea {
 
 /* Nav */
 
-	/* Align the navigation bar's 
-	text in the center */
-	#nav {
+	nav {
 		text-align: center;
-		height: auto; /*6.75em;*/
-		cursor: default;
+		height: auto;
+		
+		/* Make the nav bar 'hit' the top of the page and stick */
 		position: sticky;
 		top: 0;
-		/*padding: 2.50em 0 30px 0;*/
-		padding: 2.25rem 0 1rem 0;
-		z-index: 3;
-		width: 100%;
-		background-image: url("images/overlay.png"), url("images/bg.jpg");
+
+		padding: 2.5rem 0 1rem 0; /* Add top and bottom padding to the nav bar; this gives some clearance for the anchor icons before the main div and also enough overhead for the popup text when the nav bar 'sticks' to the top of the viewport*/
+		z-index: 3; /* Make sure the nav bar appears above main when scrolling */
+		width: 100%; /* Make the nav bar span the whole width of wrapper */
+		background-image: url("images/overlay.png"), url("images/bg.jpg"); /* Set the background of the nav bar to be the same background as body */
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
-		/* Suppressed because it appeared to cause the popup text of the 
-		nav bar to not be visible */
-		/*overflow-y: hidden;*/
 	}
 
-		#nav a {
-			position: relative;
-			display: inline-block;
-			color: #ffffff;
-			width: auto; /*1em;*/
-			height: auto; /*1em;*/
-			line-height: 0.9em;
-			font-size: 2rem;
-			margin: 0 20px; /* 0 0.25em 0 0.25em;*/
-			opacity: 0.35;
-			outline: 0;
+		nav a {
+			position: relative; /* Position the anchor's elements relative to it */
+			display: inline-block; /* Display the anchors as adjustable inline blocks */
+			color: #ffffff; /* Set the color of the anchors and the popup text */
+			width: auto; /* Make the width just wide enough to contain the content and satisfy any margin, border, or padding */
+			height: auto; /* Make the height just tall enough to contain the content and satisfy any margin, border, or padding */
+			font-size: 2rem; /* Set the size of the anchors */
+			margin: 0 0.6em; /* Set the margin of the anchors so that they appear proportionally spaced regardless of the font size */
+			opacity: 0.35; /* Make the anchors faint by default */
+
+			/*
 			-moz-transition: opacity .25s ease-in-out;
 			-webkit-transition: opacity .25s ease-in-out;
 			-ms-transition: opacity .25s ease-in-out;
 			transition: opacity .25s ease-in-out;
-		}
-
-			#nav a.icon:before {
-				padding-right: 0;
+			*/
 			}
 
-			#nav a:before {
-				/*font-size: 0.8em;*/
-			}
-
-			#nav a:hover {
+			nav a:hover {
+				/* Make an anchor slightly larger and more opaque when hovered */
 				transform: scale(1.1);
 				opacity: 0.7;
-				/*margin: 0 10px;*/
-				transition: transform .25s ease-in-out;
+				transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+			}
+
+				nav a:hover span {
+					/* Make the popup text's opacity completely opaque when the anchor is hovered; the popup text still won't appear entirely opaque, since it is 'screened' through the anchor's opacity, which is still nonzero */
+					opacity: 1.0;
 				transition: opacity .25s ease-in-out;
-				/*transition: margin .25s ease-in-out;*/
+				}
+
+			nav a.active {
+				/* Make the anchor completely opaque and larger when it is the active anchor */
+				opacity: 1.0;
+				transform: scale(1.2);
+				transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 			}
 
-			/*
-			#nav a:after {
-				content: '';
-				display: block;
-				position: absolute;
-				left: 50%;
-				bottom: -0.7em;
-				margin-left: -0.5em;
-				border-bottom: solid 0em #ffffff;
-				border-left: solid 0.5em transparent;
-				border-right: solid 0.5em transparent;
-				-moz-transition: border-bottom-width .25s ease-in-out;
-				-webkit-transition: border-bottom-width .25s ease-in-out;
-				-ms-transition: border-bottom-width .25s ease-in-out;
-				transition: border-bottom-width .25s ease-in-out;
-			}
-			*/
-
-			#nav a span {
-				display: block;
+			nav a span {
 				position: absolute;
 				background: none;
-				color: #ffffff;
 				font-weight: bold;
-				top: -2.2em;
-				font-size: 1rem;
-				height: 2.25em;
-				line-height: 2.25em;
+				top: -2em;
 				left: 50%;
+				transform: translateX(-50%);
+				font-size: 1rem;
 				opacity: 0;
 				-moz-transition: opacity .25s ease-in-out;
 				-webkit-transition: opacity .25s ease-in-out;
 				-ms-transition: opacity .25s ease-in-out;
 				transition: opacity .25s ease-in-out;
-				width: 5.5em;
-				margin-left: -2.75em;
-			}
-
-			 	/*
-				#nav a span:after {
-					content: '';
-					display: block;
-					position: absolute;
-					bottom: -0.4em;
-					left: 50%;
-					margin-left: -0.6em;
-					border-top: solid 0.6em #222222;
-					border-left: solid 0.6em transparent;
-					border-right: solid 0.6em transparent;
-				}
-				*/
-
-			/* Make anchors opaque 
-			when hovered over */
-			/*
-			#nav a:hover {
-				opacity: 1.0;
-				margin: 0 10px;
-				transform: scale(1.0);
-			}
-			*/
-
-				#nav a:hover span {
-					opacity: 1.0;
-				}
-
-			#nav a.active {
-				opacity: 1.0;
-				transform: scale(1.2);
-				transition: opacity 0.25s ease-in-out;
-				transition: transform 0.25s ease-in-out;
-				/*margin: 0 10px;*/
-			}
-
-				#nav a.active:after {
-					border-bottom-width: 0.5em;
+				height: auto;
+				width: auto;
 				}
 
 		@media screen and (max-width: 980px) {
