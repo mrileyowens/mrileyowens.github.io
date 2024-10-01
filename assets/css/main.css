@@ -74,10 +74,12 @@ input, select, textarea {
 
 /* Basic */
 
+	/* Set the box-sizing to the standard, more sensible setting */
 	html {
 		box-sizing: border-box;
 	}
 
+	/* Make all elements inherit the same box-sizing from html */
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
@@ -87,8 +89,8 @@ input, select, textarea {
 		background-image: url("images/overlay.png"), url("images/bg.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
-		background-attachment: fixed;
-		overflow-y: scroll;
+		background-attachment: fixed; /* Do not move the background relative to the viewport */
+		overflow-y: scroll; /* Show a scroll bar when the contents of body overflow the edges of body */
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
