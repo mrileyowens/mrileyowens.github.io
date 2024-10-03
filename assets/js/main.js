@@ -30,9 +30,13 @@
 		}, 100);
 	});
 
+	var $link = null;
+
 	// When one of the nav bar anchors is clicked
 	$nav_links
 		.on('click', function(event) {
+
+			$link = $(this)
 
 			// Get the href of the anchor
 			var href = $(this).attr('href');
@@ -59,7 +63,7 @@
 		// Initialize.
 		(function() {
 
-			var $panel, $section, $sections, $link;
+			var $panel, $section, $sections;
 
 			// If the URL has a hash portion
 			if (window.location.hash) {
@@ -71,6 +75,10 @@
 
 				// Get the anchor of the nav bar that corresponds to the URL
 				$link = $nav_links.filter('[href="' + window.location.hash + '"]');
+
+				if ($link.length > 1) {
+					$link = $link.last()
+				}
 
 				// If the panel has sections
 				//if ($panel.children('section #' + window.location.hash.split('/')[0])) {
@@ -141,7 +149,7 @@
 		// When the hash portion of the URL changes
 			$window.on('hashchange', function(event) {
 
-				var $panel, $link, $sections, $section;
+				var $panel, $sections, $section;
 
 				// If the current URL has a hash portion
 				if (window.location.hash) {
@@ -150,7 +158,7 @@
 				 	$panel = $panels.filter(window.location.hash.split('/')[0]);
 
 					// Get the clicked anchor
-					$link = $nav_links.filter('[href="' + window.location.hash + '"]');
+					//$link = $nav_links.filter('[href="' + window.location.hash + '"]');
 
 					// Get all the sections that are children of the panel
 					$sections = $panel.children('section')
@@ -186,8 +194,6 @@
 					// Deactivate all panels.
 					$panels.addClass('inactive');
 
-					//$sections.addClass('inactive');
-
 					// Deactivate all links.
 					$nav_links.removeClass('active');
 
@@ -196,6 +202,8 @@
 
 						// Disable the sections
 						$panel.children('section').addClass('inactive')
+
+						$panel.children('nav').children('a').first().addClass('active')
 
 					}
 				
@@ -211,8 +219,6 @@
 					$sections.addClass('inactive');
 
 				}
-
-				//$sections.addClass('inactive');
 
 				// Deactivate all links.
 				//$nav_links.removeClass('active');
