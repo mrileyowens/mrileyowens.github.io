@@ -567,7 +567,7 @@ input, select, textarea {
 
 /* Nav */
 
-	nav {
+	nav.main {
 		text-align: center;
 		height: auto;
 		
@@ -584,7 +584,7 @@ input, select, textarea {
 		background-attachment: fixed;
 	}
 
-		nav a {
+		nav.main a {
 			position: relative; /* Position the anchor's elements relative to it */
 			display: inline-block; /* Display the anchors as adjustable inline blocks */
 			color: #ffffff; /* Set the color of the anchors and the popup text */
@@ -602,27 +602,27 @@ input, select, textarea {
 			*/
 			}
 
-			nav a:hover {
+			nav.main a:hover {
 				/* Make an anchor slightly larger and more opaque when hovered */
 				transform: scale(1.1);
 				opacity: 0.7;
 				transition: opacity .25s ease-in-out, transform .25s ease-in-out;
 			}
 
-				nav a:hover span {
+				nav.main a:hover span {
 					/* Make the popup text's opacity completely opaque when the anchor is hovered; the popup text still won't appear entirely opaque, since it is 'screened' through the anchor's opacity, which is still nonzero */
 					opacity: 1.0;
 				transition: opacity .25s ease-in-out;
 				}
 
-			nav a.active {
+			nav.main a.active {
 				/* Make the anchor completely opaque and larger when it is the active anchor */
 				opacity: 1.0;
 				transform: scale(1.2);
 				transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 			}
 
-			nav a span {
+			nav.main a span {
 				position: absolute;
 				background: none;
 				font-weight: bold;
@@ -638,6 +638,38 @@ input, select, textarea {
 				height: auto;
 				width: auto;
 				}
+
+	nav.sub {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		height: auto;
+		width: 100%;
+		border: 2px solid #2f2f2f;
+		margin: 0 0 1rem 0;
+	}
+
+		nav.sub a {
+			width: 100%;
+			color: #2f2f2f;
+			background-color: transparent;
+			text-decoration: none;
+			border: 2px solid #ffffff;
+			border-radius: 2px;
+			text-align: center;
+			transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+			font-family: sans-serif;
+			font-size: 0.8rem;
+		}
+
+			nav.sub a:hover {
+				background-color: #2f2f2f;
+				color: white;
+			}
+
+			nav.sub a.active {
+				background-color: #2f2f2f;
+				color: white;
+			}
 
 		@media screen and (max-width: 980px) {
 

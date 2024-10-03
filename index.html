@@ -30,11 +30,13 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-				<nav id="nav">
+			<!--The navigation bar at the top of the main content div; the different icons open different
+				sections of the website-->
+			<nav class="main">
 						<!--Make clickable icons that link to the other pages of the website-->
 						<a href="#" class="icon solid fa-home"><span>HOME</span></a>
-						<a href="#research" class="icon solid fa-flask"><span>RESEARCH</span></a>
-						<a href="#impact" class="icon solid fa-users"><span>IMPACT</span></a>
+				<a href="#research/interests" class="icon solid fa-flask"><span>RESEARCH</span></a>
+				<a href="#impact/overview" class="icon solid fa-users"><span>IMPACT</span></a>
 						<a href="#gallery" class="icon solid fa-camera"><span>GALLERY</span></a>
 						<!--<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>-->
 					</nav>
@@ -84,7 +86,14 @@
 									<button class="nav-button" id="presentations-button">PRESENTATIONS</button>
 									<button class="nav-button" id="observations-button">OBSERVATIONS</button>
 								</div>
-								<section class="visible" id="interests">
+						-->
+						<nav id="research" class="sub">
+							<a href="#research/interests">INTERESTS</a>
+							<a href="#research/publications">PUBLICATIONS</a>
+							<a href="#research/presentations">PRESENTATIONS</a>
+							<a href="#research/observations">OBSERVATIONS</a>
+						</nav>
+						<section id="interests">
 									<header class="research-interest-header" id="LyC-escape">
 										<h3 class="research-interest-header-text" id="LyC-escape">Unveiling ionizing photon escape with high-redshift lensed galaxies</h3>
 									</header>
@@ -205,7 +214,7 @@
 
 									</div>
 								</section>
-								<section class="hidden" id="publications">
+						<section id="publications">
 									<p>See my list below of authored and co-authored journal articles and white papers. Click 
 										the chevrons for a brief review of the publication's results. For a complete breakdown 
 										of my citation statistics and publication record, visit 
@@ -496,7 +505,7 @@
 										</div>
 									</section>
 								</section>
-								<section class="hidden" id="presentations">
+						<section id="presentations">
 									<section id="presentations-fa">
 										<header>
 											<h3>First author</h3>
@@ -613,7 +622,7 @@
 										</div>
 									</section>
 								</section>
-								<section class="hidden" id="observations">
+						<section id="observations">
 									<section id="observations-pi">
 										<header>
 											<h3>Principal investigator</h3>
@@ -912,7 +921,13 @@
 									<button class="nav-button" id="teaching-button">TEACHING</button>
 									<button class="nav-button" id="writing-button">WRITING</button>
 								</div>
-								<section class="visible" id="overview">
+						-->
+						<nav id="impact" class="sub">
+							<a href="#impact/overview">OVERVIEW</a>
+							<a href="#impact/teaching">TEACHING</a>
+							<a href="#impact/writing">WRITING</a>
+						</nav>
+						<section id="overview">
 									<header class="research-interest-header" id="LyC-escape">
 										<h3 class="research-interest-header-text" id="LyC-escape">Unveiling ionizing photon escape with high-redshift lensed galaxies</h3>
 									</header>
@@ -937,10 +952,10 @@
 
 									</div>
 								</section>
-								<section class="hidden" id="teaching">
+						<section id="teaching">
 
 								</section>
-								<section class="hidden" id="writing">
+						<section id="writing">
 									<p>See my list below of science writing. Click 
 										the chevrons for more information.</p>
 									<!--
