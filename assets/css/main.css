@@ -767,6 +767,19 @@ input, select, textarea {
 		}
 		*/
 
+/* Article/Nav */
+
+	article section {
+		-moz-transition: opacity 0.25s ease-in-out;
+		-webkit-transition: opacity 0.25s ease-in-out;
+		-ms-transition: opacity 0.25s ease-in-out;
+		transition: opacity 0.25s ease-in-out;
+	}
+
+		article section.inactive {
+			opacity: 0;
+		}
+
 /* Main */
 
 	#main {
@@ -1117,10 +1130,12 @@ input, select, textarea {
 
 /* Research */
 
+/*
 #interests, #publications, #presentations, #observations {
 	transition: min-height 0.5s ease-in-out;
 	transition: max-height 0.5s ease-in-out;
 }
+*/
 
 #research p {
 	text-align: justify;
