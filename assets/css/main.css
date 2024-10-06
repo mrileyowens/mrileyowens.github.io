@@ -7,6 +7,8 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* Set no margins, paddings, or borders for all elements by default, make them inherit 
+their font properties from their parent elements, and set their vertical-align to baseline */
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -19,15 +21,17 @@ canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
 	margin: 0;
-	padding: 0;
 	border: 0;
-	/*font-size: 62.5%;*/
+	padding: 0;
+
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;}
+	display: block;
+}
 
 body {
 	line-height: 1;
@@ -91,6 +95,7 @@ input, select, textarea {
 		background-size: auto, 100% 100%;
 		background-attachment: fixed; /* Do not move the background relative to the viewport */
 		overflow-y: scroll; /* Show a scroll bar when the contents of body overflow the edges of body */
+		/*scrollbar-gutter: stable;*/
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -105,11 +110,11 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
+		line-height: 1.75rem;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
+
 		color: #777777;
-		/*font-size: 20pt;*/
-		line-height: 1.75em;
 	}
 
 	 	/*
@@ -158,9 +163,9 @@ input, select, textarea {
 	}
 
 	h2 {
-		/*font-size: 1.8em;*/
 		font-size: 2.5rem;
-		letter-spacing: -0.015em;
+		font-variant: small-caps;
+		font-weight: bold;
 	}
 
 	h3, h4, h5, h6 {
@@ -223,8 +228,727 @@ input, select, textarea {
 		margin-bottom: 2em;
 	}
 
-/* Table */
+/* Make the central wrapper containing all the content */
 
+#wrapper {
+	margin: auto;
+	min-height: 100vh;
+	max-width: 100%;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	-moz-transition: opacity 1s ease-in-out;
+	-webkit-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+}
+
+@media screen and (min-width: 1024px) {
+	#wrapper {
+		width: calc(max(819px,30vw))
+	}
+}
+
+	body.is-preload #wrapper {
+		opacity: 0;
+	}
+
+	/*
+	@media screen and (max-width: 1280px) {
+
+		#wrapper {
+			padding: 3em 0;
+			max-width: calc(100% - 6em);
+		}
+
+	}
+	*/
+
+	/*
+	@media screen and (max-width: 980px) {
+
+		#wrapper {
+			padding: 1.5em 0;
+			max-width: calc(100% - 8em);
+		}
+
+	}
+	*/
+
+	/*
+	@media screen and (max-width: 736px) {
+
+		#wrapper {
+			padding: 1em 0;
+			max-width: calc(100% - 2em);
+		}
+
+	}
+
+	@media screen and (max-width: 360px) {
+
+		#wrapper {
+			padding: 1em 0;
+			max-width: 100%;
+		}
+
+	}
+	*/
+
+/* Design the main navigation bar */
+
+/* The main navigation bar, containing the icons at the top of the content box */
+nav.main {
+	position: sticky; /* Make the nav bar 'hit' the top of the page and stick */
+	top: 0;
+	height: auto;
+	width: 100%; /* Make the nav bar span the whole width of wrapper */
+	padding: 2.5rem 0 1rem 0; /* Add top and bottom padding to the nav bar; this gives some clearance for the anchor icons before the main div and also enough overhead for the popup text when the nav bar 'sticks' to the top of the viewport*/
+	z-index: 3; /* Make sure the nav bar appears above main when scrolling */
+
+	text-align: center;
+
+	/* Set the background of the nav bar to be the same background as body */
+	background-image: url("images/overlay.png"), url("images/bg.jpg");
+	background-repeat: repeat, no-repeat;
+	background-size: auto, 100% 100%;
+	background-attachment: fixed;
+}
+
+	nav.main a {
+		display: inline-block; /* Display the anchors as adjustable inline blocks */
+		position: relative; /* Position the anchor's elements relative to it */
+		height: auto; /* Make the height just tall enough to contain the content and satisfy any margin, border, or padding */
+		width: auto; /* Make the width just wide enough to contain the content and satisfy any margin, border, or padding */
+		margin: 0 0.6em; /* Set the margin of the anchors so that they appear proportionally spaced regardless of the font size */
+
+		font-size: 2rem; /* Set the size of the anchors */
+
+		color: #ffffff; /* Set the color of the anchors and the popup text */
+		opacity: 0.35; /* Make the anchors faint by default */
+
+		/*
+		-moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+		-ms-transition: opacity .25s ease-in-out;
+		transition: opacity .25s ease-in-out;
+		*/
+	}
+
+		nav.main a:hover {
+			/* Make an anchor slightly larger and more opaque when hovered */
+			transform: scale(1.1);
+			opacity: 0.7;
+			transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+		}
+
+			nav.main a:hover span {
+				/* Make the popup text's opacity completely opaque when the anchor is hovered; the popup text still won't appear entirely opaque, since it is 'screened' through the anchor's opacity, which is still nonzero */
+				opacity: 1.0;
+				transition: opacity .25s ease-in-out;
+			}
+
+		nav.main a.active {
+			/* Make the anchor completely opaque and larger when it is the active anchor */
+			opacity: 1.0;
+			transform: scale(1.2);
+			transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+		}
+
+		nav.main a span {
+			position: absolute;
+			top: -2em;
+			left: 50%;
+			height: auto;
+			width: auto;
+
+			font-size: 1rem;
+			font-weight: bold;
+
+			/* Make the popup text transparent by default */
+			opacity: 0;
+			background: none;
+
+			transform: translateX(-50%); /* Translate the text-containing span so that it appears centered above the icon */
+			-moz-transition: opacity .25s ease-in-out;
+			-webkit-transition: opacity .25s ease-in-out;
+			-ms-transition: opacity .25s ease-in-out;
+			transition: opacity .25s ease-in-out;
+		}
+
+/* Make the anchor icons of the navigation bars */
+
+.icon {
+	text-decoration: none;
+	position: relative;
+	text-decoration: none;
+}
+
+	.icon:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		line-height: 1;
+		text-transform: none !important;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 400;
+	}
+
+	.icon.solid:before {
+		font-weight: 900;
+	}
+
+	.icon.brands:before {
+		font-family: 'Font Awesome 5 Brands';
+	}
+
+	.icon:before {
+		line-height: inherit;
+	}
+
+	.icon > .label {
+		display: none;
+	}
+
+/* Make the main content div*/
+
+#main {
+	position: relative;
+	height: auto;
+	width: 100%;
+
+	background: #ffffff;
+
+	-moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+	-webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+	-ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+	transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+/* Design the high-level sections*/
+
+#main > section {
+	position: relative;
+	height: auto;
+	width: 100%;
+	padding: 2rem;
+
+	-moz-transition: opacity 0.25s ease-in-out;
+	-webkit-transition: opacity 0.25s ease-in-out;
+	-ms-transition: opacity 0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out;
+}
+
+#main .panel.inactive {
+	opacity: 0;
+}
+
+/*
+@media screen and (max-width: 736px) {
+
+	#main > .panel {
+		padding: 2em 1.5em 1.5em 1.5em;
+	}
+
+}
+*/
+
+/* Design the intro panel */
+
+#main > .panel.intro {
+	padding: 0;
+	height: 20em;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+	#main > .panel.intro .pic {
+		text-decoration: none;
+		position: relative;
+		-moz-flex-grow: 0;
+		-webkit-flex-grow: 0;
+		-ms-flex-grow: 0;
+		flex-grow: 0;
+		-moz-flex-shrink: 0;
+		-webkit-flex-shrink: 0;
+		-ms-flex-shrink: 0;
+		flex-shrink: 0;
+		width: 17em;
+		height: 100%;
+	}
+
+		#main > .panel.intro .pic:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: url("images/overlay.png");
+			width: 100%;
+			height: 100%;
+		}
+
+		#main > .panel.intro .pic img {
+			position: relative;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			-moz-object-fit: cover;
+			-webkit-object-fit: cover;
+			-ms-object-fit: cover;
+			object-fit: cover;
+			-moz-object-position: center;
+			-webkit-object-position: center;
+			-ms-object-position: center;
+			object-position: center;
+		}
+
+		#main > .panel.intro .pic .arrow {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -1.375em;
+			width: 2.75em;
+			height: 2.75em;
+			background: #000;
+			background: rgba(0, 0, 0, 0.75);
+			color: #ffffff;
+			text-align: center;
+			line-height: 2.75em;
+			/*font-size: 1.5em;*/
+			z-index: 1;
+			-moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+			-webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+			-ms-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+			transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+		}
+
+			#main > .panel.intro .pic .arrow:before {
+				position: relative;
+				padding-right: 0;
+				top: 0.125em;
+			}
+
+			#main > .panel.intro .pic .arrow span {
+				display: block;
+				text-indent: -9999px;
+			}
+
+		#main > .panel.intro .pic:hover .arrow {
+			width: 3em;
+			padding-right: 0.25em;
+		}
+
+	#main > .panel.intro header {
+		-moz-flex-grow: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-grow: 1;
+		flex-grow: 1;
+		-moz-flex-shrink: 1;
+		-webkit-flex-shrink: 1;
+		-ms-flex-shrink: 1;
+		flex-shrink: 1;
+		padding: 3.5em 2.5em;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+		#main > .panel.intro header h1 {
+			line-height: 1.25em;
+			margin-bottom: 0;
+		}
+
+		#main > .panel.intro header p {
+			letter-spacing: -0.015em;
+			/*font-size: 1.25em;*/
+			margin: 0.25em 0 0 0;
+			font-size: 1.5rem;
+		}
+
+		#main > .panel.intro header a {
+			position: relative;
+			display: inline-block;
+			color: #222222;
+			/*
+			width: 1em;
+			height: 1em;
+			*/
+			height: auto;
+			width: auto;
+			line-height: 0.9em;
+			/*font-size: 2.5em;*/
+			font-size: 2rem;
+			margin: 3rem 1rem 0 0;
+			opacity: 0.35;
+			outline: 0;
+			-moz-transition: opacity .25s ease-in-out;
+			-webkit-transition: opacity .25s ease-in-out;
+			-ms-transition: opacity .25s ease-in-out;
+			transition: opacity .25s ease-in-out;
+		}
+
+			#main > .panel.intro header a.icon:before {
+				padding-right: 0;
+			}
+
+			#main > .panel.intro header a:before {
+				/*font-size: 0.8em;*/
+			}
+
+			#main > .panel.intro header a:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 50%;
+				bottom: -0.75em;
+				margin-left: -0.5em;
+				border-bottom: solid 0em #000000;
+				border-left: solid 0.5em transparent;
+				border-right: solid 0.5em transparent;
+				-moz-transition: border-bottom-width .25s ease-in-out;
+				-webkit-transition: border-bottom-width .25s ease-in-out;
+				-ms-transition: border-bottom-width .25s ease-in-out;
+				transition: border-bottom-width .25s ease-in-out;
+			}
+
+			/* Span containing the popup text identifying the link
+			when hovering over the anchor */
+			#main > .panel.intro header a span {
+				display: block;
+				position: absolute;
+				background: #222222;
+				color: #ffffff;
+				top: -2.9rem;
+				font-size: 1rem;
+				height: 2.25rem;
+				line-height: 2.25rem;
+				/*
+				left: -100%;
+				*/
+				left: 50%;
+				transform: translateX(-50%);
+				text-align: center;
+				opacity: 0;
+				-moz-transition: opacity .25s ease-in-out;
+				-webkit-transition: opacity .25s ease-in-out;
+				-ms-transition: opacity .25s ease-in-out;
+				transition: opacity .25s ease-in-out;
+				width: 6em;
+				/*
+				margin-left: -2.75rem;
+				margin: auto;
+				*/
+			}
+
+				#main > .panel.intro header a span:after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: -0.4rem;
+					left: 50%;
+					margin-left: -0.6rem;
+					border-top: solid 0.6em #222222;
+					border-left: solid 0.6em transparent;
+					border-right: solid 0.6em transparent;
+				}
+
+			#main > .panel.intro header a:hover {
+				opacity: 1.0;
+			}
+
+				#main > .panel.intro header a:hover span {
+					opacity: 1.0;
+				}
+
+			#main > .panel.intro header a.active {
+				opacity: 1.0;
+			}
+
+				#main > .panel.intro header a.active:after {
+					border-bottom-width: 0;/*.5em;*/
+				}
+
+section.panel > header {
+	height: auto;
+	width: 100%;
+	padding: 0 0 1.5rem 0;
+}
+
+/* Design the article-level navigation bar */
+
+nav.sub {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	height: auto;
+	width: 100%;
+	margin: 0 0 1.5rem 0;
+	font-size: 0.8rem;
+	border-radius: 0.1rem;
+	box-shadow: 0 0 0 0.2rem #2f2f2f;
+}
+
+	nav.sub a {
+		height: auto;
+		width: 100%;
+		color: #2f2f2f;
+		background-color: transparent;
+		text-decoration: none;
+		border: 0.2rem solid #ffffff;
+		border-radius: 0.1rem;
+		text-align: center;
+		transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+		font-family: sans-serif;
+		line-height: 2rem;
+	}
+
+	 	/* Flip the colors of the text and background when the anchor is hovered or active */
+		nav.sub a:hover, nav.sub a.active {
+			background-color: #2f2f2f;
+			color: white;
+		}
+
+	@media screen and (max-width: 980px) {
+
+		#nav a span {
+			display: none;
+		}
+
+	}
+
+	/*
+	@media screen and (max-width: 980px) {
+
+		#main > .panel.intro {
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			height: auto;
+		}
+
+			#main > .panel.intro .pic {
+				height: 25em;
+				width: 100%;
+			}
+
+			#main > .panel.intro header {
+				padding: 4em;
+				text-align: center;
+			}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		#main > .panel.intro .pic {
+			height: 20em;
+		}
+
+		#main > .panel.intro header {
+			padding: 2.75em 2em 2.5em 2em;
+		}
+
+			#main > .panel.intro header p {
+				font-size: 1em;
+				margin: 0.25em 0 0 0;
+			}
+
+	}
+	*/
+
+section article {
+		height: auto;
+		width: 100%;
+
+		-moz-transition: opacity 0.25s ease-in-out;
+		-webkit-transition: opacity 0.25s ease-in-out;
+		-ms-transition: opacity 0.25s ease-in-out;
+		transition: opacity 0.25s ease-in-out;
+	}
+
+		section article.inactive {
+			opacity: 0;
+		}
+
+	section article header {
+		height: auto;
+		width: 100%;
+		padding: 0 0 1rem 0;
+
+		font-size: 1.5rem;
+	}
+
+/* Make the accessibility button */
+#accessibility {
+	position: relative;
+	height: auto;
+	width: 100%;
+	padding: 0 0 1rem 0;
+
+	vertical-align: middle;
+}
+
+/*
+@media screen and (max-width: 1023px) {
+	.accessibility-button-container {
+		position: relative;
+		margin: 0;
+		vertical-align: middle;
+		width: 100%;
+		height: auto;
+		font-size: 1rem;
+	}
+}
+*/
+
+	.accessibility{
+		height: auto;
+		width: auto;
+		border: 0.2rem solid #ffffff;
+		border-radius: 0.1rem;
+		background-color: rgba(255,255,255,0);
+		color: #2f2f2f;
+	}
+
+		.accessibility:hover {
+			background-color: #2f2f2f;
+			color: white;
+
+			transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+			/*transition: color 0.25s ease-in-out;*/
+		}
+
+		.accessibility.active {
+			background-color: #2f2f2f;
+			color: white;
+			box-shadow: 0 0 0 0.2em #2f2f2f;
+		}
+
+.text {
+	transition: opacity 0.25s ease-in-out;
+}
+
+	.text.inactive {
+		opacity: 0;
+	}
+
+p {
+	text-align: justify;
+	font-size: 1rem;
+	line-height: 1.8rem;
+}
+
+/* Footer */
+
+	/* Align the footer's text in the center */
+	#footer {
+		width: 100%;
+		color: rgba(255, 255, 255, 0.45);
+		text-align: center;
+		padding: 2em 0 0 0;
+		/*font-size: 0.75em;*/
+	}
+
+		#footer a {
+			color: #ddd;
+			color: rgba(255, 255, 255, 0.65);
+			-moz-transition: color .25s ease-in-out;
+			-webkit-transition: color .25s ease-in-out;
+			-ms-transition: color .25s ease-in-out;
+			transition: color .25s ease-in-out;
+		}
+
+		 	/* Make anchors nested 
+			in the ID footer white 
+			wwhen hovered over */
+			#footer a:hover {
+				color: white;
+			}
+
+		#footer .copyright {
+			list-style: none;
+			padding-left: 0;
+		}
+
+			#footer .copyright li {
+				display: inline-block;
+				padding-left: 1em;
+				margin-left: 1em;
+				border-left: solid 1px rgba(255, 255, 255, 0.25);
+				line-height: 1;
+			}
+
+				#footer .copyright li:first-child {
+					padding-left: 0;
+					margin-left: 0;
+					border-left: 0;
+				}
+
+		@media screen and (max-width: 736px) {
+
+			#footer .copyright li {
+				padding-left: 0.5em;
+				margin-left: 0.5em;
+			}
+
+		}
+
+/* Scrollbar */
+
+	::-webkit-scrollbar {
+		width: 0.5rem;
+		background-color: transparent;
+	}
+
+	::-webkit-scrollbar-track {
+		/*box-shadow: inset 0 0 0.1rem grey;*/
+		/*border-radius: 0.5rem;*/
+		background-color: transparent;
+	}
+	
+	::-webkit-scrollbar-thumb {
+		background-color: #2f2f2f;
+		opacity: 0.3;
+		border-radius: 0.5rem;
+		border: 0.1rem solid transparent;
+		background-clip: content-box;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		opacity: 0.7;
+	}
+
+/* Table */
+/*
 	table {
 		width: 100%;
 	}
@@ -246,9 +970,9 @@ input, select, textarea {
 		table.default thead {
 			border-bottom: solid 2px #f4f4f4;
 		}
-
+*/
 /* Form */
-
+/*
 	form label {
 		display: block;
 		font-weight: 400;
@@ -302,25 +1026,33 @@ input, select, textarea {
 	form :-ms-input-placeholder {
 		color: #999;
 	}
-
+*/
 /* Section/Article */
 
+	/*
 	section, article {
 		margin-bottom: 3em;
 	}
+	*/
 
+	 	/*
 		section > :last-child, section:last-child, article > :last-child, article:last-child {
 			margin-bottom: 0;
 		}
+		*/
 
+	/*
 	header {
-		margin: 0 0 1.5rem 0;
+		padding: 0 0 1.5rem 0;
 	}
+	*/
 
+	 	/*
 		header > p {
 			margin: 0.5em 0 0 0;
 			color: #aaa;
 		}
+		*/
 
 		/*
 		@media screen and (max-width: 736px) {
@@ -387,7 +1119,7 @@ input, select, textarea {
 		border: 0;
 		cursor: pointer;
 		outline: 0;
-		padding: 0.7em 1.5em 0.7em 1.5em;
+		/*padding: 0.7em 1.5em 0.7em 1.5em;*/
 	}
 
 		input[type="button"]:hover,
@@ -526,7 +1258,7 @@ input, select, textarea {
 
 		}
 
-/* Icons */
+/* Icons
 
 	.icon {
 		text-decoration: none;
@@ -563,102 +1295,44 @@ input, select, textarea {
 			display: none;
 		}
 
-/* Loader */
+*/
 
-/* Nav */
+/*
 
-	nav.main {
-		text-align: center;
-		height: auto;
-		
-		/* Make the nav bar 'hit' the top of the page and stick */
-		position: sticky;
-		top: 0;
+section header {
+	padding: 0 0 1rem 0;
+}
 
-		padding: 2.5rem 0 1rem 0; /* Add top and bottom padding to the nav bar; this gives some clearance for the anchor icons before the main div and also enough overhead for the popup text when the nav bar 'sticks' to the top of the viewport*/
-		z-index: 3; /* Make sure the nav bar appears above main when scrolling */
-		width: 100%; /* Make the nav bar span the whole width of wrapper */
-		background-image: url("images/overlay.png"), url("images/bg.jpg"); /* Set the background of the nav bar to be the same background as body */
-		background-repeat: repeat, no-repeat;
-		background-size: auto, 100% 100%;
-		background-attachment: fixed;
+	section header h3 {
+		margin: 0;
 	}
+*/
 
-		nav.main a {
-			position: relative; /* Position the anchor's elements relative to it */
-			display: inline-block; /* Display the anchors as adjustable inline blocks */
-			color: #ffffff; /* Set the color of the anchors and the popup text */
-			width: auto; /* Make the width just wide enough to contain the content and satisfy any margin, border, or padding */
-			height: auto; /* Make the height just tall enough to contain the content and satisfy any margin, border, or padding */
-			font-size: 2rem; /* Set the size of the anchors */
-			margin: 0 0.6em; /* Set the margin of the anchors so that they appear proportionally spaced regardless of the font size */
-			opacity: 0.35; /* Make the anchors faint by default */
+/* Design the <nav> navigation bars */
 
-			/*
-			-moz-transition: opacity .25s ease-in-out;
-			-webkit-transition: opacity .25s ease-in-out;
-			-ms-transition: opacity .25s ease-in-out;
-			transition: opacity .25s ease-in-out;
-			*/
-			}
-
-			nav.main a:hover {
-				/* Make an anchor slightly larger and more opaque when hovered */
-				transform: scale(1.1);
-				opacity: 0.7;
-				transition: opacity .25s ease-in-out, transform .25s ease-in-out;
-			}
-
-				nav.main a:hover span {
-					/* Make the popup text's opacity completely opaque when the anchor is hovered; the popup text still won't appear entirely opaque, since it is 'screened' through the anchor's opacity, which is still nonzero */
-					opacity: 1.0;
-				transition: opacity .25s ease-in-out;
-				}
-
-			nav.main a.active {
-				/* Make the anchor completely opaque and larger when it is the active anchor */
-				opacity: 1.0;
-				transform: scale(1.2);
-				transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
-			}
-
-			nav.main a span {
-				position: absolute;
-				background: none;
-				font-weight: bold;
-				top: -2em;
-				left: 50%;
-				transform: translateX(-50%);
-				font-size: 1rem;
-				opacity: 0;
-				-moz-transition: opacity .25s ease-in-out;
-				-webkit-transition: opacity .25s ease-in-out;
-				-ms-transition: opacity .25s ease-in-out;
-				transition: opacity .25s ease-in-out;
-				height: auto;
-				width: auto;
-				}
-
+ /*
 	nav.sub {
 		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 		height: auto;
 		width: 100%;
-		border: 2px solid #2f2f2f;
-		margin: 0 0 1rem 0;
+		border: 0.2em solid #2f2f2f;
+		margin: 0 0 1.5rem 0;
+		font-size: 0.8rem;
 	}
 
 		nav.sub a {
+			height: auto;
 			width: 100%;
 			color: #2f2f2f;
 			background-color: transparent;
 			text-decoration: none;
-			border: 2px solid #ffffff;
+			border: 0.2em solid #ffffff;
 			border-radius: 2px;
 			text-align: center;
 			transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 			font-family: sans-serif;
-			font-size: 0.8rem;
+			line-height: 2rem;
 		}
 
 			nav.sub a:hover {
@@ -679,20 +1353,15 @@ input, select, textarea {
 
 		}
 
+	*/
+
 /* Wrapper */
 
+	/*
 	#wrapper {
-		/*
-		width: 45em;
-		margin: 0 auto;
-		*/
 		margin: auto;
 		min-height: 100vh;
 		max-width: 100%;
-		/*
-		padding: 4em 0;
-		*/
-		padding: auto 0;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -725,7 +1394,6 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		/*
 		@media screen and (max-width: 1280px) {
 
 			#wrapper {
@@ -769,44 +1437,49 @@ input, select, textarea {
 
 /* Article/Nav */
 
-	article section {
+	/*
+	section article {
 		-moz-transition: opacity 0.25s ease-in-out;
 		-webkit-transition: opacity 0.25s ease-in-out;
 		-ms-transition: opacity 0.25s ease-in-out;
 		transition: opacity 0.25s ease-in-out;
 	}
 
-		article section.inactive {
+		section article.inactive {
 			opacity: 0;
 		}
+	*/
 
 /* Main */
 
+/*
+
 	#main {
 		position: relative;
-		overflow: hidden;
+		height: auto;
 		width: 100%;
+
 		background: #ffffff;
-		background-attachment: fixed;
-		box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
+
 		-moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 	}
 
-		#main > .panel {
+		#main > section {
+			position: relative;
+			height: 100%;
+			width: 100%;
+			padding: 2rem;
+
 			-moz-transition: opacity 0.25s ease-in-out;
 			-webkit-transition: opacity 0.25s ease-in-out;
 			-ms-transition: opacity 0.25s ease-in-out;
 			transition: opacity 0.25s ease-in-out;
-			margin-bottom: 0;
-			position: relative;
-			padding: 3.5em 2.5em 2.5em 2.5em;
-			width: 100%;
 		}
 
-			#main > .panel.inactive {
+			#main .panel.inactive {
 				opacity: 0;
 			}
 
@@ -819,6 +1492,8 @@ input, select, textarea {
 
 			}
 			*/
+
+			/*
 
 			#main > .panel.intro {
 				padding: 0;
@@ -894,7 +1569,7 @@ input, select, textarea {
 						text-align: center;
 						line-height: 2.75em;
 						/*font-size: 1.5em;*/
-						z-index: 1;
+						/*z-index: 1;
 						-moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 						-webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 						-ms-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
@@ -939,7 +1614,7 @@ input, select, textarea {
 					#main > .panel.intro header p {
 						letter-spacing: -0.015em;
 						/*font-size: 1.25em;*/
-						margin: 0.25em 0 0 0;
+						/*margin: 0.25em 0 0 0;
 						font-size: 1.5rem;
 					}
 
@@ -951,11 +1626,11 @@ input, select, textarea {
 						width: 1em;
 						height: 1em;
 						*/
-						height: auto;
+						/*height: auto;
 						width: auto;
 						line-height: 0.9em;
 						/*font-size: 2.5em;*/
-						font-size: 2rem;
+						/*font-size: 2rem;
 						margin: 3rem 1rem 0 0;
 						opacity: 0.35;
 						outline: 0;
@@ -971,7 +1646,7 @@ input, select, textarea {
 
 						#main > .panel.intro header a:before {
 							/*font-size: 0.8em;*/
-						}
+						/*}
 
 						#main > .panel.intro header a:after {
 							content: '';
@@ -991,7 +1666,7 @@ input, select, textarea {
 
 						/* Span containing the popup text identifying the link
 						when hovering over the anchor */
-						#main > .panel.intro header a span {
+						/*#main > .panel.intro header a span {
 							display: block;
 							position: absolute;
 							background: #222222;
@@ -1003,7 +1678,7 @@ input, select, textarea {
 							/*
 							left: -100%;
 							*/
-							left: 50%;
+							/*left: 50%;
 							transform: translateX(-50%);
 							text-align: center;
 							opacity: 0;
@@ -1016,7 +1691,7 @@ input, select, textarea {
 							margin-left: -2.75rem;
 							margin: auto;
 							*/
-						}
+						/*}
 
 							#main > .panel.intro header a span:after {
 								content: '';
@@ -1087,6 +1762,29 @@ input, select, textarea {
 				}
 				*/
 
+/* Article */
+
+/*
+section > header {
+	height: auto;
+	width: 100%;
+	padding: 0 0 1.5rem 0;
+}
+
+section article {
+	height: auto;
+	width: 100%;
+}
+
+	section article header {
+		height: auto;
+		width: 100%;
+		padding: 0 0 1rem 0;
+
+		font-size: 1.5rem;
+	}
+*/
+
 .fa-external-link-alt {
 	/*display: inline-block;*/
 	box-sizing: border-box;
@@ -1131,60 +1829,13 @@ input, select, textarea {
 /* Research */
 
 /*
-#interests, #publications, #presentations, #observations {
-	transition: min-height 0.5s ease-in-out;
-	transition: max-height 0.5s ease-in-out;
-}
-*/
-
 #research p {
 	text-align: justify;
 	text-justify: inter-word;
 	font-size: 1rem;
 	line-height: 1.8rem;
 }
-
-#research h3 {
-	font-size: 1.5rem;
-	margin: 0 0 1rem 0;
-}
-
-#research section > header {
-	margin-bottom: 0;
-}
-
-.research-nav-bar {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 1px;
-	position: relative;
-	height: auto;
-	width: auto;
-	margin: 0 auto 1rem auto;
-	border: 2px solid #2f2f2f;
-}
-
-	.nav-button {
-		height: 100%;
-		width: auto;
-		border: 2px solid #ffffff;
-		border-radius: 2px;
-		background-color: rgba(255,255,255,0);
-		color: #2f2f2f;
-		cursor: pointer;
-	}
-
-		.nav-button.selected {
-			background-color: #2f2f2f;
-			color: white;
-		}
-
-	.nav-button:hover {
-		background-color: #2f2f2f;
-		color: white;
-		transition: background-color 0.25s ease-in-out;
-		transition: color 0.25s ease-in-out;
-	}
+*/
 
 .publication p {
 	position: relative;
@@ -1207,12 +1858,13 @@ input, select, textarea {
 	.item .header {
 		display: flex;
 		flex-direction: row;
+		gap: 1rem;
 		height: auto;
 		width: 100%;
 		align-items: flex-start;
 	}
 
-		.item .header .header-info {
+		.item .header .info {
 			/*
 			display: inline-block;
 			height: 100%;
@@ -1221,12 +1873,12 @@ input, select, textarea {
 			flex: 1;
 		}
 
-			.item .header .header-info p {
+			.item .header .info p {
 				margin: 0;
 				line-height: 1;
 			}
 
-			.item .header .header-info .source {
+			.item .header .info .source {
 				font-style: italic;
 			}
 
@@ -1238,7 +1890,6 @@ input, select, textarea {
 			width: auto;
 			*/
 			flex: 0 1 auto;
-			margin: 0 1rem;
 		}
 
 			.item .header .statistic p {
@@ -1266,7 +1917,6 @@ input, select, textarea {
 			flex: 0 1 auto;
 			height: auto;
 			width: auto;
-			padding: 0;
 			align-items: flex-start;
 			line-height: 1.8rem;
 			background-color: #ffffff;
@@ -1340,19 +1990,29 @@ input, select, textarea {
 	transition: opacity 0.25s ease;
 }
 
-@media screen and (min-width: 1024px) {
-	.accessibility-button-container {
-		position: relative;
-		margin: 0 0 1.2rem 0;
-		vertical-align: middle;
-		width: auto;
-		height: auto;
-	}
-		.accessibility-button {
-			font-size: 0.8rem;
-		}
+/* Accessibility button */
+
+/*
+.interest-text-container {
+	transition: opacity 0.25s ease-in-out;
 }
 
+	.interest-text-container.inactive {
+		opacity: 0;
+	}
+*/
+
+/*
+#accessibility {
+	position: relative;
+	height: auto;
+	width: 100%;
+	padding: 0 0 1rem 0;
+
+	vertical-align: middle;
+}
+
+/*
 @media screen and (max-width: 1023px) {
 	.accessibility-button-container {
 		position: relative;
@@ -1363,30 +2023,34 @@ input, select, textarea {
 		font-size: 1rem;
 	}
 }
+*/
+/*
+	.accessibility{
+		height: auto;
+		width: auto;
+		/*background-color: rgba(255,255,255,0);*/
+		/*margin-right: 0.2rem;*/
+		/*margin-bottom: 0.5em;*/
+		/*border: 0.2rem solid #ffffff;
+		border-radius: 0.1rem;
+		/*box-shadow: 0 0 0 2px #2f2f2f;*/
+		/*background-color: rgba(255,255,255,0);
+		color: #2f2f2f;
+		/*cursor: pointer;*/
+	/*}
 
-.accessibility-button {
-	/*background-color: rgba(255,255,255,0);*/
-	margin-right: 2px;
-	margin-bottom: 0.5em;
-	border: 2px solid #ffffff;
-	/*box-shadow: 0 0 0 2px #2f2f2f;*/
-	background-color: rgba(255,255,255,0);
-	color: #2f2f2f;
-	cursor: pointer;
-}
+		.accessibility:hover {
+			background-color: #2f2f2f;
+			color: white;
+			transition: background-color 0.25s ease-in-out;
+			transition: color 0.25s ease-in-out;
+		}
 
-.accessibility-button:hover {
-	background-color: #2f2f2f;
-	color: white;
-	transition: background-color 0.25s ease-in-out;
-	transition: color 0.25s ease-in-out;
-}
-
-	.accessibility-button.selected {
-		background-color: #2f2f2f;
-		color: white;
-		box-shadow: 0 0 0 2px #2f2f2f;
-	}
+		.accessibility.active {
+			background-color: #2f2f2f;
+			color: white;
+			box-shadow: 0 0 0 0.2em #2f2f2f;
+		}
 
 /* Gallery */
 
@@ -1724,13 +2388,12 @@ input, select, textarea {
 
 /* Footer */
 
-	/* Align the footer's text in the center */
+	/* Align the footer's text in the center
 	#footer {
 		width: 100%;
 		color: rgba(255, 255, 255, 0.45);
 		text-align: center;
 		padding: 2em 0 0 0;
-		/*font-size: 0.75em;*/
 	}
 
 		#footer a {
@@ -1742,9 +2405,8 @@ input, select, textarea {
 			transition: color .25s ease-in-out;
 		}
 
-		 	/* Make anchors nested 
 			in the ID footer white 
-			wwhen hovered over */
+			wwhen hovered over
 			#footer a:hover {
 				color: white;
 			}

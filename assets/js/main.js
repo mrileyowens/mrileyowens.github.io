@@ -10,8 +10,7 @@
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
 		$main = $('#main'),
-		$panels = $main.children('.panel'),
-		//$sections = $panels.children('section')
+		$sections = $main.children('section'),
 		$nav = $('nav'), $nav_links = $nav.children('a');
 
 	// Breakpoints.
@@ -63,15 +62,16 @@
 		// Initialize.
 		(function() {
 
-			var $panel, $section, $sections;
+			var $article, $articles, $section;
 
 			// If the URL has a hash portion
 			if (window.location.hash) {
 
-				// Get the panel that corresponds to the URL
-				$panel = $panels.filter(window.location.hash.split('/')[0]);
+				// Get the section that corresponds to the URL
+				$section = $sections.filter(window.location.hash.split('/')[0]);
 
-				$sections = $panel.children('section')
+				// Get any articles in the section
+				$articles = $section.children('article')
 
 				// Get the anchor of the nav bar that corresponds to the URL
 				$link = $nav_links.filter('[href="' + window.location.hash + '"]');
@@ -80,22 +80,21 @@
 					$link = $link.last()
 				}
 
-				// If the panel has sections
-				//if ($panel.children('section #' + window.location.hash.split('/')[0])) {
+				// If the section has articles
 				if ($link.parent('nav.sub').length > 0) {
 
-					// Get the section that corresponds to the URL
-					$section = $sections.filter('#' + window.location.hash.split('/')[1])
+					// Get the article that corresponds to the URL
+					$article = $articles.filter('#' + window.location.hash.split('/')[1])
 
 				}
 
 			}
 
-			// No panel/link? Default to first.
-			if (!$panel
-			||	$panel.length == 0) {
+			// No section/link? Default to first.
+			if (!$section
+			||	$section.length == 0) {
 
-				$panel = $panels.first();
+				$section = $sections.first();
 				$link = $nav_links.first();
 
 			}
@@ -103,16 +102,16 @@
 			// If the anchor is part of the .main nav bar
 			if ($link.parent('nav.main').length > 0) {
 
-				// Deactivate all panels except this one
-				$panels.not($panel)
+				// Deactivate all sections except this one
+				$sections.not($section)
 					.addClass('inactive')
 					.hide();
 
-				// If the panel has sections
-				if ($panel.children('section').length > 0) {
+				// If the section has any articles
+				if ($section.children('article').length > 0) {
 
-					// Deactivate any sections except the first
-					$sections.not($sections.first())
+					// Deactivate any articles except the first
+					$articles.not($articles.first())
 						.addClass('inactive')
 						.hide();
 
@@ -123,13 +122,13 @@
 			// If the anchor is part of the .sub nav bar
 			if ($link.parent('nav.sub').length > 0) {
 
-				// Deactivate all the panels except this one
-				$panels.not($panel)
+				// Deactivate all the sections except this one
+				$sections.not($section)
 					.addClass('inactive')
 					.hide();
 
-				// Deactivate all sections except this one
-				$sections.not($section)
+				// Deactivate all articles except this one
+				$articles.not($article)
 					.addClass('inactive')
 					.hide();
 
@@ -149,41 +148,41 @@
 		// When the hash portion of the URL changes
 			$window.on('hashchange', function(event) {
 
-				var $panel, $sections, $section;
+				var $section, $article, $articles;
 
 				// If the current URL has a hash portion
 				if (window.location.hash) {
 
-					// Get the panel that corresponds to the clicked anchor
-				 	$panel = $panels.filter(window.location.hash.split('/')[0]);
+					// Get the section that corresponds to the clicked anchor
+				 	$section = $sections.filter(window.location.hash.split('/')[0]);
 
 					// Get the clicked anchor
 					//$link = $nav_links.filter('[href="' + window.location.hash + '"]');
 
-					// Get all the sections that are children of the panel
-					$sections = $panel.children('section')
+					// Get all the articles that are children of the section
+					$articles = $section.children('article')
 
-					// If the panel has a .sub nav bar
-					if ($panel.children('nav.sub').length > 0) {
+					// If the section has a .sub nav bar
+					if ($section.children('nav.sub').length > 0) {
 
 						// Get all the sections that are children of the panel
 						//$sections = $panel.children('section')
 
-						// Get the section that corresponds to the clicked anchor
-						$section = $sections.filter('#' + window.location.hash.split('/')[1])
+						// Get the article that corresponds to the clicked anchor
+						$article = $articles.filter('#' + window.location.hash.split('/')[1])
 
 					}
 
-					// No target panel? Bail.
-					if ($panel.length == 0)
+					// No target section? Bail.
+					if ($section.length == 0)
 						return;
 
 				}
 
-				// No panel/link? Default to first.
+				// No section/link? Default to first.
 				else {
 
-					$panel = $panels.first();
+					$section = $sections.first();
 					$link = $nav_links.first();
 
 				}
@@ -191,19 +190,19 @@
 				// If the clicked anchor is in the .main nav bar
 				if ($link.parent('nav.main').length > 0) {
 
-					// Deactivate all panels.
-					$panels.addClass('inactive');
+					// Deactivate all sections.
+					$sections.addClass('inactive');
 
 					// Deactivate all links.
 					$nav_links.removeClass('active');
 
-					// If the panel that corresponds to the clicked anchor has a .sub nav bar
-					if ($panel.children('nav.sub').length > 0) {
+					// If the section that corresponds to the clicked anchor has a .sub nav bar
+					if ($section.children('nav.sub').length > 0) {
 
-						// Disable the sections
-						$panel.children('section').addClass('inactive')
+						// Disable the articles
+						$section.children('article').addClass('inactive')
 
-						$panel.children('nav').children('a').first().addClass('active')
+						$section.children('nav').children('a').first().addClass('active')
 
 					}
 				
@@ -215,8 +214,8 @@
 					// Remove any active anchors from any .sub nav bar
 					$('nav.sub').children('a').removeClass('active')
 
-					// Disable the sections
-					$sections.addClass('inactive');
+					// Disable the articles
+					$articles.addClass('inactive');
 
 				}
 
@@ -237,19 +236,19 @@
 					// If the clicked anchor is in the .main nav bar
 					if ($link.parent('nav.main').length > 0) {
 
-						// Hide all panels.
-						$panels.hide();
+						// Hide all sections.
+						$sections.hide();
 
-						// Show the panel that corresponds to the clicked anchor
-						$panel.show();
+						// Show the section that corresponds to the clicked anchor
+						$section.show();
 					
-						if ($panel.children('nav.sub').length > 0) {
-							$sections.hide();
-							$section.show();
+						if ($section.children('nav.sub').length > 0) {
+							$articles.hide();
+							$article.show();
 						}
 
 						else {
-							$panel.children('section').show();
+							$section.children('section').show();
 						}
 					
 					}
@@ -259,15 +258,15 @@
 
 					if ($link.parent('nav.sub').length > 0) {
 
-						$sections.hide();
-						$section.show();
+						$articles.hide();
+						$article.show();
 
 					}
 
 					// Set new max/min height.
 					$main
-						.css('max-height', $panel.outerHeight() + 'px')
-						.css('min-height', $panel.outerHeight() + 'px');
+						.css('max-height', $section.outerHeight() + 'px')
+						.css('min-height', $section.outerHeight() + 'px');
 
 					// Reset scroll.
 					$window.scrollTop(0);
@@ -278,14 +277,14 @@
 						// If the clicked anchor is in the .main nav bar
 						if ($link.parent('nav.main').length > 0) {
 
-							// Activate target panel.
-							$panel.removeClass('inactive');
+							// Activate target section.
+							$section.removeClass('inactive');
 						
 						}
 
-						if ($panel.children('nav.sub').length > 0) {
+						if ($section.children('nav.sub').length > 0) {
 
-							$section.removeClass('inactive');
+							$article.removeClass('inactive');
 						
 						}
 
@@ -347,5 +346,77 @@
 				});
 
 		}
+
+})(jQuery);
+
+(function($) {
+
+	var $window = $(window),
+		$main = $('#main'),
+		$buttons = $('button.accessibility')
+		$divs = $buttons.parent('div').siblings('div')
+
+	// Breakpoints.
+	breakpoints({
+		xlarge:  [ '1281px',  '1680px' ],
+		large:   [ '981px',   '1280px' ],
+		medium:  [ '737px',   '980px'  ],
+		small:   [ '361px',   '736px'  ],
+		xsmall:  [ null,      '360px'  ]
+	});
+
+	// When one of the accessibility buttons is clicked
+	$buttons
+		.on('click', function(event) {
+
+			var $button, $div, $panel;
+
+			// Get the clicked button
+			$button = $(this)
+
+			// Get the panel containing the clicked button
+			$panel = $button.parents('.panel');
+
+			// Get the div containing the corresponding text
+			$div = $divs.filter('#' + $button.attr('id'));
+
+			$divs.addClass('inactive')
+
+			$buttons.removeClass('active')
+
+			$button.addClass('active')
+
+			$main
+				.css('max-height', $main.height() + 'px')
+				.css('min-height', $main.height() + 'px');
+
+			setTimeout(function() {
+
+				$divs.hide();
+				$div.show();
+
+				$main
+					.css('max-height', $panel.outerHeight() + 'px')
+					.css('min-height', $panel.outerHeight() + 'px')
+
+				$window.scrollTop(0);
+				
+				window.setTimeout(function() {
+
+					$div.removeClass('inactive');
+
+					$main
+						.css('max-height', '')
+						.css('min-height', '')
+
+					$window.triggerHandler('--refresh')
+
+					locked = false;
+
+				}, (breakpoints.active('small') ? 0 : 500));
+
+			}, 250);
+
+		});
 
 })(jQuery);
