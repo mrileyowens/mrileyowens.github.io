@@ -1119,8 +1119,7 @@ p {
 		border: 0;
 		cursor: pointer;
 		outline: 0;
-		/*padding: 0.7em 1.5em 0.7em 1.5em;*/
-	}
+		padding: 0.7em 1.5em 0.7em 1.5em;
 
 		input[type="button"]:hover,
 		input[type="submit"]:hover,
@@ -1855,44 +1854,65 @@ section article {
 	width: 100%;
 }
 
-	.item .header {
+	.header {
 		display: flex;
 		flex-direction: row;
-		gap: 1rem;
+		gap: 1.5rem;
 		height: auto;
 		width: 100%;
 		align-items: flex-start;
 	}
 
-		.item .header .info {
-			/*
-			display: inline-block;
-			height: 100%;
-			width: auto;
-			*/
-			flex: 1;
+	.header > p {
+		flex: 0 1 auto;
+		font-weight: bold;
+		margin: 0;
+	}
+
+		.info {
+			height: auto;
+			width: 100%;
+			flex: 1; /* Expand the high-level info to fill the flex box */
 		}
 
-			.item .header .info p {
+			.info p {
+				height: auto;
+				width: 100%;
 				margin: 0;
-				line-height: 1;
+				line-height: 1.5rem;
 			}
 
-			.item .header .info .source {
+			.title {
+				display: inline-block;
+				text-align: justify;
+				align-items: baseline;
+				text-decoration: none;
+				color: #777777;
+				padding: 0 0 0.5rem 0;
+			}
+
+
+				.title:hover {
+					text-decoration: underline;
+				}
+
+			.source {
 				font-style: italic;
 			}
 
-		.item .header .statistic {
+		/*
+		.statistic {
 			/*
 			display: inline-block;
 			position: relative;
 			height: 100%;
 			width: auto;
 			*/
-			flex: 0 1 auto;
+			/*flex: 0 1 auto;
+			font-weight: bold;
 		}
 
-			.item .header .statistic p {
+			.statistic p {
 				margin: 0;
 			}
 
@@ -1917,6 +1937,7 @@ section article {
 			flex: 0 1 auto;
 			height: auto;
 			width: auto;
+			padding: 0;
 			align-items: flex-start;
 			line-height: 1.8rem;
 			background-color: #ffffff;
@@ -1934,15 +1955,11 @@ section article {
 		padding: 0;
 	}
 
-	.item .info {
-
-	}
-
-		.item .info p {
+		.item .details p {
 			margin: 0 0 1rem 0;
 		}
 
-		.item .info .authors {
+		.item .details .authors {
 			font-size: 0.9rem;
 			line-height: 1.62rem;
 		}
