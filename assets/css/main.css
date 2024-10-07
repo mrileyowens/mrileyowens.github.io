@@ -1894,7 +1894,7 @@ section article {
 			}
 
 
-				.title:hover {
+				a.title:hover {
 					text-decoration: underline;
 				}
 
