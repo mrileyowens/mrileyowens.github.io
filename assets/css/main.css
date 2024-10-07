@@ -1861,12 +1861,14 @@ section article {
 		height: auto;
 		width: 100%;
 		align-items: flex-start;
+		line-height: 1.5rem;
 	}
 
 	.header > p {
 		flex: 0 1 auto;
 		font-weight: bold;
 		margin: 0;
+		line-height: 1.5rem;
 	}
 
 		.info {
@@ -1879,7 +1881,7 @@ section article {
 				height: auto;
 				width: 100%;
 				margin: 0;
-				line-height: 1.5rem;
+				/*line-height: 1.5rem;*/
 			}
 
 			.title {
@@ -1900,30 +1902,6 @@ section article {
 				font-style: italic;
 			}
 
-		/*
-		.statistic {
-			/*
-			display: inline-block;
-			position: relative;
-			height: 100%;
-			width: auto;
-			*/
-			/*flex: 0 1 auto;
-			font-weight: bold;
-		}
-
-			.statistic p {
-				margin: 0;
-			}
-
-			 	/*
-				.observation .header .time p::after {
-					font-family: "Font Awesome 5 Free";
-					content: "\f078";
-					color: #777777;
-				}
-				*/
-
 		.item .header button {
 			/*
 			height: auto;
@@ -1939,14 +1917,14 @@ section article {
 			width: auto;
 			padding: 0;
 			align-items: flex-start;
-			line-height: 1.8rem;
+			line-height: 1.5rem;
 			background-color: #ffffff;
 			color: #777777;
 			transition: transform 0.25s ease-in-out;
 		}
 
 			.item .header button i {
-				line-height: 1.8rem;
+				line-height: 1.5rem;
 				transition: transform 0.25s ease-in-out;
 			}
 
