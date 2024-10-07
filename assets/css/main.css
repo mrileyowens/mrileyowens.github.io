@@ -1881,7 +1881,7 @@ section article {
 				height: auto;
 				width: 100%;
 				margin: 0;
-				/*line-height: 1.5rem;*/
+				line-height: 1.5rem;
 			}
 
 			.title {
