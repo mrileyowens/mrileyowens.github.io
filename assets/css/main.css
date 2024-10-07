@@ -1785,12 +1785,13 @@ section article {
 */
 
 .fa-external-link-alt {
-	/*display: inline-block;*/
+	display: inline-block;
 	box-sizing: border-box;
 	font-size: 0.8rem;
 	/*margin-bottom: 0.8rem;*/
 	margin-left: 0.3rem;
 	vertical-align: baseline;
+	line-height: 1.5rem;
 }
 
 .title a {
