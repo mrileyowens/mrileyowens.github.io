@@ -420,3 +420,259 @@
 		});
 
 })(jQuery);
+
+(function($) {
+
+	var $window = $(window),
+		$main = $('#main'),
+		$buttons = $('.item .header button');
+		//$divs = $buttons.parent('div').siblings('div')
+
+	// Breakpoints.
+	breakpoints({
+		xlarge:  [ '1281px',  '1680px' ],
+		large:   [ '981px',   '1280px' ],
+		medium:  [ '737px',   '980px'  ],
+		small:   [ '361px',   '736px'  ],
+		xsmall:  [ null,      '360px'  ]
+	});
+
+	// When one of the accessibility buttons is clicked
+	$buttons
+		.on('click', function(event) {
+
+			var $button, $panel, active, panel_height, div_height;
+
+			// Get the clicked button
+			$button = $(this);
+
+			active = $button.hasClass('active');
+
+			$panel = $button.parents('.panel');
+
+			// Get the div that the button will reveal / hide
+			$div = $button.parent('div').siblings('div');
+
+			$main
+				.css('max-height', $main.height() + 'px')
+				.css('min-height', $main.height() + 'px');
+
+			if (active) {
+
+				panel_height = $panel.outerHeight()
+				div_height = $div.height()
+
+				$div
+					.css('max-height', $div.height() + 'px')
+
+				$div.addClass('inactive');
+
+				$button.removeClass('active');
+
+				setTimeout(function() {
+
+					$div
+						.css('max-height', '0px');
+						//.css('min-height', '0px');
+
+					setTimeout(function() {
+						$main
+							.css('max-height', panel_height - div_height + 'px')
+							.css('min-height', panel_height - div_height + 'px');
+					});
+
+					setTimeout(function() {
+						$div.hide();
+					}, 500);
+
+					//$div.hide();
+
+					$window.scrollTop(0);
+
+					setTimeout(function() {
+
+						//if (active) {
+							//$div.addClass('inactive');
+						//}
+
+						//else {
+							//$div.removeClass('inactive');
+						//}
+
+						//$div.removeClass('inactive');
+
+						$main
+							.css('max-height', '')
+							.css('min-height', '');
+						$div
+							.css('max-height', '')
+							//.css('min-height', '');
+
+						$window.triggerHandler('--refresh');
+
+						locked = false;
+
+					}, (breakpoints.active('small') ? 0 : 500));
+
+				}, 250);
+
+			}
+
+			else {
+
+				$button.addClass('active');
+
+				$div
+					.css('max-height', $div[0].scrollHeight + 'px')
+					.css('min-height', $div[0].scrollHeight + 'px');
+				$div.show();
+
+				$main
+					.css('max-height', $panel.outerHeight() + 'px')
+					.css('min-height', $panel.outerHeight() + 'px');
+
+				setTimeout(function() {
+
+					$div.removeClass('inactive');
+
+					//$div
+						//.css('max-height', '0px')
+						//.css('min-height', '0px');
+
+					$window.scrollTop(0);
+
+					window.setTimeout(function() {
+
+						//if (active) {
+							//$div.addClass('inactive');
+						//}
+
+						//else {
+							//$div.removeClass('inactive');
+						//}
+
+						//$div.removeClass('inactive');
+
+						$main
+							.css('max-height', '')
+							.css('min-height', '');
+						$div
+							.css('max-height', '')
+							.css('min-height', '');
+
+						$window.triggerHandler('--refresh');
+
+						locked = false;
+
+					}, (breakpoints.active('small') ? 0 : 500));
+
+				}, 250);
+			}
+
+
+			//if (active) {
+				//$div.addClass('inactive')
+
+				//$button.removeClass('active')
+
+			//}
+
+			//else {
+				//$div.removeClass('inactive')
+
+				//$button.addClass('active')
+
+			//}
+
+			//$div.addClass('inactive')
+
+			//$button.removeClass('inactive')
+
+			//$button.addClass('active')
+
+			//$main
+				//.css('max-height', $main.height() + 'px')
+				//.css('min-height', $main.height() + 'px');
+
+			//if (active) {
+				//$div
+					//.css('max-height', $div.height() + 'px')
+					//.css('min-height', $div.height() + 'px');
+			//}
+			//else {
+				//$div
+					//.css('max-height', '0px')
+					//.css('min-height', '0px');
+			//}
+
+			//console.log($div.height())
+
+			//setTimeout(function() {
+
+				////if (active) {
+					////$div.hide();
+
+					////$div
+						////.css('max-height', '0px')
+						////.css('min-height', '0px')
+				////}
+
+				////else {
+					////$div.show();
+				////}
+
+				////$divs.hide();
+				////$div.show();
+
+				//if (active) {
+					//$div
+						//.css('max-height', '0px')
+						//.css('min-height', '0px');
+
+					//$div.hide()
+				//}
+
+				//else {
+					//$div
+						//.css('max-height', $div[0].scrollHeight + 'px')
+						//.css('min-height', $div[0].scrollHeight + 'px')
+
+					//$div.show()
+				//}
+
+				//$main
+					//.css('max-height', $panel.outerHeight() + 'px')
+					//.css('min-height', $panel.outerHeight() + 'px')
+
+				//$window.scrollTop(0);
+				
+				//window.setTimeout(function() {
+
+					////if (active) {
+						////$div.addClass('inactive');
+					////}
+
+					////else {
+						////$div.removeClass('inactive');
+					////}
+
+					////$div.removeClass('inactive');
+
+					//$main
+						//.css('max-height', '')
+						//.css('min-height', '')
+					//$div
+						//.css('max-height', '')
+						//.css('min-height', '')
+
+					//$window.triggerHandler('--refresh')
+
+					//locked = false;
+
+				//}, (breakpoints.active('small') ? 0 : 500));
+
+			//}, 250);
+
+		});
+
+})(jQuery);
