@@ -520,158 +520,35 @@
 
 			else {
 
-				$button.addClass('active');
+				panel_height = $panel.outerHeight();
+				div_height = $div.show().height();
+
+				$button.addClass('active')
 
 				$div
-					.css('max-height', $div[0].scrollHeight + 'px')
-					.css('min-height', $div[0].scrollHeight + 'px');
-				$div.show();
+					.css('max-height', '0px')
 
-				$main
-					.css('max-height', $panel.outerHeight() + 'px')
-					.css('min-height', $panel.outerHeight() + 'px');
+				setTimeout(function() {
+					$div
+						.css('max-height', div_height + 'px')
+				})
+
+				setTimeout(function() {
+					$main
+						.css('max-height', $panel.outerHeight() + div_height + 'px')
+						.css('min-height', $panel.outerHeight() + div_height + 'px');
+				});
+
+				setTimeout(function() {
+					$div.show()
+				},500);
 
 				setTimeout(function() {
 
-					$div.removeClass('inactive');
+					$div.removeClass('inactive')
 
-					//$div
-						//.css('max-height', '0px')
-						//.css('min-height', '0px');
-
-					$window.scrollTop(0);
-
-					window.setTimeout(function() {
-
-						//if (active) {
-							//$div.addClass('inactive');
-						//}
-
-						//else {
-							//$div.removeClass('inactive');
-						//}
-
-						//$div.removeClass('inactive');
-
-						$main
-							.css('max-height', '')
-							.css('min-height', '');
-						$div
-							.css('max-height', '')
-							.css('min-height', '');
-
-						$window.triggerHandler('--refresh');
-
-						locked = false;
-
-					}, (breakpoints.active('small') ? 0 : 500));
-
-				}, 250);
+				}, 500);
 			}
-
-
-			//if (active) {
-				//$div.addClass('inactive')
-
-				//$button.removeClass('active')
-
-			//}
-
-			//else {
-				//$div.removeClass('inactive')
-
-				//$button.addClass('active')
-
-			//}
-
-			//$div.addClass('inactive')
-
-			//$button.removeClass('inactive')
-
-			//$button.addClass('active')
-
-			//$main
-				//.css('max-height', $main.height() + 'px')
-				//.css('min-height', $main.height() + 'px');
-
-			//if (active) {
-				//$div
-					//.css('max-height', $div.height() + 'px')
-					//.css('min-height', $div.height() + 'px');
-			//}
-			//else {
-				//$div
-					//.css('max-height', '0px')
-					//.css('min-height', '0px');
-			//}
-
-			//console.log($div.height())
-
-			//setTimeout(function() {
-
-				////if (active) {
-					////$div.hide();
-
-					////$div
-						////.css('max-height', '0px')
-						////.css('min-height', '0px')
-				////}
-
-				////else {
-					////$div.show();
-				////}
-
-				////$divs.hide();
-				////$div.show();
-
-				//if (active) {
-					//$div
-						//.css('max-height', '0px')
-						//.css('min-height', '0px');
-
-					//$div.hide()
-				//}
-
-				//else {
-					//$div
-						//.css('max-height', $div[0].scrollHeight + 'px')
-						//.css('min-height', $div[0].scrollHeight + 'px')
-
-					//$div.show()
-				//}
-
-				//$main
-					//.css('max-height', $panel.outerHeight() + 'px')
-					//.css('min-height', $panel.outerHeight() + 'px')
-
-				//$window.scrollTop(0);
-				
-				//window.setTimeout(function() {
-
-					////if (active) {
-						////$div.addClass('inactive');
-					////}
-
-					////else {
-						////$div.removeClass('inactive');
-					////}
-
-					////$div.removeClass('inactive');
-
-					//$main
-						//.css('max-height', '')
-						//.css('min-height', '')
-					//$div
-						//.css('max-height', '')
-						//.css('min-height', '')
-
-					//$window.triggerHandler('--refresh')
-
-					//locked = false;
-
-				//}, (breakpoints.active('small') ? 0 : 500));
-
-			//}, 250);
 
 		});
 

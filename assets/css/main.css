@@ -1934,6 +1934,18 @@ section article {
 		padding: 0;
 	}
 
+	.item .details {
+		height: auto;
+		overflow: hidden;
+		min-height: 0;
+
+		transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out, opacity 0.25s ease-in-out;
+	}
+
+		.item .details.inactive {
+			opacity: 0;
+		}
+
 		.item .details p {
 			margin: 0 0 1rem 0;
 		}
