@@ -2124,17 +2124,46 @@ section article {
     margin: 0;
     overflow: hidden;
     border-radius: 0.1rem;
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);*/
 	/*height: 6em;*/
 	aspect-ratio: 4/3;
 	width: 100%;
 }
 
+	.album:hover > .caption {
+		opacity: 0.8;
+	}
+
+	.album .caption {
+		position: absolute;
+		bottom: 0%;
+		left: 0%;
+		height: auto;
+		width: 100%;
+		padding: 3%;
+		background: #000000;
+		opacity: 0;
+		transition: opacity 0.25s ease-in-out;
+	}
+
+	.album h4 {
+		font-size: 1rem;
+		font-weight: bold;
+		color: #ffffff;
+	}
+
+	.album p {
+		margin: 0;
+		font-size: 0.8rem;
+		line-height: 1.1rem;
+		color: #ffffff;
+	}
+
 	.album img {
     	width: 100%;
     	height: 100%;
 		display: block;
-    	border-radius: 2px;
+    	border-radius: 0.1rem;
 		object-fit: cover;
 		transition: transform 0.25s ease-in-out;
 		z-index: 1;
@@ -2150,27 +2179,28 @@ section article {
 	}
 	*/
 
+	/*
 	.album p {
     	position: relative;
     	/*bottom: 0;*/
     	/*left: 0;*/
-		height: auto;
+		/*height: auto;
     	width: 100%;
     	margin: 0;
     	/*padding: 10px 10px;*/
-		padding: 0;
+		/*padding: 0;
     	background: rgba(0, 0, 0, 0);
     	color: #fff;
     	/*font-size: 14px;*/
 		/*font-size: 1em;*/
-		font-size: 1rem;
+		/*font-size: 1rem;
     	text-align: justify;
 		text-justify: inter-word;
-	}
+	}*/
 
 	.album .title {
 		/*font-size: 18px;*/
-		font-size: 1rem;
+		font-size: 5%;
 		font-weight: bold;
 		top: 0%;
 		height: auto;
@@ -2181,7 +2211,7 @@ section article {
 
 	.album .text-container .caption {
 		line-height: 1.2em;
-		font-size: 0.8rem;
+		font-size: 3%;
 	}
 
 	.album .text-container {
@@ -2232,11 +2262,10 @@ section article {
 	}
 
 .modal {
-	padding: 1em;
-	border: 0;
 	position: fixed;
 	width: auto;
 	height: auto;
+	padding: 1rem;
 }
 
 .modal::backdrop {
@@ -2257,7 +2286,6 @@ section article {
 			*/
 			grid-template-columns: repeat(3, minmax(0, 1fr));
     		/*gap: 20px;*/
-    		padding: 20px;
 		}
 	}
 
@@ -2277,13 +2305,12 @@ section article {
 
 		.close-album-button {
 			position: relative;
+			padding: 0;
 			transition: none;
 			background-color: transparent;
 			color: #2f2f2f;
 			opacity: 0.7;
 			z-index: 10;
-			margin: 0 0 0 20px;
-			padding: 0;
 			font-size: 2rem;
 		}
 
@@ -2312,13 +2339,14 @@ section article {
 				object-fit: cover;
 			}
 
-		.photo:hover .photo-caption-container {
-			transform: translateY(-100%);
+		.photo:hover .caption{
+			/*transform: translateY(-100%);*/
+			opacity: 1;
 		}
 
-			.photo-caption-container {
+			.photo .caption {
     			position: absolute;
-    			top: 100%;
+    			bottom: 0%;
     			left: 0;
 				height: auto;
     			width: 100%;
@@ -2329,13 +2357,16 @@ section article {
     			/*font-size: 14px;*/
 				font-size: 1rem;
     			text-align: left;
-    			transition: transform 0.25s ease-in-out;
+    			/*transition: transform 0.25s ease-in-out;*/
 				/*transform: translateY(100%)*/
 				z-index: 2;
 				/*line-height: 1.2em;*/
+				opacity: 0;
+				transition: opacity 0.25s ease-in-out;
 			}
 
-				.photo-caption-header {
+				.caption > .header {
+					display: block;
 					margin-bottom: 0.8em;
 				}
 
@@ -2355,7 +2386,7 @@ section article {
 						line-height: 1.5em;
 					}
 
-				.caption {
+				.caption .caption {
 					height: auto;
 					width: 100%;
 					line-height: 1.3em;
@@ -2368,7 +2399,7 @@ section article {
 						color: #ffffff;
 					}
 
-				.photo-people-container {
+				.people {
 					margin-top: 10px;
 				}
 
