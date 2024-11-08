@@ -1,30 +1,30 @@
-const anyoneText = document.getElementById('anyone-text');
-const scientistsText = document.getElementById('scientists-text');
+//const anyoneText = document.getElementById('anyone-text');
+//const scientistsText = document.getElementById('scientists-text');
 
-const anyoneButton = document.getElementById('anyone-button');
-const scientistsButton = document.getElementById('scientists-button');
+//const anyoneButton = document.getElementById('anyone-button');
+//const scientistsButton = document.getElementById('scientists-button');
 
-// Add click event listeners to the buttons
-anyoneButton.addEventListener('click', function() {
+//// Add click event listeners to the buttons
+//anyoneButton.addEventListener('click', function() {
 
-    anyoneText.classList.remove('hidden');
-    anyoneText.classList.add('visible');
+    //anyoneText.classList.remove('hidden');
+    //anyoneText.classList.add('visible');
 
-    scientistsText.classList.remove('visible');
-    scientistsText.classList.add('hidden');
+    //scientistsText.classList.remove('visible');
+    //scientistsText.classList.add('hidden');
 
-    scientistsButton.classList.remove('selected')
-    anyoneButton.classList.add('selected')
-});
+    //scientistsButton.classList.remove('active')
+    //anyoneButton.classList.add('active')
+//});
 
-scientistsButton.addEventListener('click', function() {
+//scientistsButton.addEventListener('click', function() {
 
-    anyoneText.classList.remove('visible');
-    anyoneText.classList.add('hidden');
+    //anyoneText.classList.remove('visible');
+    //anyoneText.classList.add('hidden');
 
-    scientistsText.classList.remove('hidden');
-    scientistsText.classList.add('visible');
+    //scientistsText.classList.remove('hidden');
+    //scientistsText.classList.add('visible');
 
-    anyoneButton.classList.remove('selected')
-    scientistsButton.classList.add('selected')
-});
+    //anyoneButton.classList.remove('active')
+    //scientistsButton.classList.add('active')
+//});
