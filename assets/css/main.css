@@ -1925,8 +1925,12 @@ section article {
 			line-height: 1.5rem;
 			background-color: #ffffff;
 			color: #777777;
-			transition: transform 0.25s ease-in-out;
+			transition: transform 0.5s ease-in-out;
 		}
+
+			.item .header button.active {
+				transform: rotate(180deg);
+			}
 
 			.item .header button i {
 				line-height: 1.5rem;
