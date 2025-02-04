@@ -1,0 +1,52 @@
+{
+    "orbits": [
+        {
+            "name": "Mercury",
+            "semiMajorAxis": 0.38709893,
+            "eccentricity": 0.20563069,
+            "inclination": 7.00487
+        },
+        {
+            "name": "Venus",
+            "semiMajorAxis": 0.72333199,
+            "eccentricity": 0.00677323,
+            "inclination": 3.39471
+        },
+        {
+            "name": "Earth",
+            "semiMajorAxis": 1.00000011,
+            "eccentricity": 0.01671022,
+            "inclination": 0.00005
+        },
+        {
+            "name": "Mars",
+            "semiMajorAxis": 1.52366231,
+            "eccentricity": 0.09341233,
+            "inclination": 1.85061
+        },
+        {
+            "name": "Jupiter",
+            "semiMajorAxis": 5.20336301,
+            "eccentricity": 0.04839266,
+            "inclination": 1.30530
+        },
+        {
+            "name": "Saturn",
+            "semiMajorAxis": 9.53707032,
+            "eccentricity": 0.05415060,
+            "inclination": 2.48446
+        },
+        {
+            "name": "Uranus",
+            "semiMajorAxis": 19.19126393,
+            "eccentricity": 0.04716771,
+            "inclination": 0.76986
+        },
+        {
+            "name": "Neptune",
+            "semiMajorAxis": 30.06896348,
+            "eccentricity": 0.00858587,
+            "inclination": 1.76917
+        },
+    ]
+}

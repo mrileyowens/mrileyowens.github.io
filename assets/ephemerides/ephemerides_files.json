@@ -1,0 +1,76 @@
+{
+    "files": [
+        {
+            "name": "Mercury",
+            "file": "nasa_jpl_ssd_horizons_mercury_position.txt",
+            "semiMajorAxis": 0.38709893,
+            "eccentricity": 0.20563069,
+            "inclination": 7.00487,
+            "ascendingNodeLongitude": 48.33167,
+            "perihelionLongitude": 77.45645
+        },
+        {
+            "name": "Venus",
+            "file": "nasa_jpl_ssd_horizons_venus_position.txt",
+            "semiMajorAxis": 0.72333199,
+            "eccentricity": 0.00677323,
+            "inclination": 3.39471,
+            "ascendingNodeLongitude": 76.68069,
+            "perihelionLongitude": 131.53298
+        },
+        {
+            "name": "Earth",
+            "file": "nasa_jpl_ssd_horizons_earth_position.txt",
+            "semiMajorAxis": 1.00000011,
+            "eccentricity": 0.01671022,
+            "inclination": 0.00005,
+            "ascendingNodeLongitude": -11.26064,
+            "perihelionLongitude": 102.94719
+        },
+        {
+            "name": "Mars",
+            "file": "nasa_jpl_ssd_horizons_mars_position.txt",
+            "semiMajorAxis": 1.52366231,
+            "eccentricity": 0.09341233,
+            "inclination": 1.85061,
+            "ascendingNodeLongitude": 49.57854,
+            "perihelionLongitude": 336.04084
+        },
+        {
+            "name": "Jupiter",
+            "file": "nasa_jpl_ssd_horizons_jupiter_position.txt",
+            "semiMajorAxis": 5.20336301,
+            "eccentricity": 0.04839266,
+            "inclination": 1.30530,
+            "ascendingNodeLongitude": 100.55615,
+            "perihelionLongitude": 14.75385
+        },
+        {
+            "name": "Saturn",
+            "file": "nasa_jpl_ssd_horizons_saturn_position.txt",
+            "semiMajorAxis": 9.53707032,
+            "eccentricity": 0.05415060,
+            "inclination": 2.48446,
+            "ascendingNodeLongitude": 113.71504,
+            "perihelionLongitude": 92.43194
+        },
+        {
+            "name": "Uranus",
+            "file": "nasa_jpl_ssd_horizons_uranus_position.txt",
+            "semiMajorAxis": 19.19126393,
+            "eccentricity": 0.04716771,
+            "inclination": 0.76986,
+            "ascendingNodeLongitude": 74.22988,
+            "perihelionLongitude": 170.96424
+        },
+        {
+            "name": "Neptune",
+            "file": "nasa_jpl_ssd_horizons_neptune_position.txt",
+            "semiMajorAxis": 30.06896348,
+            "eccentricity": 0.00858587,
+            "inclination": 1.76917,
+            "ascendingNodeLongitude": 131.72169,
+            "perihelionLongitude": 44.97135
+        }
+    ]
+}
