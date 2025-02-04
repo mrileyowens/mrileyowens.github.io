@@ -39,9 +39,3 @@ ellipse {
 	stroke: #d2b069;
 	stroke-width: 0.05pt;
 }
-
-hr #vertical {
-	width: 0px;
-	height: 100%;
-	color: #d2b069;
-}
