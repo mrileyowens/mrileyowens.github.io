@@ -240,11 +240,11 @@ function getOrbitalElementsForDate(time, orbital_elements) {
     return closestEntry;
 }
 
-function renderPlanet(orbital_elements) {
-    const svg = document.getElementById("solar_system");
+function renderPlanet(orbital_elements, svg, scale) {
+    //const svg = document.getElementById("solar_system");
     const centerX = svg.clientWidth / 2;
     const centerY = svg.clientHeight / 2;
-    const scale = 20; // Example scale to fit AU to pixels
+    //const scale = 20; // Example scale to fit AU to pixels
 
     //const distance = Math.sqrt(ephemeris.x * ephemeris.x + ephemeris.y * ephemeris.y);
     //const ratio = 1 // Math.cbrt(distance) / distance
@@ -372,9 +372,13 @@ function renderPlanet(orbital_elements) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+
     const time = await getTime();
 
+    const svg = document.getElementById('solar_system')
+
     if (time) {
+
         console.log("Current time:", time);
 
         const response = await fetch('assets/orbital_elements/orbital_elements_files.json');
@@ -400,8 +404,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         }
 
+        const a_max = current_orbital_elements_list.reduce((max, obj) => Math.max(max, obj.a), -Infinity)
+
+        const width = svg.clientWidth;
+        const height = svg.clientHeight;
+
+        const space = Math.min(width, height) * (1 - 0.05 * 2);
+
+        const scale = space / (2 * a_max);
+
         current_orbital_elements_list.forEach(obj => {
-            renderPlanet(obj);
+            renderPlanet(obj, svg, scale);
         })
 
         //    if (orbital_element) {
