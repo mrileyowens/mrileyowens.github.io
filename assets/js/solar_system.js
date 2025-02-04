@@ -365,10 +365,28 @@ function renderPlanet(orbital_elements, svg, scale) {
     const screenX = centerX + X * scale
     const screenY = centerY - Y * scale
 
-    marker.setAttribute("x", screenX)
-    marker.setAttribute("y", screenY)
+    //const bbox = marker.getBBox();
+
+    //const marker_width = bbox.width;
+    //const marker_height = bbox.height;
+
+    //console.log(marker_width, marker_height)
+
+    //marker.setAttribute("x", screenX - marker_width / 2)
+    //marker.setAttribute("y", screenY + marker_height / 2)
 
     svg.appendChild(marker)
+
+    const bbox = marker.getBBox();
+
+    const marker_width = bbox.width;
+    const marker_height = bbox.height;
+
+    console.log(marker_width, marker_height)
+
+    marker.setAttribute("x", screenX - marker_width / 2)
+    marker.setAttribute("y", screenY - marker_height / 2)
+
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
