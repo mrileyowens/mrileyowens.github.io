@@ -240,7 +240,7 @@ function getOrbitalElementsForDate(time, orbital_elements) {
     return closestEntry;
 }
 
-function renderPlanet(orbital_elements, svg, scale) {
+function renderPlanet(orbital_elements, svg, scale, computed_width) {
     //const svg = document.getElementById("solar_system");
     const centerX = svg.clientWidth / 2;
     const centerY = svg.clientHeight / 2;
@@ -347,13 +347,19 @@ function renderPlanet(orbital_elements, svg, scale) {
 
     orbit.setAttribute("d", path);
     orbit.setAttribute("stroke", "#d2b069");
+    orbit.setAttribute("stroke-width", 0.0015 * computed_width)
     orbit.setAttribute("fill", "none");
 
     svg.appendChild(orbit);
 
-    const marker = document.createElementNS("http://www.w3.org/2000/svg", "use")
+    const marker = document.createElementNS("http://www.w3.org/2000/svg", "circle")
 
-    marker.setAttribute("href", "#earth")
+    marker.setAttribute("r", 0.004 * computed_width)
+    marker.setAttribute("fill", "#d2b069")
+    marker.setAttribute("stroke", "#26252c")
+    marker.setAttribute("stroke-width", 0.0025 * computed_width)
+
+    //marker.setAttribute("href", "#earth")
 
     // Compute radius at this true anomaly
     const r = Math.pow((a * (1 - e * e)) / (1 + e * Math.cos(ta)), 1/5);
@@ -382,10 +388,8 @@ function renderPlanet(orbital_elements, svg, scale) {
     const marker_width = bbox.width;
     const marker_height = bbox.height;
 
-    console.log(marker_width, marker_height)
-
-    marker.setAttribute("x", screenX - marker_width / 2)
-    marker.setAttribute("y", screenY - marker_height / 2)
+    marker.setAttribute("cx", screenX)// marker_width / 2)
+    marker.setAttribute("cy", screenY)// marker_height / 2)
 
 }
 
@@ -437,7 +441,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const scale = space / (2 * Math.pow(a_max, 1/5));
 
         current_orbital_elements_list.forEach(obj => {
-            renderPlanet(obj, svg, scale);
+            renderPlanet(obj, svg, scale, computedWidth);
         })
 
         //    if (orbital_element) {
