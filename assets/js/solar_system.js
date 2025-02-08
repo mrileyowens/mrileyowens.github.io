@@ -328,7 +328,7 @@ function renderPlanet(orbital_elements, svg, scale) {
         const nu = ν// * Math.PI / 180; // Convert true anomaly to radians
 
         // Compute radius at this true anomaly
-        const r = (a * (1 - e * e)) / (1 + e * Math.cos(nu));
+        const r = Math.pow((a * (1 - e * e)) / (1 + e * Math.cos(nu)), 1/5);
 
         // Compute projected X, Y in the ecliptic plane
         const X = r * (Math.cos(omega) * Math.cos(nu + w) - Math.sin(omega) * Math.sin(nu + w) * Math.cos(i));
@@ -356,7 +356,7 @@ function renderPlanet(orbital_elements, svg, scale) {
     marker.setAttribute("href", "#earth")
 
     // Compute radius at this true anomaly
-    const r = (a * (1 - e * e)) / (1 + e * Math.cos(ta));
+    const r = Math.pow((a * (1 - e * e)) / (1 + e * Math.cos(ta)), 1/5);
 
     // Compute projected X, Y in the ecliptic plane
     const X = r * (Math.cos(omega) * Math.cos(ta + w) - Math.sin(omega) * Math.sin(ta + w) * Math.cos(i));
@@ -429,7 +429,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const space = Math.min(width, height) * (1 - 0.05 * 2);
 
-        const scale = space / (2 * a_max);
+        const scale = space / (2 * Math.pow(a_max, 1/5));
 
         current_orbital_elements_list.forEach(obj => {
             renderPlanet(obj, svg, scale);
