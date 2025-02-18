@@ -25,6 +25,18 @@ body {
 	background-color: #26252c;
 }
 
+#wrapper {
+	height: 100%;
+
+	margin: auto;
+}
+
+	@media screen and (min-width: 1024px) {
+		#wrapper {
+			width: calc(max(819px,30vw))
+		}
+	}
+
 #solar_system {
 	height: auto;
 	width: auto;
