@@ -37,6 +37,16 @@ body {
 		}
 	}
 
+#header {
+	height: auto; /* will need to change this since the SVG background does not count as content, and the future divs for the buttons probably won't be large enough to saturate the entire background */
+	width: 100%;
+
+	background-image: url(banner.svg);
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 #solar_system {
 	height: auto;
 	width: auto;
