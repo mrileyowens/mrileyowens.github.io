@@ -37,15 +37,6 @@ body {
 	transform: translate(-50%,-50%);
 }
 
-#date {
-	display: block;
-	position: absolute;
-
-	bottom: 0%;
-
-	color: #d2b069;
-}
-
 ellipse {
 	fill: none;
 	stroke: #d2b069;
