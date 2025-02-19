@@ -3,11 +3,9 @@ document.getElementById("nav-svg").addEventListener("load", function() {
     
     let buttons = svgDoc.querySelector("#g8").children;
 
-    console.log(buttons)
-
     Array.from(buttons).forEach(button => {
         button.addEventListener("click", () => {
-            window.location.href = button.id + ".html";
+            window.location.href = button.getAttribute("inkscape:label").toLowerCase() + ".html";
         });
     });
     
