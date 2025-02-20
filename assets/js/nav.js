@@ -7,8 +7,15 @@ document.getElementById("nav-svg").addEventListener("load", function() {
         button.addEventListener("click", () => {
             window.location.href = button.getAttribute("inkscape:label").toLowerCase() + ".html";
         });
+        //button.setAttribute("pointer-events", "all");
+        console.log(button.getAttribute("pointer-events"))
     });
-    
+
+    let labels = svgDoc.querySelector("#g7").children;
+
+    Array.from(labels).forEach(label => {
+        label.setAttribute("pointer-events", "none");
+    });
     // Example: Making an existing SVG shape clickable
     //let button = svgDoc.getElementById("button-area");
     //button.style.cursor = "pointer";
