@@ -7,6 +7,7 @@ document.getElementById("nav-svg").addEventListener("load", function() {
         button.addEventListener("click", () => {
             window.location.href = button.getAttribute("inkscape:label").toLowerCase() + ".html";
         });
+        button.style.cursor = "pointer";
         //button.setAttribute("pointer-events", "all");
         console.log(button.getAttribute("pointer-events"))
     });
