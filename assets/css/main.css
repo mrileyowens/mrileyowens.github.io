@@ -10,10 +10,12 @@
 body {
 	margin: 0;
 
+	/*
 	background-image: url(atlas.svg);
 	background-size: auto 100vh;
 	background-position: center;
 	background-repeat: no-repeat;
+	*/
 }
 
 body {
@@ -26,6 +28,26 @@ body {
 
 	color: #d2b069ff;
 	font-family: 'Josefin Sans';
+	font-size: 12pt;
+	line-height: 16pt;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Make it twice as tall to allow for the pan effect */
+    background-image: url('atlas.svg');
+	background-size: auto 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	z-index: -1;
+
+	pointer-events: none;
+
+    transition: transform 1.5s ease-in-out;
 }
 
 #wrapper {
@@ -51,7 +73,7 @@ body {
 
 	/*
 	background-image: url(banner.svg);
-	background-size: 100% auto;
+	background-size: 100% 15vh;
 	background-position: center;
 	background-repeat: no-repeat;
 	*/

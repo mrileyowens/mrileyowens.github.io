@@ -2,21 +2,60 @@ document.getElementById("nav-svg").addEventListener("load", function() {
     let svgDoc = this.contentDocument;
     
     let buttons = svgDoc.querySelector("#g8").children;
+    let background = document.getElementById("background");
 
-    Array.from(buttons).forEach(button => {
-        button.addEventListener("click", () => {
-            window.location.href = button.getAttribute("inkscape:label").toLowerCase() + ".html";
-        });
-        button.style.cursor = "pointer";
-        //button.setAttribute("pointer-events", "all");
-        console.log(button.getAttribute("pointer-events"))
-    });
+    let isLandingPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
 
     let labels = svgDoc.querySelector("#g7").children;
 
     Array.from(labels).forEach(label => {
         label.setAttribute("pointer-events", "none");
     });
+
+    Array.from(buttons).forEach(button => {
+
+        button.style.cursor = "pointer";
+
+        //if (localStorage.getItem(button.id) === "clicked") {
+            //button.style.fill = "#d2b069ff";
+        //}
+
+        button.addEventListener("click", (event) => {
+            console.log('Clicked!');
+
+            //button.style.fill = "#d2b069ff";
+            //localStorage.setItem(button.id, "clicked")
+
+            let targetPage = button.getAttribute("inkscape:label").toLowerCase() + ".html";
+            //if (isLandingPage) {
+                //// If we're on index.html, animate the background before navigating
+                //background.classList.add("inactive");
+
+                //event.preventDefault(); // Prevent immediate navigation
+
+                //setTimeout(() => {
+                    //window.location.href = targetPage;
+                //}, 500); // Matches the CSS transition duration
+            //} else {
+                //window.location.href = targetPage;
+            //}
+
+            window.location.href = targetPage;
+        
+            //button.setProperty("fill", "#d2b069ff")
+
+        });
+
+        //button.style.cursor = "pointer";
+        //button.setAttribute("pointer-events", "all");
+        console.log(button.getAttribute("pointer-events"))
+    });
+
+    //let labels = svgDoc.querySelector("#g7").children;
+
+    //Array.from(labels).forEach(label => {
+        //label.setAttribute("pointer-events", "none");
+    //});
     // Example: Making an existing SVG shape clickable
     //let button = svgDoc.getElementById("button-area");
     //button.style.cursor = "pointer";

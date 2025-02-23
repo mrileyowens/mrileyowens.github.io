@@ -432,7 +432,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const height = svg.clientHeight;
 
         const img = new Image();
-        img.src = getComputedStyle(document.body).backgroundImage.slice(5, -2); // Extract URL
+        img.src = getComputedStyle(document.getElementById('background')).backgroundImage.slice(5, -2); // Extract URL
 
         const computedWidth = window.innerHeight * (img.width / img.height)
 
