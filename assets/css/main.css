@@ -66,6 +66,11 @@ body {
 	transform: translate(-50%,-50%);
 }
 
+#main {
+	border: 50px solid transparent;
+	border-image: url(frame.svg) 33.3% 33.3% 33.3% 33.3% stretch;
+}
+
 /*
 ellipse {
 	fill: none;
