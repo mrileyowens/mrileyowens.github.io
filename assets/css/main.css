@@ -70,6 +70,9 @@ body {
 }
 
 #main {
+	text-align: justify;
+	text-justify: inter-word;
+
 	border: 50px solid transparent;
 	border-image: url(frame.svg) 33.3% 33.3% 33.3% 33.3% stretch;
 }
