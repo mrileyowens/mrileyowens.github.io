@@ -23,6 +23,9 @@ body {
 	overflow: hidden;
 
 	background-color: #26252c;
+
+	color: #d2b069ff;
+	font-family: 'Josefin Sans';
 }
 
 #wrapper {
