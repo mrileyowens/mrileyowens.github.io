@@ -101,6 +101,11 @@ body {
 	background-color: #26252c;
 }
 
+img {
+	float: inline-end;
+	margin: 9px;
+}
+
 /*
 ellipse {
 	fill: none;
