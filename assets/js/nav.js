@@ -12,13 +12,29 @@ document.getElementById("nav-svg").addEventListener("load", function() {
         label.setAttribute("pointer-events", "none");
     });
 
-    Array.from(buttons).forEach(button => {
+    Array.from(buttons).forEach((button, index) => {
+
+        let label = labels[index].querySelector("tspan");
+        console.log(label)
 
         button.style.cursor = "pointer";
 
         //if (localStorage.getItem(button.id) === "clicked") {
             //button.style.fill = "#d2b069ff";
         //}
+
+        button.style.transition = "fill 0.25s ease-in-out";
+        label.style.transition = "fill 0.25s ease-in-out";
+
+        button.addEventListener("mouseenter", () => {
+            button.style.fill = "#d2b069";
+            label.style.fill = "#26252c";
+        })
+
+        button.addEventListener("mouseleave", () => {
+            button.style.fill = "#26252c";
+            label.style.fill = "#d2b069";
+        })
 
         button.addEventListener("click", (event) => {
             console.log('Clicked!');
