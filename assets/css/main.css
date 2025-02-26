@@ -139,3 +139,44 @@ ellipse {
 #links a:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
+
+.sections {
+	height: auto;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	text-align: center;
+
+	box-sizing: border-box;
+
+	border: 0.2rem solid #d2b069ff;
+
+	font-size: 1.2rem;
+	padding: 0.5rem;
+	line-height: 2rem;
+
+	font-variant-caps: small-caps;
+}
+
+	.sections a {
+		display: flex;		
+		justify-content: center;
+		align-items: center;
+
+		height: auto;
+
+		flex: 1 1 0;
+
+		text-decoration: none;
+
+		color: #d2b069ff;
+
+		transition: color 0.25s ease-in-out;
+		transition: background-color 0.25s ease-in-out;
+	}
+
+		.sections a:hover {
+			color: #26252c;
+			background-color: #d2b069ff;
+		}
