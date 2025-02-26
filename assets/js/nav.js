@@ -15,9 +15,16 @@ document.getElementById("nav-svg").addEventListener("load", function() {
     Array.from(buttons).forEach((button, index) => {
 
         let label = labels[index].querySelector("tspan");
-        console.log(label)
 
         button.style.cursor = "pointer";
+
+        console.log(window.location.pathname)
+        console.log(button.getAttribute("inkscape:label").toLowerCase() + ".html")
+
+        if (window.location.pathname === "/" + button.getAttribute("inkscape:label").toLowerCase() + ".html") {
+            button.style.fill = "#d2b069";
+            label.style.fill = "#26252c";
+        }
 
         //if (localStorage.getItem(button.id) === "clicked") {
             //button.style.fill = "#d2b069ff";
