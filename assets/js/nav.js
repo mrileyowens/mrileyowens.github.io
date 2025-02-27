@@ -25,11 +25,14 @@ document.getElementById("banner").addEventListener("load", function() {
         // Get the label corresponding to the button
         let label = labels[index].querySelector("tspan");
 
+        // Check if the button corresponds to the current page
+        let isActive = window.location.pathname === `/${button.getAttribute("inkscape:label").toLowerCase()}.html`;
+
         // Make the cursor change to a pointer when hovering over the button
         button.style.cursor = "pointer";
 
         // If the current page corresponds to the button, 'fill' the button by flipping the color of the button and label
-        if (window.location.pathname === `/${button.getAttribute("inkscape:label").toLowerCase()}.html`) {
+        if (isActive) {
             button.style.fill = "#d2b069";
             label.style.fill = "#26252c";
         }
@@ -47,10 +50,13 @@ document.getElementById("banner").addEventListener("load", function() {
             label.style.fill = "#26252c";
         });
 
-        // Make ending the hover over the button return the colors of the button and label to their default
+        // Make ending the hover over the button return the colors of the button and label to their default,
+        // if the button does not correspond to the current page
         button.addEventListener("mouseleave", () => {
-            button.style.fill = "#26252c";
-            label.style.fill = "#d2b069";
+            if (!isActive) {
+                button.style.fill = "#26252c";
+                label.style.fill = "#d2b069";
+            }
         });
 
         // Make a click on the button redirect to the target page
