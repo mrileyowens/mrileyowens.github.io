@@ -62,7 +62,7 @@ body {
 		}
 	}
 
-#nav-svg {
+#banner {
 	height: 15vh; /* will need to change this since the SVG background does not count as content, and the future divs for the buttons probably won't be large enough to saturate the entire background */
 	/*width: 100%;*/
 	margin: 5% auto 5% auto;

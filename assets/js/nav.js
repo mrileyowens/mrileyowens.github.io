@@ -1,88 +1,66 @@
-document.getElementById("nav-svg").addEventListener("load", function() {
-    let svgDoc = this.contentDocument;
+const defaultSections = {
+    "research": "interests"
+};
+
+// Add navigation functionality to the banner
+document.getElementById("banner").addEventListener("load", function() {
+
+    // Get the contents of the SVG
+    let svg = this.contentDocument;
     
-    let buttons = svgDoc.querySelector("#g8").children;
-    let background = document.getElementById("background");
+    // Get the buttons
+    let buttons = svg.querySelector("#g8").children;
 
-    let isLandingPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+    // Get the labels of the buttons
+    let labels = svg.querySelector("#g7").children;
 
-    let labels = svgDoc.querySelector("#g7").children;
-
+    // Disable pointer events on each label to prevent them from interfering with clicking the buttons
     Array.from(labels).forEach(label => {
         label.setAttribute("pointer-events", "none");
     });
 
+    // For each button
     Array.from(buttons).forEach((button, index) => {
 
+        // Get the label corresponding to the button
         let label = labels[index].querySelector("tspan");
 
+        // Make the cursor change to a pointer when hovering over the button
         button.style.cursor = "pointer";
 
-        console.log(window.location.pathname)
-        console.log(button.getAttribute("inkscape:label").toLowerCase() + ".html")
-
-        if (window.location.pathname === "/" + button.getAttribute("inkscape:label").toLowerCase() + ".html") {
+        // If the current page corresponds to the button, 'fill' the button by flipping the color of the button and label
+        if (window.location.pathname === `/${button.getAttribute("inkscape:label").toLowerCase()}.html`) {
             button.style.fill = "#d2b069";
             label.style.fill = "#26252c";
         }
 
-        //if (localStorage.getItem(button.id) === "clicked") {
-            //button.style.fill = "#d2b069ff";
-        //}
-
+        // Add a smooth color transition for the button and label for the hover effect below
         button.style.transition = "fill 0.25s ease-in-out";
         label.style.transition = "fill 0.25s ease-in-out";
 
+        // Make hovering over the button flip the colors of the button and label
         button.addEventListener("mouseenter", () => {
             button.style.fill = "#d2b069";
             label.style.fill = "#26252c";
-        })
+        });
 
+        // Make ending the hover over the button return the colors of the button and label to their default
         button.addEventListener("mouseleave", () => {
             button.style.fill = "#26252c";
             label.style.fill = "#d2b069";
-        })
-
-        button.addEventListener("click", (event) => {
-            console.log('Clicked!');
-
-            //button.style.fill = "#d2b069ff";
-            //localStorage.setItem(button.id, "clicked")
-
-            let targetPage = button.getAttribute("inkscape:label").toLowerCase() + ".html";
-            //if (isLandingPage) {
-                //// If we're on index.html, animate the background before navigating
-                //background.classList.add("inactive");
-
-                //event.preventDefault(); // Prevent immediate navigation
-
-                //setTimeout(() => {
-                    //window.location.href = targetPage;
-                //}, 500); // Matches the CSS transition duration
-            //} else {
-                //window.location.href = targetPage;
-            //}
-
-            window.location.href = targetPage;
-        
-            //button.setProperty("fill", "#d2b069ff")
-
         });
 
-        //button.style.cursor = "pointer";
-        //button.setAttribute("pointer-events", "all");
-        console.log(button.getAttribute("pointer-events"))
+        // Make a click on the button redirect to the target page
+        button.addEventListener("click", () => {
+
+            // Get the target page based on the button's label
+            let targetPage = `${button.getAttribute("inkscape:label").toLowerCase()}`;
+            
+            // Get the default section of the page, if applicable
+            let targetSection = defaultSections[targetPage] ? `#${defaultSections[targetPage]}` : "";
+
+            // Set the HREF to the target page
+            window.location.href = `${targetPage}.html${targetSection}`;
+        });
     });
-
-    //let labels = svgDoc.querySelector("#g7").children;
-
-    //Array.from(labels).forEach(label => {
-        //label.setAttribute("pointer-events", "none");
-    //});
-    // Example: Making an existing SVG shape clickable
-    //let button = svgDoc.getElementById("button-area");
-    //button.style.cursor = "pointer";
-    //button.addEventListener("click", function() {
-        //window.location.href = "page1.html";
-    //});
 });
