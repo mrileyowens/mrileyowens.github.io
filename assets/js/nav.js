@@ -34,9 +34,12 @@ document.getElementById("banner").addEventListener("load", function() {
             label.style.fill = "#26252c";
         }
 
-        // Add a smooth color transition for the button and label for the hover effect below
-        button.style.transition = "fill 0.25s ease-in-out";
-        label.style.transition = "fill 0.25s ease-in-out";
+        // Add a smooth color transition for the button and label for the hover effect below. The timeout wrap makes sure 
+        // that buttons appear already filled when arriving at their corresponding page, rather than also fading in
+        setTimeout(() => {
+            button.style.transition = "fill 0.25s ease-in-out";
+            label.style.transition = "fill 0.25s ease-in-out";
+        }, 0);
 
         // Make hovering over the button flip the colors of the button and label
         button.addEventListener("mouseenter", () => {
@@ -55,7 +58,7 @@ document.getElementById("banner").addEventListener("load", function() {
 
             // Get the target page based on the button's label
             let targetPage = `${button.getAttribute("inkscape:label").toLowerCase()}`;
-            
+
             // Get the default section of the page, if applicable
             let targetSection = defaultSections[targetPage] ? `#${defaultSections[targetPage]}` : "";
 
