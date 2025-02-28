@@ -52,6 +52,12 @@ body {
 
 #wrapper {
 	height: 100%;
+}
+
+#wrapper {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 
 	margin: auto;
 }
@@ -68,7 +74,7 @@ body {
 
 #banner {
 	position: sticky;
-	height: 15vh; /* will need to change this since the SVG background does not count as content, and the future divs for the buttons probably won't be large enough to saturate the entire background */
+	height: 100%; /* will need to change this since the SVG background does not count as content, and the future divs for the buttons probably won't be large enough to saturate the entire background */
 	/*width: 100%;*/
 	/*margin: 5% auto 5% auto;*/
 
@@ -99,6 +105,7 @@ body {
 }
 
 #main {
+	height: 80vh;
 	text-align: justify;
 	text-justify: inter-word;
 
@@ -106,6 +113,11 @@ body {
 	border-image: url(frame.svg) 33.3% 33.3% 33.3% 33.3% stretch;
 
 	background-color: #26252c;
+
+	max-height: 80vh;
+	overflow-y: auto;
+
+	box-sizing: border-box;
 }
 
 img {
