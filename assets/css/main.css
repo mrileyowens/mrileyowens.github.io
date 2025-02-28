@@ -187,3 +187,30 @@ ellipse {
 			color: #26252c;
 			background-color: #d2b069ff;
 		}
+
+		.sections a:target {
+			color: #26252c;
+			background-color: #d2b069ff;
+
+			transition: none;
+		}
+
+		a:focus {
+			outline: none;
+		}
+
+		/*
+		.sections a.active {
+			color: #26252c;
+			background-color: #d2b069ff;
+
+			transition: none;
+		}
+		*/
+
+/*
+html {
+	visibility: visible;
+	opacity: 1;
+}
+*/
