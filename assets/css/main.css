@@ -167,6 +167,9 @@ ellipse {
 	justify-content: center;
 	text-align: center;
 
+	position: sticky;
+	top: 0;
+
 	box-sizing: border-box;
 
 	border: 0.2rem solid #d2b069ff;
@@ -176,6 +179,8 @@ ellipse {
 	line-height: 2rem;
 
 	font-variant-caps: small-caps;
+
+	background-color: #26252c;
 }
 
 	.sections a {
