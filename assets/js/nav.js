@@ -73,3 +73,41 @@ document.getElementById("banner").addEventListener("load", function() {
         });
     });
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+
+});
+
+window.addEventListener('hashchange', () => {
+
+    console.log('Hash changed.')
+
+    document.querySelectorAll('section')?.forEach( section => 
+        section.classList.remove('active')
+    );
+
+    const hash = window.location.hash
+    
+    if (hash) {
+        /*console.log(document.querySelectorAll(`section`))*/
+        console.log(document.querySelector(`section${hash}`))
+        document.querySelector(`section${hash}`).classList.add('active')
+    }
+});
+
+//document.addEventListener("DOMContentLoaded", function () {
+    //console.log(window.location.pathname)
+    //let currentPage = window.location.pathname.split("/").pop().replace(".html", "")
+    //if (currentPage in defaultSections) {
+        //targetAnchor = document.querySelector(`a[href="#${defaultSections[currentPage]}"]`);
+        //targetAnchor.classList.add('active')
+    //}
+//});
+
+//document.addEventListener("DOMContentLoaded", function () {
+    //// Force a reflow/repaint so :target applies instantly
+    //document.body.style.display = "none";
+    //requestAnimationFrame(() => {
+        //document.body.style.display = "";
+    //});
+//});

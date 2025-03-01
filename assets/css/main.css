@@ -231,3 +231,15 @@ html {
 	opacity: 1;
 }
 */
+
+p > a {
+	color: white;
+}
+
+section {
+	display: none;
+}
+
+	section.active {
+		display: block;
+	}
