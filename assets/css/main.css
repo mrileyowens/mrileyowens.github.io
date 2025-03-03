@@ -264,3 +264,26 @@ section {
 
 
 	}
+
+::-webkit-scrollbar {
+	width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+	background: #ffffff33;
+	/*border-radius: 0.3rem;*/
+}
+
+::-webkit-scrollbar-thumb {
+	background: #d2b069ff;
+	/*border-radius: 0.3rem;*/
+}
+
+/*
+::-webkit-scrollbar-button {
+	background: #d2b069ff;
+
+	display: block;
+	background-size: 0.6rem;
+}
+*/
