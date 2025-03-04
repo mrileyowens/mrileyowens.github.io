@@ -149,7 +149,7 @@ ellipse {
     justify-content: center; /* Center the icons horizontally */
     align-items: center;
     flex-wrap: wrap; /* Ensures responsiveness */
-    padding: 10px;
+    margin-bottom: 1rem;
 }
 
 #links a {
