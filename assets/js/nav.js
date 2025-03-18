@@ -76,17 +76,22 @@ document.getElementById("banner").addEventListener("load", function() {
 
 window.addEventListener('hashchange', () => {
 
-    console.log('Hash changed.')
-
+    // For each section, if they exist
     document.querySelectorAll('section')?.forEach( section => 
+
+        // Make the section inactive
         section.classList.remove('active')
+
     );
 
+    // Get the current hash of the URL
     const hash = window.location.hash
     
+    // If there is a hash
     if (hash) {
         /*console.log(document.querySelectorAll(`section`))*/
         console.log(document.querySelector(`section${hash}`))
+        // Make the corresponding section active
         document.querySelector(`section${hash}`).classList.add('active')
     }
 });
