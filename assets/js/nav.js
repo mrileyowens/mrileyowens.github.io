@@ -96,19 +96,7 @@ window.addEventListener('hashchange', () => {
     }
 });
 
-//document.addEventListener("DOMContentLoaded", function () {
-    //console.log(window.location.pathname)
-    //let currentPage = window.location.pathname.split("/").pop().replace(".html", "")
-    //if (currentPage in defaultSections) {
-        //targetAnchor = document.querySelector(`a[href="#${defaultSections[currentPage]}"]`);
-        //targetAnchor.classList.add('active')
-    //}
-//});
-
-//document.addEventListener("DOMContentLoaded", function () {
-    //// Force a reflow/repaint so :target applies instantly
-    //document.body.style.display = "none";
-    //requestAnimationFrame(() => {
-        //document.body.style.display = "";
-    //});
-//});
+window.addEventListener('load', function() {
+    const hash = window.location.hash
+    document.querySelector(`section${hash}`)?.classList.add('active')
+});
