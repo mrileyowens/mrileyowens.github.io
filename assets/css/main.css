@@ -246,6 +246,10 @@ p > a {
 	color: white;
 }
 
+	p > a:visited {
+		color: #bfbfbf;
+}
+
 section {
 	display: none;
 	
