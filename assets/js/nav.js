@@ -74,10 +74,6 @@ document.getElementById("banner").addEventListener("load", function() {
     });
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-
-});
-
 window.addEventListener('hashchange', () => {
 
     console.log('Hash changed.')
