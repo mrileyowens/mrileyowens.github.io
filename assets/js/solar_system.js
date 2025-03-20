@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             //const ephemerides = await fetchEphemerides(`assets/ephemerides/${planet.file}`);
             //const ephemeris = getEphemerisForDate(time, ephemerides);
 
-            const orbital_elements = await fetchOrbitalElements(`assets/orbital_elements/nasa_jpl_ssd_horizons_${planet.name}_orbital_elements.txt`)
+            const orbital_elements = await fetchOrbitalElements(`assets/orbital_elements/${planet.file}`)
             const current_orbital_elements = getOrbitalElementsForDate(time, orbital_elements)
 
             //current_orbital_elements_list.push(current_orbital_elements) 
