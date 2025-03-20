@@ -108,7 +108,13 @@ function parseOrbitalElements(data) {
         if (line.trim() === "") continue;
 
         // Check for JD and start a new entry
-        const jdMatch = line.match(jdRegex);
+        const jdMatch = line.trim().match(jdRegex);
+
+        //console.log(line)
+        //console.log("2460678.500000000 = A.D. 2025-Jan-03 00:00:00.0000 TDB ".match(jdRegex))
+        //console.log(line.trim().match(jdRegex))
+        //console.log("Test JD regex:", "2460678.500000000 = A.D. 2025-Jan-03 00:00:00.0000 TDB ".match(/^(\d+\.\d+)\s+=\s+.*$/));
+
         if (jdMatch) {
             if (currentEntry) orbital_elements.push(currentEntry);
             currentEntry = { JD: parseFloat(jdMatch[1]) }; // Initialize new entry with JD
