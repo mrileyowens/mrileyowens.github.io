@@ -14,7 +14,7 @@ const centerY = svgHeight / 2;
 async function getUTCTime() {
     try {
         // Fetch the current UTC time
-        const response = await fetch("http://worldtimeapi.org/api/timezone/Etc/UTC");
+        const response = await fetch("https://worldtimeapi.org/api/timezone/Etc/UTC");
 
         // If the fetch fails, throw an error to exit the try block
         if (!response.ok) {
