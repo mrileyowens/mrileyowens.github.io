@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html lang="en">
+	<head>
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-MDHJS8N1G5"></script>
+		<script>
+  			window.dataLayer = window.dataLayer || [];
+  			function gtag(){dataLayer.push(arguments);}
+  			gtag('js', new Date());
+
+  			gtag('config', 'G-MDHJS8N1G5');
+		</script>
+
+		<!--Set the title of the website-->
+		<title>M. Riley Owens | Astronomer</title>
+
+		<!--Specify UTF-8 encoding-->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!--Link to the CSS-->
+		<link rel="stylesheet" href="assets/css/main.css"/>
+		<!--<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
+
+		<link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+			<div id="header">
+				<object id="banner" type="image/svg+xml" data="assets/css/banner.svg"></object>
+			</div>
+			<div id="main">
+				<!--<img src="assets/css/frame.png">-->
+				<p style="font-size: 2rem; display: flex; justify-content: center; align-items: center;">Coming soon!</p>
+			</div>
+			<div id="footer">
+
+			</div>
+		</div>
+
+		<script>
+    		function adjustHeight() {
+        		let container = document.getElementById("banner");
+        		let img = new Image();
+        		img.src = "assets/css/banner.svg";
+        		img.onload = function() {
+            		let aspectRatio = img.height / img.width;
+            		container.style.width = (container.clientHeight / aspectRatio) + "px";
+        		};
+    		}
+
+    		window.addEventListener("load", adjustHeight);
+    		window.addEventListener("resize", adjustHeight);
+		</script>
+
+		<!-- Scripts -->
+		 	<script src="assets/js/nav.js"></script>
+			
+	</body>
+</html>

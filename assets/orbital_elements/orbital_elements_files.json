@@ -1,0 +1,36 @@
+{
+    "files": [
+        {
+            "name": "Mercury",
+            "file": "nasa_jpl_ssd_horizons_mercury_orbital_elements.txt"
+        },
+        {
+            "name": "Venus",
+            "file": "nasa_jpl_ssd_horizons_venus_orbital_elements.txt"
+        },
+        {
+            "name": "Earth",
+            "file": "nasa_jpl_ssd_horizons_earth_orbital_elements.txt"
+        },
+        {
+            "name": "Mars",
+            "file": "nasa_jpl_ssd_horizons_mars_orbital_elements.txt"
+        },
+        {
+            "name": "Jupiter",
+            "file": "nasa_jpl_ssd_horizons_jupiter_orbital_elements.txt"
+        },
+        {
+            "name": "Saturn",
+            "file": "nasa_jpl_ssd_horizons_saturn_orbital_elements.txt"
+        },
+        {
+            "name": "Uranus",
+            "file": "nasa_jpl_ssd_horizons_uranus_orbital_elements.txt"
+        },
+        {
+            "name": "Neptune",
+            "file": "nasa_jpl_ssd_horizons_neptune_orbital_elements.txt"
+        }
+    ]
+}
