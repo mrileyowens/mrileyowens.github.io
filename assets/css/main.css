@@ -127,13 +127,18 @@ body {
 	flex-direction: column;
 }
 
+/*
+
 section {
+	float: right;
 }
 
 img {
-	float: inline-end;
-	margin: 9px;
+	float: right;
+	width: 100px;
 }
+
+*/
 
 /*
 ellipse {
