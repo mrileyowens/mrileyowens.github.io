@@ -53,42 +53,42 @@ async function getTime() {
     return utc_time || getLocalTime();
 }
 
-function parseEphemerides(data) {
-    const lines = data.split("\n");
-    const ephemerides = [];
-    let currentEntry = null;
+//function parseEphemerides(data) {
+    //const lines = data.split("\n");
+    //const ephemerides = [];
+    //let currentEntry = null;
 
-    // For each line in the .txt file
-    for (const line of lines) {
+    //// For each line in the .txt file
+    //for (const line of lines) {
 
-        if (line.trim() === "") continue;
+        //if (line.trim() === "") continue;
 
-        if (line.includes("=")) {
-            const [key, value] = line.split("=").map(s => s.trim());
+        //if (line.includes("=")) {
+            //const [key, value] = line.split("=").map(s => s.trim());
 
-            if (key.startsWith("24")) {
-                // Start a new entry
-                if (currentEntry) ephemerides.push(currentEntry);
+            //if (key.startsWith("24")) {
+                //// Start a new entry
+                //if (currentEntry) ephemerides.push(currentEntry);
 
-                currentEntry = { JD: parseFloat(key), x: 0, y: 0 };
-            } else if (key === "X") {
+                //currentEntry = { JD: parseFloat(key), x: 0, y: 0 };
+            //} else if (key === "X") {
 
-                const regex = /X\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*Y\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*Z\s*=\s*(-?\d+\.\d+E[+-]?\d+)/;
-                const match = line.match(regex);
+                //const regex = /X\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*Y\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*Z\s*=\s*(-?\d+\.\d+E[+-]?\d+)/;
+                //const match = line.match(regex);
 
-                if (match) {
-                    currentEntry.x = parseFloat(match[1]);
-                    currentEntry.y = parseFloat(match[2]);
-                } else {
-                    console.error("Invalid coordinate string format");
-                }
-            }
-        }
-    }
+                //if (match) {
+                    //currentEntry.x = parseFloat(match[1]);
+                    //currentEntry.y = parseFloat(match[2]);
+                //} else {
+                    //console.error("Invalid coordinate string format");
+                //}
+            //}
+        //}
+    //}
 
-    if (currentEntry) ephemerides.push(currentEntry);
-    return ephemerides;
-}
+    //if (currentEntry) ephemerides.push(currentEntry);
+    //return ephemerides;
+//}
 
 function parseOrbitalElements(data) {
     const lines = data.split("\n");
@@ -109,11 +109,6 @@ function parseOrbitalElements(data) {
 
         // Check for JD and start a new entry
         const jdMatch = line.trim().match(jdRegex);
-
-        //console.log(line)
-        //console.log("2460678.500000000 = A.D. 2025-Jan-03 00:00:00.0000 TDB ".match(jdRegex))
-        //console.log(line.trim().match(jdRegex))
-        //console.log("Test JD regex:", "2460678.500000000 = A.D. 2025-Jan-03 00:00:00.0000 TDB ".match(/^(\d+\.\d+)\s+=\s+.*$/));
 
         if (jdMatch) {
             if (currentEntry) orbital_elements.push(currentEntry);
@@ -140,90 +135,32 @@ function parseOrbitalElements(data) {
             currentEntry.ad = parseFloat(match[2]);
             currentEntry.pr = parseFloat(match[3]);
         }
-        //if (line.includes("=")) {
-            //const [key, value] = line.split("=").map(s => s.trim());
-
-            //if (key.startsWith("24")) {
-                //// Start a new entry
-                //if (currentEntry) orbital_elements.push(currentEntry);
-
-                //currentEntry = { JD: parseFloat(key), ec: 0, qr: 0, in: 0, om: 0, w: 0, tp: 0, n: 0, ma: 0, ta: 0, a: 0, ad: 0, pr: 0 };
-            //} else if (key === "EC") {
-
-                //const regex = /EC\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*QR\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*IN\s*=\s*(-?\d+\.\d+E[+-]?\d+)/;
-                //const match = line.match(regex);
-
-                //if (match) {
-                    //currentEntry.ec = parseFloat(match[1]);
-                    //currentEntry.qr = parseFloat(match[2]);
-                    //currentEntry.in = parseFloat(match[3]);
-                //} else {
-                    //console.error("Invalid coordinate string format");
-                //}
-            //} else if (key === "OM") {
-
-                //const regex = /OM\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*W\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*Tp\s*=\s*(-?\d+\.\d+E[+-]?\d+)/;
-                //const match = line.match(regex);
-
-                //if (match) {
-                    //currentEntry.om = parseFloat(match[1]);
-                    //currentEntry.w = parseFloat(match[2]);
-                    //currentEntry.tp = parseFloat(match[3]);
-                //} else {
-                    //console.error("Invalid coordinate string format");
-                //}
-            //} else if (key === "N") {
-
-                //const regex = /N\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*MA\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*TA\s*=\s*(-?\d+\.\d+E[+-]?\d+)/;
-                //const match = line.match(regex);
-
-                //if (match) {
-                    //currentEntry.n = parseFloat(match[1]);
-                    //currentEntry.ma = parseFloat(match[2]);
-                    //currentEntry.ta = parseFloat(match[3]);
-                //} else {
-                    //console.error("Invalid coordinate string format");
-                //}
-            //} else if (key === "A") {
-
-                //const regex = /A\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*AD\s*=\s*(-?\d+\.\d+E[+-]?\d+)\s*PR\s*=\s*(-?\d+\.\d+E[+-]?\d+)/;
-                //const match = line.match(regex);
-
-                //if (match) {
-                    //currentEntry.a = parseFloat(match[1]);
-                    //currentEntry.ad = parseFloat(match[2]);
-                    //currentEntry.pr = parseFloat(match[3]);
-                //} else {
-                    //console.error("Invalid coordinate string format");
-                //}
-            //}
-        //}
     }
 
     if (currentEntry) orbital_elements.push(currentEntry);
     return orbital_elements;
 }
 
-async function fetchEphemerides(filePath) {
-    const response = await fetch(filePath);
-    const text = await response.text();
-    return parseEphemerides(text);
-}
+//async function fetchEphemerides(filePath) {
+    //const response = await fetch(filePath);
+    //const text = await response.text();
+    //return parseEphemerides(text);
+//}
 
-function getEphemerisForDate(time, ephemerides) {
-    let closestEntry = null;
-    let smallestDifference = Infinity;
+//function getEphemerisForDate(time, ephemerides) {
+    //let closestEntry = null;
+    //let smallestDifference = Infinity;
 
-    for (const entry of ephemerides) {
-        const difference = Math.abs(entry.JD - time);
-        if (difference < smallestDifference) {
-            smallestDifference = difference;
-            closestEntry = entry;
-        }
-    }
+    //for (const entry of ephemerides) {
+        //const difference = Math.abs(entry.JD - time);
+        //if (difference < smallestDifference) {
+            //smallestDifference = difference;
+            //closestEntry = entry;
+        //}
+    //}
 
-    return closestEntry;
-}
+    //return closestEntry;
+//}
 
 async function fetchOrbitalElements(filePath) {
     const response = await fetch(filePath);
@@ -252,31 +189,12 @@ function renderPlanet(orbital_elements, svg, scale, computed_width) {
     const centerY = svg.clientHeight / 2;
     //const scale = 20; // Example scale to fit AU to pixels
 
-    //const distance = Math.sqrt(ephemeris.x * ephemeris.x + ephemeris.y * ephemeris.y);
-    //const ratio = 1 // Math.cbrt(distance) / distance
-
-    // Convert position from AU to scaled SVG coordinates
-    //const screenX = centerX + ephemeris.x * ratio * scale;
-    //const screenY = centerY - ephemeris.y * ratio * scale; // Flip Y-axis for SVG
-
-    // Create planet circle
-    //const marker = document.createElementNS("http://www.w3.org/2000/svg", "use");
-
-    //if (planet.file.includes('sun')) {
-        //marker.setAttribute("href", "#sun")
-    //} else {
-        //marker.setAttribute("href", "#earth")
-    //}
-
     const sun = document.createElementNS("http://www.w3.org/2000/svg", "use");
     sun.setAttribute("href", "#sun")
 
     sun.setAttribute("x", centerX);
     sun.setAttribute("y", centerY);
 
-    //marker.setAttribute("x", screenX);
-    //marker.setAttribute("y", screenY);
-    
     const e = orbital_elements.ec
     const a = orbital_elements.a
 
@@ -285,47 +203,6 @@ function renderPlanet(orbital_elements, svg, scale, computed_width) {
     const omega = orbital_elements.om * Math.PI / 180
 
     const ta = orbital_elements.ta * Math.PI / 180
-
-    //console.log("---")
-
-    //console.log(periapsis_argument)
-    //console.log(ascending_node_longitude)
-
-    ////console.log(eccentricity)
-    ////console.log(semimajor_axis)
-    ////console.log(periapsis_argument)
-    ////console.log(inclination)
-    ////console.log(ascending_node_longitude)
-
-    ////
-
-    //const semiminor_axis = Math.sqrt(semimajor_axis * semimajor_axis * (1 - eccentricity * eccentricity))
-
-    //const perihelion = eccentricity * semiminor_axis * ratio * scale
-
-    //const radius = semimajor_axis * (1 - eccentricity * eccentricity) / (1 + eccentricity * Math.cos(true_anomaly * Math.PI / 180))
-
-    //const screenX = centerX + radius * (Math.cos(ascending_node_longitude * Math.PI / 180) * Math.cos((periapsis_argument + true_anomaly) * Math.PI / 180) - Math.sin(ascending_node_longitude * Math.PI / 180) * Math.sin((periapsis_argument + true_anomaly) * Math.PI / 180) * Math.cos(inclination * Math.PI / 180)) * ratio * scale
-    //const screenY = centerY - radius * (Math.sin(ascending_node_longitude * Math.PI / 180) * Math.cos((periapsis_argument + true_anomaly) * Math.PI / 180) + Math.cos(ascending_node_longitude * Math.PI / 180) * Math.sin((periapsis_argument + true_anomaly) * Math.PI / 180) * Math.cos(inclination * Math.PI / 180)) * ratio * scale
-
-    //marker.setAttribute("x", screenX);
-    //marker.setAttribute("y", screenY)
-
-    //const orbit = document.createElementNS("http://www.w3.org/2000/svg", "ellipse")
-    //orbit.setAttribute("cx", centerX)
-    //orbit.setAttribute("cy", centerY + perihelion)
-    //orbit.setAttribute("transform", `rotate(${ascending_node_longitude + Math.atan(Math.tan(periapsis_argument * Math.PI / 180) * Math.cos(inclination * Math.PI / 180))} ${centerX} ${centerY})`)
-    //orbit.setAttribute("rx", semimajor_axis * Math.sqrt(1 - (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180)) * (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180))) * ratio * scale)
-    //orbit.setAttribute("ry", semiminor_axis * Math.sqrt(1 - (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180 - Math.PI / 2)) * (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180 - Math.PI / 2))) * ratio * scale)
-
-    ////console.log(semimajor_axis * Math.sqrt(1 - (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180)) * (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180))) * ratio * scale)
-    ////console.log(semiminor_axis * Math.sqrt(1 - (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180 - Math.PI / 2)) * (Math.sin(inclination * Math.PI / 180) * Math.sin(periapsis_argument * Math.PI / 180 - Math.PI / 2))) * ratio * scale)
-
-    //// Add to SVG
-    //svg.appendChild(marker);
-    //svg.appendChild(orbit);
-
-    //svg.appendChild(sun);
 
     const orbit = document.createElementNS("http://www.w3.org/2000/svg", "path");
     let path = "";
@@ -377,16 +254,6 @@ function renderPlanet(orbital_elements, svg, scale, computed_width) {
     const screenX = centerX + X * scale
     const screenY = centerY - Y * scale
 
-    //const bbox = marker.getBBox();
-
-    //const marker_width = bbox.width;
-    //const marker_height = bbox.height;
-
-    //console.log(marker_width, marker_height)
-
-    //marker.setAttribute("x", screenX - marker_width / 2)
-    //marker.setAttribute("y", screenY + marker_height / 2)
-
     svg.appendChild(marker)
 
     const bbox = marker.getBBox();
@@ -423,8 +290,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             const orbital_elements = await fetchOrbitalElements(`assets/orbital_elements/${planet.file}`)
             const current_orbital_elements = getOrbitalElementsForDate(time, orbital_elements)
 
-            //current_orbital_elements_list.push(current_orbital_elements) 
-
             if (current_orbital_elements) {
                 current_orbital_elements_list.push(current_orbital_elements);
             } else {
@@ -449,27 +314,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         current_orbital_elements_list.forEach(obj => {
             renderPlanet(obj, svg, scale, computedWidth);
         })
-
-        //    if (orbital_element) {
-        //        renderPlanet(orbital_element);
-        //    } else {
-        //       console.error("No ephemeris found for the current date.");
-        //    }
-        //}
-
-        //const date = document.getElementById("date")
-        //time = time - 2440587.5
-        //time = time * 86400000
-        //date.innerHTML = time
-
-        //const response2 = await fetch('assets/ephemerides/orbital_parameters.json');
-        //const orbits = await response2.json();
-
-        //for (const orbit of orbits) {
-            //const semimajor_axis = orbit.semiMajorAxis
-            //const semiminor_axis = orbit.eccentricity
-            //const inclination = orbit.inclination
-        //}
 
     } else {
         console.error("Failed to compute time.");
