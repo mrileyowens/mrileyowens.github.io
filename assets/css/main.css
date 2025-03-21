@@ -248,6 +248,10 @@ html {
 }
 */
 
+section > p {
+	margin: 0 0 2rem 0;
+}
+
 p > a {
 	color: white;
 }
@@ -263,6 +267,8 @@ section {
 	/*position: absolute;*/
 	height: 100%;
 	min-height: 0;
+
+	margin-top: 1rem;
 
 }
 
