@@ -46,6 +46,8 @@ function buildingExistedAt(properties, snapshotYear) {
 
 var map = L.map('map').setView([39.1031, -84.5120], 13);
 
+L.control.scale().addTo(map);
+
 document.getElementById("map").style.backgroundColor = "#26252c";
 
 //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
