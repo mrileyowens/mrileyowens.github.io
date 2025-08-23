@@ -1,0 +1,512 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{orcidlink}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+ \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item[\circ]\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\tech}[4]{
+  \vspace{0pt}\item
+    \begin{tabular}[t]{p{0.485\textwidth}p{0.485\textwidth}}
+      \textbf{#1} & \textbf{#2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingSimple}[2]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\award}[3]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{ll@{\extracolsep{\fill}}r}
+      \textbf{#1}, & \;\textit{#2} & #3
+    \end{tabular*}\vspace{-20pt}
+}
+
+\newcommand{\rf}[7]{
+    \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{ll}
+        \textbf{#1},\;\textit{#2} \vspace{1pt} \\
+        #3 \\
+        #4 \\
+        #5 \\
+        T:$\;$#6, E:$\;$\href{mailto:#7}{\texttt{#7}}
+    \end{tabular*}\vspace{10pt}
+}
+
+\newcommand{\member}[2]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-20pt}
+}
+
+\newcommand{\loc}[3]{
+  \vspace{0pt}\item[\circ]
+    \begin{tabular*}{0.928\textwidth}[t]{ll@{\extracolsep{\fill}}r}
+      #1, & \;\textit{#2} & #3
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & {\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}\vspace{2pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\referenceListStart}[]{}
+\newcommand{\referenceListEnd}[]{}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+    }
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape \href{https://mrileyowens.github.io/}{M. Riley Owens}} \\ \vspace{3pt}
+    \small Cincinnati, OH 45202 $|$
+    \small +1 5136074330 $|$
+    \href{mailto:m.riley.owens@gmail.com}{\texttt{m.riley.owens@gmail.com}} $|$
+    \href{https://github.com/mrileyowens}{\faGithub} $|$ \orcidlink{0000-0002-2862-307X}% 
+    %\href{https://linkedin.com/in/...}{\underline{linkedin.com/in/francescagear}} $|$
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeSubheading{University of Cincinnati}{August 2018 -- April 2022}{Bachelor of Science in Astrophysics, Physics}{GPA: 3.73}
+    \resumeSubHeadingListEnd
+
+%----------RESEARCH-EXPERIENCE-----------
+\section{Research Experience}
+    \resumeSubHeadingListStart
+        \resumeSubheading{Postbaccalaureate researcher}{May 2022 -- December 2022}{West Virginia University, advised by Prof. Loren Anderson}{}
+            \resumeItemListStart
+                \resumeItem{Continued previous work with the addition of new low-frequency data}
+            \resumeItemListEnd
+        %\resumeSubheading{Undergraduate / postbaccalaureate researcher}{December 2021 -- July 2023}{American University of Sharjah, advised by Dr. Randa Asa'd}{}
+        %    \resumeItemListStart
+        %        \resumeItem{Contributed to development of ASAD, a Python program to determine the age of star cluster observations and other key quantities}
+            %\resumeItemListEnd
+        \resumeSubheading{Undergraduate researcher}{May 2021 -- August 2021}{West Virginia University, advised by Prof. Loren Anderson}{}
+            \resumeItemListStart
+                \resumeItem{Investigated kinematics of the massive star forming complex Cygnus X to characterize stellar feedback on small scales}
+            \resumeItemListEnd
+        \resumeSubheading{Undergraduate / postbaccalaureate researcher}{October 2019 -- Present}{University of Cincinnati, advised by Prof. Matthew Bayliss}{}
+            \resumeItemListStart
+                \resumeItem{Studying the strongly lensed, LyC-leaking Sunburst Arc with rest-UV spectroscopy to understand mechanisms of LyC escape}
+                \resumeItem{Searching for new, lensed, LyC-leaking galaxies}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+% Publications 
+\section{Publications}
+    \begin{itemize}
+        \item[12.] \textbf{Owens, M. R.}, Malhas, C. M., Smith, P., Burns, J. G., Chisholm, J., Rigby, J. R., Bayliss, M. B. (in prep.). ``Dissecting the subgalactic outflow structure of the Sunburst Arc''. \href{https://www.overleaf.com/read/rzqypfpzpcsv#0c2cac}{https://www.overleaf.com/read/rzqypfpzpcsv#0c2cac}
+
+        \item[11.] Hsiao, T. Y.-Y., Coe, D., Bradley, L. D., Windhorst, R. A., Jim\'enez-Teja, Y., Resseguier, T., Brammer, G., Abdurro'uf, Dayal, P., Kokorev, V., Ricotti, M., Xu, X., Killi, M., \textbf{Owens, M. R.}, Adamo, A., Bhatawdekar, R. (in prep.). ``High Redshift Galaxies at $8<z<13$ of SPT0615 with JWST".
+        
+        \item[10.] Emig, K. L., Salas, P., Anderson, L., Roshi, D. A., Bonne, L., Bolatto, A. D., Grenier, I., Levy, R. C., Linville, D. J., Luisi, M., \textbf{Owens, M. R.}, Poojapriyatharsheni, J., Schneider, N., Tibaldo, L., Tielens, A. G. G. M., Walch, S., White, G. J. (subm.). ``Cold dark gas in Cygnus X: The first large-scale mapping of low-frequency carbon recombination lines".
+    
+        \item[9.] \textbf{Owens, M. R.}, Kim, K. J., Bayliss, M. B., Rivera-Thorsen, T. E., Sharon, K., Rigby, J. R., Navarre, A., Florian, M., Gladders, M. D., Burns, J. G., Khullar, G., Chisholm, J., Mahler, G., Dahle, H., Malhas, C. M., Welch, B., Hutchison, T. A., Gassis, R., Choe, S., Adhikari, P. (2024). ``Connecting Ly$\alpha$ and Ionizing Photon Escape in the Sunburst Arc". \textit{The Astrophysical Journal}.
+        
+        %\item[3.] Asa'd, R., John, J. M., Ivanov, V. D., Gonneau, A., \textbf{Owens, M. R.}, Negueruela, I., Hernandez, S. (in prep.). ``Analysis of 46 RSGs Near the Galactic Center. I. Radial Velocity". \textit{TBA}
+
+        \item[8.] Cloonan, A. P., Khullar, G., Napier, K. A., Gladders, M. D., Dahle, H., Rosener, R., Sullivan Jr., J., Bayliss, M. B., Chicoine, N., Escapa, I., Garza, D., Garza, J., Glusman, R., Gozman, K., Horwath, G., Kisare, A., Levine, B. C., Liang, O., Malagon, N., Martinez, M. N., Masegian, A., Mork, S. D., Niu, K., \textbf{Owens, M. R.}, Pan, Y., Rigby, J. R., Sharon, K., Sierra, I., Stark, A. A., Sukay, E., Tamargo-Arizmendi, M., Tavangar, K., Teixeira, R., Tsiane, K., Wagner, G., Zaborowski, E. A., Zhang, Y., Zhao, Y. (2024). ``COOL-LAMPS VIII: Characterization of known wide-separation lensed quasars and their host galaxies reveals evidence for a smaller $M_{\rm{BH}}/M_\star$ than field quasars at $z\sim2$". arXiv:2408.03379.
+
+        \item[7.] Choe, S., Rivera-Thorsen, T. E., Dahle, H., Sharon, K., \textbf{Owens, M. R.}, Rigby, J. R., Bayliss, M. B., Hayes, M. J., Hutchison, T., Welch, B., Chisholm, J., Gladders, M. D., Khullar, G., Kim, K. (2024). ``The Sunburst Arc with JWST: II. Observations of an Eta Carinae Analog at $z=2.37$". arXiv:2405.06953.
+
+        \item[6.] Welch, B., Rivera-Thorsen, T. E., Rigby, J., Hutchison, T., Olivier, G. M., Berg, D. A., Sharon, K., Dahle, H., \textbf{Owens, M. R.}, Bayliss, M. B., Khullar, G., Chisholm, J., Hayes, M., Kim, K. J. (2024). ``The Sunburst Arc with JWST: III. An abundance of Direct Chemical Abundances". arXiv:2405.06631.
+
+        \item[5.] Rivera-Thorsen, T. E., Chisholm, J., Welch, B., Rigby, J. R., Hutchison, T., Florian, M., Sharon, K., Choe, S., Dahle, H., Bayliss, M. B., Khullar, G., Gladders, M., Hayes, M., Adamo, A., \textbf{Owens, M. R.}, Kim, K. (2024). ``The Sunburst Arc with JWST: I. Detection of Wolf-Rayet stars injecting nitrogen into a low-metallicity, $z=2.37$ proto-globular cluster leaking ionizing photons". \textit{Astronomy \& Astrophysics}.
+
+        \item[4.] Klein, M., Sharon, K., Napier, K., Gladders, M. D., Khullar, G., Bayliss, M., Dahle, H., \textbf{Owens, M. R.}, Stark, A., Brownsberger, S., Kim, K. J., Kuchta, N., Mahler, G., Smith, G., Walker, R., Gozman, K., Martinez, M. N., Matthews Acu\~na, O. S., Merz, K., Sanchez, J. A., Kavin Stein, D. J., Sukay, E. O., Tavangar, K. (2024). ``COOL-LAMPS. VI. Lens Model and New Constraints on the Properties of COOL J1241+2219, a Bright $z=5$ Lyman Break Galaxy and its $z=1$ Cluster Lens". \textit{The Astrophysical Journal}.
+
+        \item[3.] Navarre, A., Khullar, G., Bayliss, M. B., Dahle, H., Florian, M., Gladders, M., Kim, K. J., \textbf{Owens, M. R.}, Rigby, J., Sharon, K., Shibuya, T., Walker, R. (2024). ``Resolving Clumpy versus Extended Ly$\alpha$ in Strongly Lensed, High-redshift Ly$\alpha$ Emitters". \textit{The Astrophysical Journal}.
+        
+        \item[2.] Kim, K. J., Bayliss, M. B., Rigby, J. R., Gladders, M. D., Chisholm, J., Sharon, K., Dahle, H., Rivera-Thorsen, T. E., Florian, M. K., Khullar, G., Mahler, G., Mainali, R., Napier, K. A., Navarre, A., \textbf{Owens, M. R.}, Roberson, J. (2023). ``Small Region, Big Impact: Highly Anisotropic Lyman-continuum Escape from a Compact Starburst Region with Extreme Physical Properties''. \textit{The Astrophysical Journal Letters}.
+        
+        \item[1.] Mainali, R., Rigby, J. R., Chisholm, J., Bayliss, M., Bordoloi, R., Gladders, M. D., Rivera-Thorsen, T. E., Dahle, H., Sharon, K., Florian, M., Sharma, S., \textbf{Owens, M. R.}, Kjellgren, K., Kim, K. J., Wayne, J. (2022). ``The Connection between Galactic Outflows and the Escape of Ionizing Photons". \textit{The Astrophysical Journal}.
+    \end{itemize}
+
+\section{White Papers}
+    \begin{itemize}
+        \item[1.] Kim, K. J., Bayliss, M. B., Dahle, H., Hutchison, T., Sharon, K., Mahler, G., \textbf{Owens, M. R.}, Rhoads, J. E. (2023). ``Strongly lensed [O III] emitters at Cosmic Noon with Roman: Characterizing extreme emission line galaxies on star cluster complex scales (100 pc)". arXiv:2307.01247.
+    \end{itemize}
+    
+% Meeting Proceedings
+\section{Meeting Proceedings}
+    \begin{itemize}
+
+        \item[22.] \textbf{Owens, M. R.}, Kim, K. J., Bayliss, M. B., Rivera-Thorsen, T. E., Sharon, K., Rigby, J. R., Navarre, A., Florian, M., Gladders, M. D., Burns, J. G., Khullar, G., Chisholm, J., Mahler, G., Dahle, H., Malhas, C. M., Welch, B., Hutchison, T. A., Gassis, R., Choe, S., Adhikari, P., Smith, P. A., Tiju, J. M. (15 January 2025). \textit{The strongly lensed Sunburst Arc galaxy reveals direct Lyman-$\alpha$ escape hundreds of parsecs away from ionizing photon escape} [Oral presentation]. American Astronomical Society meeting \#245, National Harbor, MD, USA.
+    
+        \item[21.] Adhikari, P., Bayliss, M., Gladders, M., Sharon, K., Gassis, R., Dahle, H., Ebey, A., \textbf{Owens, R.} (11 January 2024). \textit{Probing Galaxy Cluster Dynamics: Virial Mass Constraints and Velocity Phase-Space Substructure Analysis} [Poster presentation]. American Astronomical Society meeting \#243, New Orleans, LA, USA.
+        
+        \item[20.]  \textbf{Owens, R.}, Kim, K., Bayliss, M., Rivera-Thorsen, E., Sharon, K., Rigby, J., Navarre, A., Florian, M., Gladders, M., Burns, J., Khullar, G., Chisholm, J., Mahler, G., Dahle, H., Malhas, C., Welch, B., Hutchison, T., Gassis, R., Choe, S., Adhikari, P. (8 January 2024). \textit{Connecting Lyman-$\alpha$ and ionizing photon escape at cosmic noon with a strongly lensed galaxy arc} [Oral presentation]. American Astronomical Society meeting \#243, New Orleans, LA, USA.
+        
+        \item[19.] Gassis, R., Bayliss, M. B., Sharon, K., Mahler, G., Gladders, M. D., Dahle, H., Florian, M. K., Rigby, J. R., McDonald, M., Elicker, L., \textbf{Owens, M. R.} (27 June 2023). \textit{Understanding shape and centroid deviations in 39 strong lensing galaxy clusters in various dynamical states} [Oral presentation]. Observing the Universe at millimetre wavelengths, Grenoble, France.
+        
+        %\item[19.] Gassis, R., Bayliss, M. B., Sharon, K., Mahler, G., Dahle, H., Florian, M. K., Rigby, J. R., Elicker, L., \textbf{Owens, M. R.} (X). \textit{Multicomponent Analysis of Strong Lensing Galaxy Clusters as an Observational Test of Structure Formation Predictions} [X]. X, X, X.
+    
+        \item[18.] \textbf{Owens, M. R.}, Kim, K. J., Bayliss, M.B., Rivera-Thorsen, T. E., Sharon, K., Rigby, J. R., Navarre, A., Florian, M., Gladders, M. D., Burns, J. G., Dahle, H., Chisholm, J., Mahler, G. (19 April 2023). \textit{Connecting Ly$\alpha$ and LyC escape with a gravitationally lensed, super star cluster at cosmic noon} [Oral presentation]. Escape of Lyman radiation from galactic labyrinths, Kolymbari, Greece.
+
+        \item[17.] Kim, K. J., Bayliss, M. B., Rigby, J. R., Gladders, M. D., Chisholm, J., Sharon, K., Dahle, H., Rivera-Thorsen, T. E., Florian, M. K., Khullar, G., Mahler, G., Mainali, R., Napier, K. A., Navarre, A., \textbf{Owens, M. R.}, Roberson, J. (19 April 2023). \textit{How ionizing radiation escapes from compact star-forming regions in the Sunburst galaxy} [Oral presentation]. Escape of Lyman radiation from galactic labyrinths, Kolymbari, Greece.
+
+        \item[16.] \textbf{Owens, M. R.}, Kim, K. J., Bayliss, M.B., Rivera-Thorsen, T. E., Sharon, K., Rigby, J. R., Navarre, A., Florian, M., Gladders, M. D., Burns, J. G., Dahle, H., Chisholm, J., Mahler, G. (14 April 2023). \textit{Connecting Ly$\alpha$ and LyC escape with a gravitationally lensed, super star cluster at cosmic noon} [Oral presentation]. Kentucky Area Astronomical Society Meeting 2023, Lexington, KY, USA.
+        
+        \item[15.] \textbf{Owens, R.}, Bayliss, M., Chisholm, J., Kim, K., Rigby, J., Khullar, G., Dahle, H., Sharon, K., Navarre, A., Hutchison, T. (8-12 January 2023). \textit{Outflows and Lyman continuum escape in a highly magnified arc} [Poster presentation]. American Astronomical Society meeting \#241, Seattle, WA, USA.
+        
+        \item[14.] \textbf{Owens, R.}, Kim, K., Bayliss, M., Rivera-Thorsen, T. E., Dahle, H., Navarre, A., Gladders, M. D., Mahler, G., Bordoloi, R., Sharma, S., Florian, M., Sharon, K., Khullar, G. (2-11 August 2022). \textit{Spatially variable Ly$\alpha$ line profiles and environments in a strong LyC leaking galaxy} [Poster presentation]. IAU General Assembly 2022, Busan, Republic of Korea.
+        
+        %\item[13.] \textbf{Owens, R.}, Asa'd, R. (2-11 August 2022). \textit{Toward analysis of UV integrated spectra with a full spectrum fitting tool} [Poster presentation]. IAU General Assembly 2022, Busan, Republic of Korea.
+        
+        \item[12.] \textbf{Owens, R.}, Kim, K., Bayliss, M., Rivera-Thorsen, T. E., Dahle, H., Navarre, A., Gladders, M. D., Mahler, G., Bordoloi, R., Sharma, S., Florian, M., Sharon, K., Khullar, G. (11-15 July 2022). \textit{Spatially variable Ly$\alpha$ line profiles and environments in a strong LyC leaking galaxy} [Poster presentation]. National Astronomy Meeting 2022, Coventry, UK.
+        
+        \item[11.] Kim, K., Bayliss, M., Chisholm, J., Dahle, H., Florian, M., Gladders, M., Khullar, G., Mahler, G., Mainali, R., Navarre, A., \textbf{Owens, R.}, Rigby, J., Rivera-Thorsen, E., Sharon, K. (15 June 2022). \textit{How LyC photons escape from compact star-forming regions in the Sunburst galaxy} [Oral presentation]. American Astronomical Society meeting \#240, Pasadena, CA, USA.
+        
+        \item[10.] \textbf{Owens, R.}, Anderson, L. (12-16 June 2022). \textit{Distribution and dynamics of ionized gas in the Cygnus X massive star-forming complex} [Poster presentation]. American Astronomical Society meeting \#240, Pasadena, CA, USA.
+        
+        \item[9.] \textbf{Owens, R.}, Kim, K. J., Bayliss, M., Rivera-Thorsen, T. E., Dahle, H., Navarre, A., Gladders, M. D., Mahler, G., Bordoloi, R., Sharma, S., Florian, M., Sharon, K., Khullar, G. (22 April 2022). \textit{Spatially Variable Light and Environments in a Distant Galaxy} [Poster presentation]. Undergraduate Scholarly Showcase, Cincinnati, OH, USA.
+        
+        \item[8.] \textbf{Owens, R.}, Kim, K. J., Bayliss, M., Rivera-Thorsen, T. E., Dahle, H., Navarre, A., Gladders, M. D., Mahler, G., Bordoloi, R., Sharma, S., Florian, M., Sharon, K., Khullar, G. (2 April 2022). \textit{Ultraviolet spectra of the Sunburst Arc} [Oral presentation]. Kentucky Area Astronomical Society Meeting 2022, Clarksville, TN, USA. \href{https://sites.google.com/view/kam2022/program}{https://sites.google.com/view/kam2022/program}
+        
+        \item[7.] \textbf{Owens, R.}, Anderson, L. (11 August 2021). \textit{Ionized gas in Cygnus X} [Oral presentation]. Exploring Innovation in Appalachia Symposium, Morgantown, WV, USA.
+        
+        \item[6.] \textbf{Owens, R.}, Anderson, L. (11 August 2021). \textit{Ionized gas in Cygnus X} [Poster presentation]. Exploring Innovation in Appalachia Symposium, Morgantown, WV, USA.
+        
+        \item[5.] \textbf{Owens, M. R.}, Anderson, L. (30 July 2021). \textit{Ionized gas in Cygnus X} [Oral presentation]. 2021 Pulsar Search Collaboratory Capstone Seminar, Morgantown, WV, USA.
+        
+        \item[4.] \textbf{Owens, M. R.}, Anderson, L. (30 July 2021). \textit{Ionized gas in Cygnus X} [Poster presentation]. 2021 Pulsar Search Collaboratory Capstone Seminar, Morgantown, WV, USA.
+        
+        \item[3.] \textbf{Owens, M. R.}, Anderson, L. (30 July 2021). \textit{Ly$\alpha$ emission and gaseous outflows in a z\,$\sim$2 lensed galaxy} [Poster presentation]. 2021 Pulsar Search Collaboratory Capstone Seminar, Morgantown, WV, USA.
+        
+        \item[2.] \textbf{Owens, R.}, Anderson, L. (29 July 2021). \textit{Ionized gas in Cygnus X} [Poster presentation]. 2021 Summer Undergraduate Research Symposium, Morgantown, WV, USA. \href{https://undergraduateresearch.wvu.edu/symposia/summer-2021/past-symposia/-poster-presentations/physical-sciences-poster-presentations-99-117}{https://undergraduateresearch.wvu.edu/symposia/summer-2021/past-symposia/-poster-presentations/physical-sciences-poster-presentations-99-117}
+        
+        \item[1.] \textbf{Owens, R.}, Bayliss, M. (May 2021). \textit{Ly$\alpha$ emission and gaseous outflows in a z\,$\sim$2 lensed galaxy} [Poster presentation]. Undergraduate Scholarly Showcase, Cincinnati, OH, USA. \href{https://journals.uc.edu/index.php/Undergradshowcase/article/view/4465}{https://journals.uc.edu/index.php/Undergradshowcase/article/view/4465}
+        
+    \end{itemize}
+
+\section{Observing Programs}
+    \begin{itemize}
+
+        \item[10.] \textbf{Owens, R.}, Bayliss, M., Solhaug, E., Khullar, G., Welch, B., Kim, K., Gladders, M., Rivera-Thorsen, E., Dahle, H. (Gemini 2024B FT; GMOS-N; 6.7 hr). \textit{Resolving the Lyman-alpha kinematics of a lensed galaxy with a rare Lyman-alpha profile}.
+
+        \item[9.] Bayliss, M., Navarre, A., Sharon, K., Dahle, H., \textbf{Owens, R.}, Gladders, M., Kim, K. (Gemini 2024A FT; GMOS-N; 3.2 hr). \textit{Resolving Multi-Peaked Lyman-alpha In A Strongly Lensed Galaxy at z=4: Revealing A Candidate Highly Magnified LyC Leaking Galaxy}.
+
+        \item[8.] Bayliss, M., Dahle, H., Florian, M., Gladders, M. D., Hutchison, T. A., Khullar, G., Kim, K. J., \textbf{Owens, M. R.}, Rigby, J. R., Rivera-Thorsen, T. E., Sharon, K. (HST Cycle 32 GO; ACS, WFC3; 44 orbits). \textit{Spatially Resolving Highly Ionized Channels of Lyman Continuum and Lyman Alpha Escape on 10's of Parsecs Scales In A Strongly Lensed Galaxy}.
+
+        \item[7.] Dahle, H., Bayliss, M., Cloonan, A. P., Florian, M., Gladders, M. D., Hutchison, T. A., Khullar, G., Kim, K. J., Mahler, G., Napier, K., \textbf{Owens, M. R.}, Rigby, J. R., Rivera-Thorsen, T. E., Sharon, K., Welch, B. (HST Cycle 32 GO; ACS, WFC3, NIRCam; 14 orbits (HST), 11.5 hr (JWST)). \textit{Time delay cosmography with strong cluster lenses}.
+
+        \item[6.] Bayliss, M., Roberson, J., Dahle, H., Gladders, M., Khullar, G., Kim, K., \textbf{Owens, R.}, Sharon, K. (NOIRLab 2024B; FIRE; 21 hr). \textit{Spatially Resolved Physical Conditions In a Strongly Lensed X-ray Emitting Dwarf Starburst at Cosmic Noon}.
+
+        \item[5.] Bayliss, M., Navarre, A., Sharon, K., Dahle, H., \textbf{Owens, R.}, Gladders, M., Kim, K. (Gemini 2024A FT; GMOS-N; 3 hr). \textit{Resolving Multi-Peaked Lyman-alpha In A Strongly Lensed Galaxy at z=4: Revealing A Candidate Highly Magnified LyC Leaking Galaxy}.
+
+        \item[4.] Bayliss, M., Gassis, R., Adhikari, P., Sharon, K., Gladders, M., Dahle, H., Napier, K., Khullar, G., Mahler, G., \textbf{Owens, R.} (Gemini 2024A; GMOS-N, GMOS-S; 27.5 hr). \textit{A Dynamical Study of an HST+Chandra Sample of Strong Lensing Clusters}.
+
+        \item[3.] Salas, P., Emig, K., \textbf{Owens, M.}, Roshi, D. A., Anderson, L. (GBT 23B Regular;  49 hr). \textit{The Partially Ionized Medium around HII Regions -- the low frequency complement}. 
+    
+        \item[2.] Florian, M., Bezanson, R., Chisholm, J., Dahle, H., Gladders, M., Hutchison, T., Khullar, G., Kim, K., Mahler, G., Navarre, A., \textbf{Owens, R.}, Rigby, J., Rivera-Thorsen, T., Roberson, J., Sharon, K., Shivaei, I., Welch, B., Whitaker, K. (JWST Cycle 2 GO; NIRCam, NIRSpec; 67.6 hr). \textit{Galaxies Under Construction: Resolved Scaling Relations and Stellar Mass Assembly as Revealed by Lensed Star-Forming Clumps at Cosmic Noon}.
+        
+        \item[1.] \textbf{Owens, R.}, Kim, K., Bayliss, M., Dahle, H., Burns, J., Sharon, K., Smith, G., Klein, M., Kuchta, N., Walker, R., Rivera-Thorsen, E., Mahler, G., Khullar G. (Gemini 2023A FT; GMOS-S; 1.88 hr). \textit{Identifying galaxy-lensed Lyman-alpha emitters}.
+        
+    \end{itemize}
+
+% My experience in sharing my research
+%\section{Posters \& Presentations}
+%    \resumeSubHeadingListStart
+%        \resumeSubheadingSimple{Posters}{}
+%            \resumeSubSubheading{\href{https://docs.google.com/document/d/19c-mvijcsLkVhIgc8ZDiMn197YKIFAMexRHmW-1-z2U/edit?usp=sharing}{Toward analysis of UV integrated spectra with a full spectrum fitting tool} (in prep.)}{}
+%                \resumeItemListStart
+%                    \loc{31st General Assembly of the International Astronomical Union}{Busan, Republic of Korea}{TBA}
+%                \resumeItemListEnd
+%            \resumeSubSubheading{\href{https://docs.google.com/document/d/10EnIEyUSOIqs3ze8nEvUjft9Lq-wkeTK_PMP-VqHmwE/edit?usp=sharing}{Spatially variable Ly$\alpha$ line profiles and environments in a strong LyC leaking galaxy}}{}
+%                \resumeItemListStart
+%                    \loc{31st General Assembly of the International Astronomical Union}{Busan, Republic of Korea}{TBA}
+%                    \vspace{-18pt}
+%                    \loc{National Astronomy Meeting 2022}{Coventry, United Kingdom}{12 July 2022}
+%                    \vspace{-18pt}
+%                    \loc{2022 Undergraduate Scholarly Showcase}{Cincinnati, OH}{22 April 2022}
+%                \resumeItemListEnd
+%            \resumeSubSubheading{How LyC photons escape from compact star-forming regions (in prep.) (coauthor)}{}
+%                \resumeItemListStart
+%                    \loc{240th Meeting of the American Astronomical Society}{Pasadena, CA}{TBA}
+%                \resumeItemListEnd
+%            \resumeSubSubheading{\href{https://docs.google.com/document/d/1hLkULSVImKMBgS6aoExNqmuZRF0Os3DUnKdwe_jbDoA/edit?usp=sharing}{Distribution and dynamics of ionized gas in the Cygnus X massive star-forming complex} (in prep.)}{}
+%                \resumeItemListStart
+%                    \loc{240th Meeting of the American Astronomical Society}{Pasadena, CA}{13 June 2022}
+%                    \vspace{-18pt}
+%                    \loc{239th Meeting of the American Astronomical Society (canceled)}{Salt Lake City, UT}{NA}
+%                \resumeItemListEnd
+%            \resumeSubSubheading{\href{https://www.overleaf.com/read/qrzbxnvywnqk}{Ionized Gas in Cygnus X}}{}
+%                \resumeItemListStart
+%                    \loc{Exploring Innovation in Appalachia Symposium 2021}{virtual}{11 August 2021}
+%                    \vspace{-18pt}
+%                    \loc{2021 Pulsar Search Collaboratory Capstone Seminar}{Morgantown, WV}{30 July 2021}
+%                    \vspace{-18pt}
+%                    \loc{2021 WVU Summer Undergraduate Research Symposium}{virtual}{29 July 2021}
+%                \resumeItemListEnd
+%            \resumeSubSubheading{\href{https://www.overleaf.com/read/khtncmkfkwyg}{Ly$\alpha$ Emission and Gaseous Outflows in a z$\,\sim$2 Lensed Galaxy}}{}
+%                \resumeItemListStart
+%                    \loc{2021 Pulsar Search Collaboratory Capstone Seminar}{Morgantown, WV}{30 July 2021}
+%                    \vspace{-18pt}
+%                    \loc{\href{https://journals.uc.edu/index.php/Undergradshowcase/article/view/4465}{2021 Undergraduate Scholarly Showcase}}{virtual}{May 2021}
+%                \resumeItemListEnd
+%        \resumeSubheadingSimple{Presentations}{}
+%            \resumeSubSubheading{\href{https://docs.google.com/presentation/d/1fHZ0mv0vGKh_ZDQ5pXe8LclxE0Ql0o_NKRNcQjWnlM4/edit?usp=sharing}{Probing reionization with a giant arc}}{}
+%                \resumeItemListStart
+%                    \loc{2022 Kentucky Area Astronomical Society Meeting}{virtual}{2 April 2022}
+%                \resumeItemListEnd
+%            \resumeSubSubheading{\href{https://docs.google.com/presentation/d/1RzOR--FVH9qZ-dfUStHouI2cuz_7MB9mbdZgFhLhZ1U/edit?usp=sharing}{Ionized Gas in Cygnus X}}{}
+%                \resumeItemListStart
+%                    \loc{Exploring Innovation in Appalachia Symposium 2021}{virtual}{11 August 2021}
+%                    \vspace{-18pt}
+%                    \loc{2021 Pulsar Search Collaboratory Capstone Seminar}{Morgantown, WV}{30 July 2021}
+%                \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+
+%
+%  TEACHING EXPERIENCE
+%
+
+\section{Teaching Experience}
+    \resumeSubHeadingListStart
+        \resumeSubheading{Tutor}{March 2024 -- present}{Varsity Tutors}{}
+            \resumeItemListStart
+                \resumeItem{One-on-one tutor for physics students at various levels, from high school to college}
+            \resumeItemListEnd
+        \resumeSubheading{Private Tutor}{September 2021 -- April 2022}{Freelance}{}
+            \resumeItemListStart
+                \resumeItem{One-on-one tutor for high school physics students}
+            \resumeItemListEnd
+        \resumeSubheading{Course Instructor}{January 2020 -- April 2022}{University of Cincinnati}{}
+            \resumeItemListStart
+                \resumeItem{Shifted the learning community to management by the physics department as a graded class; revised course with more focus on physics research opportunities and careers, created / graded all assignments, and counseled students}
+                %\resumeItem{Individually organized and wrote a revised curriculum with greater focus on educating students on career options in physics and opportunities to engage in physics research}
+                %\resumeItem{Created and graded all course assignments and assigned final grade, while meeting with students one-on-one to provide counsel and mentoring}
+                %\resumeItem{Personally adapted the class to an online format due to pandemic limitations}
+            \resumeItemListEnd
+        \resumeSubheading{Teaching Assistant}{August 2019 -- December 2020, August 2021 -- April 2022}{University of Cincinnati}{}
+            \resumeItemListStart
+                \resumeItem{Acted as a teaching assistant for the freshman physics course; graded in-class problems, led extracurricular study sessions} %for my students in the learning community}
+                %\resumeItem{Reinforced techniques or topics to learn and succeed academically covered in the learning community, and strengthened a sense of continuity and community for students}
+                %\resumeItem{Graded in-class group problems, led practice problem study sessions regularly outside of class, and worked informally in assisting students on many occasions}
+            \resumeItemListEnd
+        \resumeSubheading{Peer Leader}{August 2019 -- December 2019}{University of Cincinnati}{}
+            \resumeItemListStart
+                \resumeItem{Independently led a learning community for first year physics students to discuss navigating college life and a career in physics}% within the UC Learning Commons}
+                %\resumeItem{The learning community is a required class for first year students, meant to impart crucial how-to lessons in navigating college life and a career in physics}
+                %\resumeItem{Created all class lesson plans}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+% SCIENTIFIC COMMUNICATION
+%
+
+\section{Scientific Communication}
+    \begin{itemize}
+        \item[6.] Owens, Riley. ``How a blue nugget leaks ionizing photons in a unique way" \textit{astrobites}, in prep.
+        \item[5.] Owens, Riley. ``Finding leaky galaxies in our cosmic neighborhood" \textit{astrobites}, subm.
+        \item[4.] Owens, Riley. ``Is the farthest known star actually a binary system?" \textit{astrobites}, 6 Dec. 2023, \href{https://astrobites.org/2023/12/06/is-the-farthest-known-star-actually-a-binary-system/}{https://astrobites.org/2023/12/06/is-the-farthest-known-star-actually-a-binary-system/}.}
+        \item[3.] Owens, Riley. ``How do you find high energy photons when you can’t see them?" \textit{astrobites}, 22 Aug. 2023, \href{https://astrobites.org/2023/08/22/how-do-you-find-high-energy-photons-when-you-cant-see-them/}{https://astrobites.org/2023/08/22/how-do-you-find-high-energy-photons-when-you-cant-see-them/}.
+        \item[2.] Owens, Riley. ``Are there thousands of Godzillas hiding in plain sight?" \textit{astrobites}, 9 Sep. 2022, \href{https://astrobites.org/2022/09/09/are-there-thousands-of-godzillas-hiding-in-plain-sight/}{https://astrobites.org/2022/09/09/are-there-thousands-of-godzillas-hiding-in-plain-sight/}.
+        \item[1.] Owens, Riley. ``How was the universe reionized? Cosmic sunbursts provide hints" \textit{astrobites}, 9 Oct. 2021, \href{https://astrobites.org/2021/10/09/cosmic-sunbursts-provide-hints/}{https://astrobites.org/2021/10/09/cosmic-sunbursts-provide-hints/}.
+    \end{itemize}
+
+%
+% AWARDS AND HONORS
+%
+
+\section{Awards, Scholarships, Fellowships}
+    \resumeSubHeadingListStart
+        \award{Fulbright Semifinalist}{Fulbright Program}{April 2023}
+        \vspace{-5pt}
+        \award{Chambliss Astronomy Achievement Award}{American Astronomical Society}{March 2023}
+        \vspace{-5pt}
+        \award{Undergraduate Research Fellow}{University of Cincinnati}{February 2022}
+        \vspace{-5pt}
+        \award{Dean's List}{University of Cincinnati}{Fall `18, Summer `19, Spring `20 -- Spring `22}
+        \vspace{-5pt}
+        \award{Cincinnatus Scholarship}{University of Cincinnati}{August 2018 -- April 2022}
+        \vspace{-5pt}
+        \award{University Honors Scholar}{University of Cincinnati}{August 2018 -- April 2022}
+    \resumeSubHeadingListEnd
+    
+\vspace{4}
+
+% Conferences, meetings, etc. I've attended    
+%\section{Attended Conferences \& Meetings}
+%    \resumeSubHeadingListStart
+%        \award{COOL-LAMPS Collaboration Meeting 2021}{virtual}{9 \& 15 July 2021}
+%    \resumeSubHeadingListEnd
+    
+%\vspace{4}
+
+%
+% TECHNICAL SKILLS
+%
+
+\section{Technical Skills}
+    \resumeSubHeadingListStart
+        \tech{Languages}{Software}{Python 3.x (Astropy, GaussPy+, NumPy, Pandas, SciPy)}{Atom, Git, LaTeX, Mathematica, SAOImageDS9, Vim}
+    \resumeSubHeadingListEnd
+
+%
+% PROFESSIONAL MEMBERSHIPS
+%
+ 
+%\section{Professional Memberships}
+%    \resumeSubHeadingListStart
+%        \vspace{0pt}\item
+%        \begin{tabular}[t]{p{0.323\textwidth}p{0.323\textwidth}p{0.323\textwidth}}
+%            \centering\textbf{American Astronomical Society} & \centering\textbf{American Physical Society} & \centering\textbf{Sigma Pi Sigma}
+%        \end{tabular}\vspace{-7pt}
+%    \resumeSubHeadingListEnd
+
+%
+% EXTRACURRICULAR ACTIVITIES
+%
+
+
+%\section{Extracurricular Activities}
+%    \resumeSubHeadingListStart
+%        \resumeSubheading{Society of Physics Students}{March 2019 -- April 2022}{University of Cincinnati}{}
+%            \resumeItemListStart
+%                \resumeItem{Active member of UC's Society of Physics Students branch since Spring 2019}
+%                \resumeItem{Elected president of the organization for the 2021-`22 school year}
+%            \resumeItemListEnd
+%        
+%        \resumeSubheading{Epsilon Tau Pi}{September 2018 -- April 2022}{University of Cincinnati}{}
+%            \resumeItemListStart
+%                \resumeItem{Founding member of UC chapter of Epsilon Tau Pi, a national service fraternity for Eagle Scouts}
+%                \resumeItem{Elected as the Social Chair; organized and executed social activities for members}
+%                \resumeItem{Elected as the Fraternity Education Officer; led prospective members through the candidate process and induction while creating a comfortable and inclusive environment to successfully integrate them into the larger organization}
+%            \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+
+%
+% REFERENCES
+%
+\section{References}
+    \resumeSubHeadingListStart
+        \begin{tabular}[t]{p{0.5\textwidth}p{0.5\textwidth}}
+            \rf{Loren Anderson}{Associate Professor}{Department of Physics and Astronomy}{Eberly College of Arts and Sciences}{West Virginia University}{(304) 293-4884}{loren.anderson@mail.wvu.edu}
+            &
+            \rf{Matthew Bayliss}{Associate Professor}{Department of Physics}{College of Arts and Sciences}{University of Cincinnati}{(513) 556-0501}{baylismb@ucmail.uc.edu}
+            \\
+            %\rf{Randa Asa'd}{Associate Professor}{Department of Physics}{College of Arts and Sciences}{American University of Sharjah}{+971 6 515 4708}{raasad@aus.edu}
+            %&
+            \rf{Alexandre Sousa}{Professor}{Department of Physics}{College of Arts and Sciences}{University of Cincinnati}{(513) 556-9691}{sousaae@ucmail.uc.edu}
+        \end{tabular}
+    \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
