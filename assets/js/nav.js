@@ -23,7 +23,7 @@ document.getElementById("banner").addEventListener("load", function() {
     Array.from(buttons).forEach((button, index) => {
 
         // Get the label corresponding to the button
-        let label = labels[index].querySelector("tspan");
+        let label = labels[index];//.querySelector("path");
 
         // Check if the button corresponds to the current page
         let isActive = window.location.pathname === `/${button.getAttribute("inkscape:label").toLowerCase()}.html`;
