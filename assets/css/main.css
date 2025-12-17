@@ -110,7 +110,7 @@ body {
 	text-justify: inter-word;
 
 	border: 50px solid transparent;
-	border-image: url(frame.svg) 33.3% 33.3% 33.3% 33.3% stretch;
+	border-image: url('/assets/css/frame.svg') 33.3% 33.3% 33.3% 33.3% stretch;
 
 	background-color: #26252c;
 
