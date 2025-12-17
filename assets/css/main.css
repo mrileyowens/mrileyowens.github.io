@@ -120,6 +120,8 @@ body {
 	position: relative;
 
 	box-sizing: border-box;
+	padding: 0rem;
+	background-clip: padding-box;
 
 	/*padding-right: 1rem;*/
 
