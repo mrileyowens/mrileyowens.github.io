@@ -1,0 +1,235 @@
+%  For credit to source, please look at the readme.txt file. 
+
+%   We suggest to 
+    %  Start all bullet item items with action verbs. You may base form or ing form or verbs where suited. See action verbs here, https://ecs.ihu.edu.gr/co/employment-cvcletter/action-verbs.html
+    %  Provide the most relevant information
+    %  Provide evidence for your skills.  For example, if you include MS Office and Python in your skills list, then provide bullet points detailing what YOU can do in MS Office and Python.  
+    %  In each section--start entries with the most recent one
+    %  Pay attention to grammar, avoid typos
+    %  Avoid using abbreviations
+    %  If you're applying for jobs, put your experience and skills before education
+    %  Some examples of presentations are provided
+
+
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{inter} 
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=1.8cm,
+    bottom=1in,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\setcounter{secnumdepth}{0} % remove section numbering
+\pdfgentounicode=1 % make ATS friendly
+
+\usepackage{enumitem}
+\setlist[itemize]{
+    noitemsep,
+    left=2em
+}
+\setlist[description]{itemsep=0pt}
+\setlist[enumerate]{align=left}
+\usepackage{etaremune}
+\usepackage[dvipsnames]{xcolor}
+\colorlet{icnclr}{gray}
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\color{Sepia}\large\fontseries{black}\selectfont\uppercase}{}{}{\ruleafter}[\global\RemVStrue]
+\titleformat{\subsection}{\fontseries{bold}\selectfont}{}{}{\rvs}
+\titleformat{\subsubsection}{\color{gray}\fontseries{bold}\selectfont}{}{}{}
+
+\usepackage{xhfill} 
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{1pt}[gray]} % add rule after title in .5 x-height 
+
+\newif\ifRemVS % remove vspace between \section & \subsection
+\newcommand{\rvs}{
+    \ifRemVS
+        \vspace{-1.5ex}
+    \fi
+    \global\RemVSfalse
+}
+
+\usepackage{fontawesome7}
+
+\usepackage[bookmarks=false]{hyperref} % [imp!]
+\hypersetup{ 
+    colorlinks=true,
+    urlcolor=Sepia,
+    pdftitle={My Resume},
+}
+
+\usepackage[page]{totalcount}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}	
+\fancyhf{}							
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\usepackage{tabularx}
+
+\newcommand{\entry}[3]{
+  \item
+    \begin{tabular*}{}[]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \\
+    \end{tabular*}
+}
+
+\begin{document}
+
+%== HEADER ==%
+\begin{center}      
+    {\fontsize{28}{28}\selectfont M. Riley Owens} \\ \bigskip
+
+    %{\color{icnclr}\faMapMarker} City, Country \quad 
+    {\color{icnclr}\faEnvelope[regular]} \href{mailto:m.riley.owens@gmail.com}{m.riley.owens@gmail.com} \quad
+    {\color{icnclr}\faGlobe[regular]} \href{https://mrileyowens.github.io}{mrileyowens.github.io}
+    % You can also put your LinkedIn or website address
+   % {\color{icnclr}\faLinkedinIn} \href{https://www.linkedin.com/}{linkedin.com/in/username}
+\end{center}
+%==============
+%==============
+%==============
+\section{About me}
+%==============
+%==============
+I am a first-year graduate student in the Department of Astronomy at the University of California, Berkeley, where I work with Prof. Dan Stark. My research interests focus on understanding the evolution and physics of galaxies in the early universe, from the end of reionization to the first galaxies.
+%==============
+%==============
+\section{Education}
+%==============
+%==============
+%==============
+%==============
+\subsection{Doctor of Philosophy in Astrophysics\hfill \normalfont 2025-}  
+\subsubsection{University of California, Berkeley}
+\vspace{0.1cm}
+\noindent \textit{Advised by Prof. Daniel Stark} | GPA: NA
+%\begin{itemize}
+    %\item \textit{GPA}: NA
+%\end{itemize}
+\vspace{0.3cm}
+%==============
+%==============
+\subsection{Bachelor of Science in Astrophysics and Physics, {\color{gray}\fontseries{normal}\selectfont Minor in Mathematics} \hfill \normalfont 2018-2022}  
+\subsubsection{University of Cincinnati}
+\vspace{0.1cm}
+\noindent \textit{Advised by Prof. Matthew Bayliss} | GPA: 3.73
+%\begin{itemize}
+%    \item \textit{GPA}: 3.73
+%\end{itemize}
+    
+%==============
+%==============
+\section{Positions}
+%==============
+%==============
+\subsection{Graduate researcher \hfill \normalfont 2025-} % This could be a short version of your master's thesis title
+\subsubsection{University of California, Berkeley}
+\vspace{0.3cm}
+\subsection{Postbaccalaureate researcher \hfill \normalfont 2022}
+\subsubsection{West Virginia University}
+\vspace{0.3cm}
+\subsection{Postbaccalaureate researcher \hfill \normalfont 2022-2025}
+\subsubsection{University of Cincinnati}
+\vspace{0.3cm}
+\subsection{NSF REU student \hfill \normalfont 2021}
+\subsubsection{West Virginia University}
+\vspace{0.3cm}
+\subsection{Undergraduate researcher \hfill \normalfont 2019-2022}
+\subsubsection{University of Cincinnati}
+\vspace{0.3cm}
+%==============
+%==============
+%==============
+%==============
+\section{Teaching}
+
+\subsection{Graduate student instructor, {\color{gray}\fontseries{normal}\selectfont Introduction to General Astronomy} \hfill \normalfont Fall 2025}
+\subsubsection{University of California, Berkeley}
+\vspace{0.3cm}
+
+%==============
+%==============
+%==============
+%==============
+\section{Publications}
+For a complete record of my publications and associated statistics, please visit \href{https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-2862-307X&sort=date%20desc%2C%20bibcode%20desc&p_=0}{my ORCID record on NASA ADS}.
+%==============
+%==============
+%==============
+%==============
+\section{Observations}
+
+\the\textwidth
+
+\newcommand{\cvitem}[2]{%
+  \begin{tabularx}{\linewidth}{@{}Xr@{}}
+    #1 & #2 \\
+  \end{tabularx}%
+}
+
+\subsection{Principal investigator}
+\begin{etaremune}
+    \item 
+    \textbf{Mapping the circumgalactic medium of a massive galaxy at z=2.3 with a background lensed galaxy}{4hour}
+    \item Mapping the circumgalactic medium of a massive galaxy at z=2.3 with a background lensed galaxy \hfill 4 hour
+
+\end{etaremune}
+
+\begin{tabularx}{\textwidth}{rl}
+    
+\end{tabularx}
+
+\subsection{Co-investigator}
+
+%==============
+%==============
+%==============
+%==============
+\section{Presentations}
+%==============
+%==============
+%==============
+% These are example presentations. Please replace all entries with your presentations. 
+%==============
+\begin{itemize}
+% Conference talks
+    \item[\checkmark] Talk title, Conference name, City, Country (30 May 20XY)
+    \item[\checkmark] Talk title, Conference name, City, Country (02 November 20XZ)
+% Class presentations
+    \item[\checkmark] Presentation Topic in the course of XYZ, University of ABC, City, Country (03 November 20XY)
+    \item[\checkmark] Euler method and modified Euler method in the course of Numerical Analysis, University of XYZ, City, Country (10 April 20XA)
+\end{itemize}
+%==============
+%==============
+%==============
+%==============
+\section{Certifications \& Awards}
+%==============
+% Mentioned most important certificates where you have received some training or award or have delivered a presentation
+%==============
+\begin{itemize}
+    \item[\checkmark] XYZ Scholarships
+    \item[\checkmark] Received ABC Scholarship Award for the academic session 20XX-20XX
+    \item[\checkmark] Certificate of Accomplishment, Awarding Body (28 Oct 20XZ)
+    \item[\checkmark] Certificate of Merit in Masters (2019)
+    \item[\checkmark] Certificate of Merit in Bachelors (2017)
+\end{itemize}
+%==============
+%==============
+%==============
+%==============
+\section{References}
+References available upon request.
+\end{document}
