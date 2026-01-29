@@ -186,9 +186,37 @@
     }
 }
 
-%\newcommand{\paper}[5]{
-    %\textbf{#1,} {\color{gray}\fontseries{normal}\selectfont #2} \addvspace{0.1cm} #3 & #4 citations & #5 \\ \noalign{\vskip 0.3cm}
-%}
+\newcommand{\teaching}[5]{
+    {
+    \noindent
+    \begin{tabularx}{\textwidth}{@{} X rr @{}}
+        \textbf{#1,} {\color{gray}\fontseries{normal}\selectfont #2}\newline {\color{gray}\fontseries{bold}\selectfont #5} & #3 & #4 \\
+        %{\color{gray}\fontseries{bold}\selectfont #5} &
+    \end{tabularx}
+    \addvspace{0.1cm}
+    }
+}
+
+\newcommand{\writing}[4]{
+    {
+    \noindent
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textbf{#1,} {\color{gray}\fontseries{normal}\selectfont #2}\newline {\fontseries{normal}\selectfont #4} & #3 \\
+        %{\color{gray}\fontseries{bold}\selectfont #5} &
+    \end{tabularx}
+    \addvspace{0.1cm}
+    }
+}
+
+\newcommand{\reference}[4]{
+    \noindent
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textbf{#1,} {\color{gray}\fontseries{normal}\selectfont #2}\newline {\color{gray}\fontseries{bold}\selectfont #3} & \href{mailto:#4}{#4} \\
+        %{\color{gray}\fontseries{bold}\selectfont #5} &
+    \end{tabularx}
+    \addvspace{0.1cm}
+}
+
 \begin{document}
 
 %== HEADER ==%
@@ -421,18 +449,50 @@ Strong Lensing Clusters}{Gemini/GMOS-N, Gemini/GMOS-S}{28 hr}{Gemini 2024A}{M. B
 
 %%==============
 
-%\section{Teaching}
+\section{Teaching}
 
-%\subsection{Graduate student instructor, {\color{gray}\fontseries{normal}\selectfont Introduction to General Astronomy} \hfill \normalfont Fall 2025}
-%\subsubsection{University of California, Berkeley}
-%\vspace{0.3cm}
-%\subsection{Peer leader, {\color{gray}\fontseries{normal}\selectfont ...} \hfill \normalfont Fall 2019}
-%\subsubsection{University of Cincinnati}
-%\vspace{0.3cm}
-%%==============
-%%==============
-%%==============
-%%==============
-%\section{References}
+\teaching{Graduate student instructor}{Introduction to General Astronomy}{ASTRON C10}{Fall 2025}{University of California, Berkeley}
+
+\teaching{Teaching assistant}{College Physics II}{PHYS 2006}{Spring 2022}{University of Cincinnati}
+
+\teaching{Instructor}{Collaborative Learning for PHYS 2006}{PHYS 1016}{Spring 2022}{University of Cincinnati}
+
+\teaching{Teaching assistant}{College Physics I}{PHYS 2005}{Fall 2021}{University of Cincinnati}
+
+\teaching{Instructor}{Collaborative Learning for PHYS 2005}{PHYS 1015}{Fall 2021}{University of Cincinnati}
+
+\teaching{Instructor}{Collaborative Learning for PHYS 2006}{PHYS 1016}{Spring 2021}{University of Cincinnati}
+
+\teaching{Teaching assistant}{College Physics I}{PHYS 2005}{Fall 2020}{University of Cincinnati}
+
+\teaching{Instructor}{Collaborative Learning for PHYS 2005}{PHYS 1015}{Fall 2020}{University of Cincinnati}
+
+\teaching{Teaching assistant}{College Physics II}{PHYS 2006}{Spring 2020}{University of Cincinnati}
+
+\teaching{Instructor}{Collaborative Learning for PHYS 2006}{PHYS 1016}{Spring 2020}{University of Cincinnati}
+
+\teaching{Teaching assistant}{College Physics I}{PHYS 2005}{Fall 2019}{University of Cincinnati}
+
+\teaching{Peer leader}{Learning Community}{MLTI 1011}{Fall 2019}{University of Cincinnati}
+
+\section{Scientific writing}
+
+\writing{Is the farthest known star actually a binary system?}{Astrobites}{2023}{\textbf{R. Owens}}
+
+\writing{How do you find high energy photons when you can't see them?}{Astrobites}{2023}{\textbf{R. Owens}}
+
+\writing{Are there thousands of Godzillas hiding in plain sight?}{Astrobites}{2022}{\textbf{R. Owens}}
+
+\writing{How was the universe reionized? Cosmic sunbursts provide hints}{Astrobites}{2021}{\textbf{R. Owens}}
+
+\section{References}
+
+\reference{Dan Stark}{Professor}{University of California, Berkeley}{dpstark@berkeley.edu}
+
+\reference{Loren Anderson}{Associate professor}{West Virginia University}{loren.anderson@mail.wvu.edu}
+
+\reference{Matthew Bayliss}{Associate professor}{University of Cincinnati}{baylismb@ucmail.uc.edu}
+
+\reference{Alexandre Sousa}{Professor}{University of Cincinnati}{sousaae@ucmail.uc.edu}
 %References available upon request.
 \end{document}
