@@ -1,1 +1,5 @@
 portfolio/
+
+docs/cv/
+!/docs/cv/cv.tex
+!docs/cv/cv.pdf
